@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <head>
-<title>Green Pastures Stable and Training</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storage Rents</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="GPST.css" rel="stylesheet">
@@ -9,39 +11,57 @@
 <body>
 <div id="wrapper">
 <header>
-  <h1>Green Pastures Stable and Training</h1>
+  <h1>Storage Rents</h1>
 </header>
 <nav>
   <ul>
    <li><a href="index.html">Home</a> </li>
    <li><a href="board.html">Board</a></li> 
-   <li><a href="training.html">Training</a> </li>  
+   <li><a href="Profile.html">Profile</a> </li>  
    <li><a href="contact.html">Contact Us</a></li>
   </ul>
 </nav>
 
    <div id="heroHome">
+    <img src="C:\Users\richr\Documents\GitHub\Storage-Rents\pictures\Storage Locker.jpg" alt="Storage Locker">
    </div>
 
 <main>
-
-<h2>A complete horse training & boarding facility</h2>
-<p> <span class="barn"> Green Pasture Stable and Training </span> is a full service training and boarding facility, located in just 20 miles east of Cincinnati in Amelia Ohio.  Whether you show competitively, trail ride, or just need a comfortable safe place for you horse to retire, you and your horse will love it here..</p>
+  
+<h2>The Complete Storage Renting experience</h2>
+<p> <span class="barn"> Fill in the criteria below to search through all of our storage options </span> </p>
 <ul>
-  <li>Ride year round, regardless of the weather, in our indoor arena.</li>
-  <li>Enjoy easy access to miles of trails at East Fork State Park.</li>
-  <li>We offer several board and training packages to fit a variety of needs and budgets.</li>
 </ul>
-  <div id="contact">
- <span class= "barn"> Green Pastures Stable and Training </span><br>
-  1252 Green Pasture Rd<br>
-  Amelia, Ohio 45102<br><br>
-  <a id=”mobile” href=tel:888-555-0751><span id=”desktop”>888-555-5555</span> </a><br><br>
-  </div>
+<div class="container">
+  <form action="action_page.php">
+
+    <label for="fname">Location</label>
+    <input type="text" id="fname" name="zipcode" placeholder="45219">
+
+    <label for="lname">Size</label>
+    <input type="text" id="lname" name="Size" placeholder="500 sqr Feet">
+
+    <label for="country">Time needed</label>
+    <select id="country" name="country">
+      <option value="1 Month">1 Month</option>
+      <option value="3 Months">3 Months</option>
+      <option value="6 Months">6 Months</option>
+      <option value="1 Year">1 year</option>
+      <option value="> 1 Year">More than 1 year</option>
+    </select>
+
+    <input type="submit" value="Search">
+
+  </form>
+</div>
 </main>
 <footer>
-Copyright &copy; 2020 University of Cincinati, IT2040 <br>
+Copyright &copy; 2021 University of Cincinati<br>
 <a href="mailto:binskynp@mail.uc.edu">binskynp@mail.uc.edu</a>
+<a href="#"><i class="fa fa-dribbble"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <a href="#"><i class="fa fa-facebook"></i></a>
 </footer>
 </div>
 </body>
