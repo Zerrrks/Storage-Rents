@@ -26,9 +26,6 @@ export default function FixedPlugin(props) {
       })}
     >
       <div id="fixedPluginClasses" className={props.fixedClasses}>
-        <div onClick={handleClick}>
-          <i className="fa fa-cog fa-2x" />
-        </div>
         <ul className="dropdown-menu">
           <li className="header-title">SIDEBAR FILTERS</li>
           <li className="adjustments-line">
