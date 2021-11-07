@@ -35,7 +35,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function UserProfile() {
+export default function UserStorage() {
   const classes = useStyles();
   return (
     <div>
@@ -48,7 +48,7 @@ export default function UserProfile() {
             </CardHeader>
             <CardBody>
               <GridContainer>
-                <GridItem xs={12} sm={12} md={3}>
+                <GridItem xs={12} sm={12} md={6}>
                   <CustomInput
                     labelText="Username"
                     id="username"
@@ -57,7 +57,7 @@ export default function UserProfile() {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
+                <GridItem xs={12} sm={12} md={6}>
                   <CustomInput
                     labelText="Email address"
                     id="email-address"
