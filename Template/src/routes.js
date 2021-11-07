@@ -36,7 +36,6 @@ import NotificationsPage from "views/Notifications/Notifications.js";
 //import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
-import { Box } from "@material-ui/core";
 
 const dashboardRoutes = [
   {
@@ -57,7 +56,7 @@ const dashboardRoutes = [
   },
   { path: "/storage",
     name: "User Storage",
-    icon: Box,
+    icon: "content_paste",
     component: UserStorage,
     layout: "/admin",
   },

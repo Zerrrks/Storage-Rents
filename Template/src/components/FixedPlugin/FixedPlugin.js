@@ -25,8 +25,7 @@ export default function FixedPlugin(props) {
       className={classnames("fixed-plugin", {
         "rtl-fixed-plugin": props.rtlActive,
       })}
-    >
-      
+    >  
       </div>
   );
 }
