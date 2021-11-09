@@ -13,6 +13,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
+
 //import avatar from "assets/img/faces/marc.jpg";
 
 //import { bugs, website, server } from "variables/general.js";
@@ -32,7 +33,7 @@ import CardFooter from "components/Card/CardFooter.js";
 
 
     
-export default class Dashboard extends React.Component() {
+export default class Dashboard extends React.Component {
     
   constructor(props) {
     super(props);
@@ -95,6 +96,7 @@ export default class Dashboard extends React.Component() {
                         labelText="Zipcode"
                         id="zipcode"
                         value={this.state.customer.zipcode}
+                        type="text"
                         onChange={this.handleZipcodeChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
@@ -107,6 +109,7 @@ export default class Dashboard extends React.Component() {
                       <CustomInput
                         labelText="Time needed"
                         id="timeNeeded"
+                        type="text"
                         value={this.state.customer.timeNeeded}
                         onChange={this.handleTimeNeededChanged.bind(this)}
                         formControlProps={{
@@ -118,6 +121,7 @@ export default class Dashboard extends React.Component() {
                       <CustomInput
                         labelText="Storage space"
                         id="storageSpace"
+                        type="text"
                         value={this.state.customer.storageSpace}
                         onChange={this.handleStorageSpaceChanged.bind(this)}
                         formControlProps={{
