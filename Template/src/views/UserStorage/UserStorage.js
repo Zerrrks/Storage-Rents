@@ -48,19 +48,28 @@ export default function UserStorage() {
             </CardHeader>
             <CardBody>
               <GridContainer>
-                <GridItem xs={12} sm={12} md={6}>
+                <GridItem xs={10} sm={10} md={4}>
                   <CustomInput
-                    labelText="Username"
-                    id="username"
+                    labelText="Location Name"
+                    id="location-name"
                     formControlProps={{
                       fullWidth: true,
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
+                <GridItem xs={10} sm={10} md={4}>
                   <CustomInput
-                    labelText="Email address"
-                    id="email-address"
+                    labelText="Location Price"
+                    id="location-price"
+                    formControlProps={{
+                      fullWidth: true,
+                    }}
+                  />
+                </GridItem>
+                <GridItem xs={2} sm={2} md={2}>
+                  <CustomInput
+                    labelText="Square Footage"
+                    id="square-footage"
                     formControlProps={{
                       fullWidth: true,
                     }}
