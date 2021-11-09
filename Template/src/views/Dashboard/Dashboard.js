@@ -47,23 +47,23 @@ export default class Dashboard extends React.Component() {
     }
   }
 
-    handleZipcodeChanged() {
+    handleZipcodeChanged(event) {
     var customer        = this.state.customer;
-    customer.zipcode  = this.target.value;
+    customer.zipcode  = event.target.value;
 
     this.setState({ customer: customer });
   }
 
-  handleTimeNeededChanged() {
+  handleTimeNeededChanged(event) {
     var customer      = this.state.customer;
-    customer.timeNeeded = this.target.value;
+    customer.timeNeeded = event.target.value;
 
     this.setState({ customer: customer });
   }
 
-  handleStorageSpaceChanged() {
+  handleStorageSpaceChanged(event) {
     var customer    = this.state.customer;
-    customer.storageSpace = this.target.value;
+    customer.storageSpace = event.target.value;
 
     this.setState({ customer: customer });
   }
