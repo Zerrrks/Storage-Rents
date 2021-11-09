@@ -38,13 +38,19 @@ export default class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     
-    
+ 
+
     this.state = {
       customer: {
         zipcode: props.zipcode,
         timeNeeded: props.timeNeeded,
         storageSpace: props.storageSpace
       }
+    }
+    Dashboard.propTypes = {
+      zipcode: React.proptypes.number,
+      timeNeeded: React.proptypes.number,
+      storageSpace: React.proptypes.number
     }
   }
 
