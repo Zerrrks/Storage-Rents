@@ -36,7 +36,7 @@ export default class Dashboard extends React.Component() {
     
   constructor(props) {
     super(props);
-const event = ''    
+    
     
     this.state = {
       customer: {
@@ -47,28 +47,28 @@ const event = ''
     }
   }
 
-    handleZipcodeChanged(event) {
+    handleZipcodeChanged() {
     var customer        = this.state.customer;
-    customer.zipcode  = event.target.value;
+    customer.zipcode  = this.target.value;
 
     this.setState({ customer: customer });
   }
 
-  handleTimeNeededChanged(event) {
+  handleTimeNeededChanged() {
     var customer      = this.state.customer;
-    customer.timeNeeded = event.target.value;
+    customer.timeNeeded = this.target.value;
 
     this.setState({ customer: customer });
   }
 
-  handleStorageSpaceChanged(event) {
+  handleStorageSpaceChanged() {
     var customer    = this.state.customer;
-    customer.storageSpace = event.target.value;
+    customer.storageSpace = this.target.value;
 
     this.setState({ customer: customer });
   }
 
-  handleButtonClicked(Event) {
+  handleButtonClicked() {
     console.log(this.state.customer);
   }
   
@@ -142,4 +142,4 @@ const event = ''
         
       );
     } 
-  }
+}
