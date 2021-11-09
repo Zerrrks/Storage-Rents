@@ -27,6 +27,7 @@ import Notifications from "@material-ui/icons/Notifications";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
+import UserStorage from "views/UserStorage/UserStorage.js";
 import TableList from "views/TableList/TableList.js";
 //import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
@@ -51,6 +52,12 @@ const dashboardRoutes = [
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: UserProfile,
+    layout: "/admin",
+  },
+  { path: "/storage",
+    name: "User Storage",
+    icon: "content_paste",
+    component: UserStorage,
     layout: "/admin",
   },
   {
