@@ -1,5 +1,5 @@
 import React from "react";
-var PropTypes = require('prop-types');
+
 // @material-ui/core components
 //import { makeStyles } from "@material-ui/core/styles";
 //import InputLabel from "@material-ui/core/InputLabel";
@@ -13,6 +13,7 @@ import CardHeader from "components/Card/CardHeader.js";
 //import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
+
 
 
 //import avatar from "assets/img/faces/marc.jpg";
@@ -33,6 +34,8 @@ import CardFooter from "components/Card/CardFooter.js";
 //  const classes = useStyles();
 
 
+
+var PropTypes = require('prop-types');
     
 export default class Dashboard extends React.Component {
 
@@ -74,17 +77,29 @@ export default class Dashboard extends React.Component {
   handleButtonClicked() {
     console.log(this.state.customer);
   }
-  
 
-  
-
-  
-
-
+ 
 
   render() {
     return (
     <div>
+      <label>
+          Zipcode: 
+        </label>
+        <input type="text" id="Zipcode" value={this.state.customer.zipcode} onChange={this.handleZipcodeChanged.bind(this)}/>
+        <br/>
+        <label>
+          Time needed:
+        </label>
+        <input type="text" id="TimeNeeded" value={this.state.customer.timeNeeded} onChange={this.handleTimeNeededChanged.bind(this)}/>
+        <br/>
+
+        <label>
+          Storage space:
+        </label>
+        <input type="text" id="StorageSpace" value={this.state.customer.storageSpace} onChange={this.handleStorageSpaceChanged.bind(this)}/>
+        <br/>
+        
           <GridContainer>
             <GridItem xs={12} sm={12} md={8}>
               <Card>
@@ -96,17 +111,19 @@ export default class Dashboard extends React.Component {
                     <GridItem xs={12} sm={12} md={5}>
                       <CustomInput
                         labelText="Zipcode"
-                        id="zipcode"
+                        id="Zipcode"
                         value={this.state.customer.zipcode}
                         type="text"
-                        onChange={this.handleZipcodeChanged.bind(this)}
+                        onChange={e => this.setState({ zipcode: e.target.value })}
                         formControlProps={{
+                          
                           fullWidth: true,
                           
                         }}
                       />
                       
                     </GridItem>
+                    
                     <GridItem xs={12} sm={12} md={3}>
                       <CustomInput
                         labelText="Time needed"

@@ -3,6 +3,7 @@
   "version": "1.10.0",
   "description": "Material Dashboard React. Coded by Creative Tim",
   "private": false,
+  "Proxy": "http://localhost:3001",
   "main": "dist/index.js",
   "dependencies": {
     "@material-ui/core": "4.11.4",
