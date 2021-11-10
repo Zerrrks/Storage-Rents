@@ -1,4 +1,5 @@
 import React from "react";
+var PropTypes = require('prop-types');
 // @material-ui/core components
 //import { makeStyles } from "@material-ui/core/styles";
 //import InputLabel from "@material-ui/core/InputLabel";
@@ -34,7 +35,7 @@ import CardFooter from "components/Card/CardFooter.js";
 
     
 export default class Dashboard extends React.Component {
-    
+
   constructor(props) {
     super(props);
     
@@ -46,11 +47,6 @@ export default class Dashboard extends React.Component {
         timeNeeded: props.timeNeeded,
         storageSpace: props.storageSpace
       }
-    }
-    Dashboard.propTypes = {
-      zipcode: React.proptypes.number,
-      timeNeeded: React.proptypes.number,
-      storageSpace: React.proptypes.number
     }
   }
 
@@ -152,4 +148,9 @@ export default class Dashboard extends React.Component {
         
       );
     } 
+}
+Dashboard.propTypes = {
+  zipcode: PropTypes.string,
+  timeNeeded: PropTypes.string,
+  storageSpace: PropTypes.string
 }
