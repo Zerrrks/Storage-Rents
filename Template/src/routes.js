@@ -78,7 +78,7 @@ const dashboardRoutes = [
   },*/
   {
     path: "/icons",
-    name: "Icons",
+    name: "Locations",
     rtlName: "الرموز",
     icon: BubbleChart,
     component: Icons,
