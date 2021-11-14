@@ -508,3 +508,15 @@ footer ul li a:hover {
 * {
   letter-spacing: normal !important;
 }
+.zipcode-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+}
+.use-time-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+}
+.storage-space-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+}
