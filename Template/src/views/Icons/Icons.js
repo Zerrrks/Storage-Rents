@@ -104,7 +104,7 @@ export default class Icons extends React.Component {
             <GridItem xs={12} sm={12} md={8}>
               <Card>
                 <CardHeader color="primary">
-                  <h4 >Search for available storage</h4>
+                  <h3 >Search for available storage</h3>
                 </CardHeader>
                 <CardBody>
                   <GridContainer>
@@ -159,6 +159,277 @@ export default class Icons extends React.Component {
                 </CardFooter>
               </Card>
             </GridItem>
+            <GridItem xs={6} sm={3} md={8}>
+              <Card>
+                
+                <CardHeader color="rose">
+                  <h4 >Open Garage</h4>
+                </CardHeader>
+                <GridContainer>
+                    <GridItem xs={12} sm={12} md={5}>
+                      <CustomInput
+                        labelText="Zipcode"
+                        id="Zipcode"
+                        value={this.state.customer.zipcode}
+                        type="text"
+                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        formControlProps={{
+                          
+                          fullWidth: true,
+                          
+                        }}
+                      />
+                      
+                    </GridItem>
+                    
+                    <GridItem xs={12} sm={12} md={3}>
+                      <CustomInput
+                        labelText="Time needed"
+                        id="timeNeeded"
+                        type="text"
+                        value={this.state.customer.timeNeeded}
+                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Storage space"
+                        id="storageSpace"
+                        type="text"
+                        value={this.state.customer.storageSpace}
+                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                  </GridContainer>
+              
+              
+               
+            
+              </Card>
+            </GridItem>
+            <GridItem xs={6} sm={3} md={8}>
+              <Card>
+                
+                <CardHeader color="rose">
+                  <h4 >Heated Basement</h4>
+                </CardHeader>
+                <GridContainer>
+                    <GridItem xs={12} sm={12} md={5}>
+                      <CustomInput
+                        labelText="Zipcode"
+                        id="Zipcode"
+                        value={this.state.customer.zipcode}
+                        type="text"
+                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        formControlProps={{
+                          
+                          fullWidth: true,
+                          
+                        }}
+                      />
+                      
+                    </GridItem>
+                    
+                    <GridItem xs={12} sm={12} md={3}>
+                      <CustomInput
+                        labelText="Time needed"
+                        id="timeNeeded"
+                        type="text"
+                        value={this.state.customer.timeNeeded}
+                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Storage space"
+                        id="storageSpace"
+                        type="text"
+                        value={this.state.customer.storageSpace}
+                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                  </GridContainer>
+              
+              
+               
+            
+              </Card>
+            </GridItem>
+            <GridItem xs={6} sm={3} md={8}>
+              <Card>
+                
+                <CardHeader color="rose">
+                  <h4 >Small Shed in the backyard</h4>
+                </CardHeader>
+                <GridContainer>
+                    <GridItem xs={12} sm={12} md={5}>
+                      <CustomInput
+                        labelText="Zipcode"
+                        id="Zipcode"
+                        value={this.state.customer.zipcode}
+                        type="text"
+                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        formControlProps={{
+                          
+                          fullWidth: true,
+                          
+                        }}
+                      />
+                      
+                    </GridItem>
+                    
+                    <GridItem xs={12} sm={12} md={3}>
+                      <CustomInput
+                        labelText="Time needed"
+                        id="timeNeeded"
+                        type="text"
+                        value={this.state.customer.timeNeeded}
+                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Storage space"
+                        id="storageSpace"
+                        type="text"
+                        value={this.state.customer.storageSpace}
+                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                  </GridContainer>
+              
+              
+               
+            
+              </Card>
+            </GridItem>
+            <GridItem xs={6} sm={3} md={8}>
+              <Card>
+                
+                <CardHeader color="rose">
+                  <h4 >Basement with easy access</h4>
+                </CardHeader>
+                <GridContainer>
+                    <GridItem xs={12} sm={12} md={5}>
+                      <CustomInput
+                        labelText="Zipcode"
+                        id="Zipcode"
+                        value={this.state.customer.zipcode}
+                        type="text"
+                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        formControlProps={{
+                          
+                          fullWidth: true,
+                          
+                        }}
+                      />
+                      
+                    </GridItem>
+                    
+                    <GridItem xs={12} sm={12} md={3}>
+                      <CustomInput
+                        labelText="Time needed"
+                        id="timeNeeded"
+                        type="text"
+                        value={this.state.customer.timeNeeded}
+                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Storage space"
+                        id="storageSpace"
+                        type="text"
+                        value={this.state.customer.storageSpace}
+                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                  </GridContainer>
+              
+              
+               
+            
+              </Card>
+            </GridItem>
+            <GridItem xs={6} sm={3} md={8}>
+              <Card>
+                
+                <CardHeader color="rose">
+                  <h4 >Attic space</h4>
+                </CardHeader>
+                <GridContainer>
+                    <GridItem xs={12} sm={12} md={5}>
+                      <CustomInput
+                        labelText="Zipcode"
+                        id="Zipcode"
+                        value={this.state.customer.zipcode}
+                        type="text"
+                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        formControlProps={{
+                          
+                          fullWidth: true,
+                          
+                        }}
+                      />
+                      
+                    </GridItem>
+                    
+                    <GridItem xs={12} sm={12} md={3}>
+                      <CustomInput
+                        labelText="Time needed"
+                        id="timeNeeded"
+                        type="text"
+                        value={this.state.customer.timeNeeded}
+                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Storage space"
+                        id="storageSpace"
+                        type="text"
+                        value={this.state.customer.storageSpace}
+                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                  </GridContainer>
+              
+              
+               
+            
+              </Card>
+            </GridItem>
+
           </GridContainer>
         </div>
 
