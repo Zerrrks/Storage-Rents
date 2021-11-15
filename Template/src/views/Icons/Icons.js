@@ -6,7 +6,7 @@ import React from "react";
 // core components
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-//import CustomInput from "components/CustomInput/CustomInput.js";
+import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
@@ -320,20 +320,65 @@ export default class Location extends React.Component {
                       />
                     </GridItem>
                   </GridContainer>
-              
-              
-               
-            
+              <GridItem xs={6} sm={3} md={8}>
+              <Card>
+                
+                <CardHeader color="rose">
+                  <h4 >Attic space</h4>
+                </CardHeader>
+                <GridContainer>
+                <GridItem xs={12} sm={12} md={5}>
+                      <CustomInput
+                        labelText="Zipcode"
+                        id="Zipcode"
+                        value={this.state.customer.zipcode}
+                        type="text"
+                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        formControlProps={{
+                          
+                          fullWidth: true,
+                          
+                        }}
+                      />
+                      
+                    </GridItem>
+                    
+                    <GridItem xs={12} sm={12} md={3}>
+                      <CustomInput
+                        labelText="Time needed"
+                        id="timeNeeded"
+                        type="text"
+                        value={this.state.customer.timeNeeded}
+                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Storage space"
+                        id="storageSpace"
+                        type="text"
+                        value={this.state.customer.storageSpace}
+                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                  </GridContainer>                          
               </Card>
             </GridItem>
-            
-
+            </Card>
+            </GridItem>         
           </GridContainer>
         </div>
 
         
       );
-    } 
+    }
+   
 }
 
 Location.propTypes = {
