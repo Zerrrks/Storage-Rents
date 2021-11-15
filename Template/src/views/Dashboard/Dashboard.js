@@ -16,9 +16,9 @@ import Store from "@material-ui/icons/Store";
 //import BugReport from "@material-ui/icons/BugReport";
 //import Code from "@material-ui/icons/Code";
 //import Cloud from "@material-ui/icons/Cloud";
-// core components
-import GridItem from "components/Grid/GridItem.js";
-import GridContainer from "components/Grid/GridContainer.js";
+ // core components
+ import GridItem from "components/Grid/GridItem.js";
+ import GridContainer from "components/Grid/GridContainer.js";
 //import Table from "components/Table/Table.js";
 //import Tasks from "components/Tasks/Tasks.js";
 //import CustomTabs from "components/CustomTabs/CustomTabs.js";
@@ -29,8 +29,7 @@ import CardIcon from "components/Card/CardIcon.js";
 //import CardBody from "components/Card/CardBody.js";
 //import CardFooter from "components/Card/CardFooter.js";
 import logo from 'assets/img/srlogo.png'
-//import { bugs, website, server } from "variables/general.js";
-
+ //import { bugs, website, server } from "variables/general.js";
 /*import {
   dailySalesChart,
   emailsSubscriptionChart,
@@ -96,5 +95,4 @@ export default function Dashboard() {
       </GridContainer>
     </div>
   );
-}
-
+  }
