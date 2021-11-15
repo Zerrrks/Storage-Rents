@@ -6,7 +6,7 @@ import React from "react";
 // core components
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
+//import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
@@ -26,18 +26,18 @@ import CardFooter from "components/Card/CardFooter.js";
 // completedTasksChart,
 //} from "variables/charts.js";
 
-//import styles from "assets/jss/material-dashboard-react/views/iconStyle.js";
+//import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
 //const useStyles = makeStyles(styles);
 
 
-//  const classes = useStyles();
+//const classes = useStyles();
 
 
 
 var PropTypes = require('prop-types');
     
-export default class Icons extends React.Component {
+export default class Location extends React.Component {
 
   constructor(props) {
     super(props);
@@ -82,32 +82,41 @@ export default class Icons extends React.Component {
 
   render() {
     return (
-    <div>
-      <label>
-          Zipcode: 
-        </label>
-        <input type="text" id="Zipcode" value={this.state.customer.zipcode} onChange={this.handleZipcodeChanged.bind(this)}/>
-        <br/>
-        <label>
-          Time needed:
-        </label>
-        <input type="text" id="TimeNeeded" value={this.state.customer.timeNeeded} onChange={this.handleTimeNeededChanged.bind(this)}/>
-        <br/>
-
-        <label>
-          Storage space:
-        </label>
-        <input type="text" id="StorageSpace" value={this.state.customer.storageSpace} onChange={this.handleStorageSpaceChanged.bind(this)}/>
-        <br/>
-        
+    <div>       
           <GridContainer>
             <GridItem xs={12} sm={12} md={8}>
               <Card>
                 <CardHeader color="primary">
-                  <h3 >Search for available storage</h3>
+                  <h4 >Search for Available Storage</h4>
                 </CardHeader>
                 <CardBody>
                   <GridContainer>
+                    <GridItem xs={12} sm={12} md={4}>
+                    <input className="zipcode-input" placeholder="Zipcode" type="text" id="Zipcode" value={this.state.customer.zipcode} onChange={this.handleZipcodeChanged.bind(this)}/>
+                    </GridItem>         
+                    <GridItem xs={12} sm={12} md={4}>
+                    <input className="use-time-input" placeholder="Use Time" type="text" id="TimeNeeded" value={this.state.customer.timeNeeded} onChange={this.handleTimeNeededChanged.bind(this)}/>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                    <input className="storage-space-input" placeholder="Storage Space" type="text" id="StorageSpace" value={this.state.customer.storageSpace} onChange={this.handleStorageSpaceChanged.bind(this)}/>
+                    </GridItem>
+                    </GridContainer>
+                </CardBody>
+                <CardFooter>
+               
+                  <Button color="primary"
+                  onClick={this.handleButtonClicked.bind(this)}
+                   >Search</Button>                
+                </CardFooter>
+              </Card>
+            </GridItem>
+            <GridItem xs={6} sm={3} md={8}>
+              <Card>
+                
+                <CardHeader color="rose">
+                  <h4 >Open Garage</h4>
+                </CardHeader>
+                <GridContainer>
                     <GridItem xs={12} sm={12} md={5}>
                       <CustomInput
                         labelText="Zipcode"
@@ -149,13 +158,132 @@ export default class Icons extends React.Component {
                       />
                     </GridItem>
                   </GridContainer>
+              
+              
+               
+            
+              </Card>
+            </GridItem>
+            <GridItem xs={6} sm={3} md={8}>
+              <Card>
+                
+                <CardHeader color="rose">
+                  <h4 >Heated Basement</h4>
+                </CardHeader>
+                <GridContainer>
+                    <GridItem xs={12} sm={12} md={5}>
+                      <CustomInput
+                        labelText="Zipcode"
+                        id="Zipcode"
+                        value={this.state.customer.zipcode}
+                        type="text"
+                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        formControlProps={{
+                          
+                          fullWidth: true,
+                          
+                        }}
+                      />
+                      
+                    </GridItem>
+                    
+                    <GridItem xs={12} sm={12} md={3}>
+                      <CustomInput
+                        labelText="Time needed"
+                        id="timeNeeded"
+                        type="text"
+                        value={this.state.customer.timeNeeded}
+                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Storage space"
+                        id="storageSpace"
+                        type="text"
+                        value={this.state.customer.storageSpace}
+                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                  </GridContainer>
+              
+              
+               
+            
+              </Card>
+            </GridItem>
+            <GridItem xs={6} sm={3} md={8}>
+              <Card>
+                
+                <CardHeader color="rose">
+                  <h4 >Small Shed in the backyard</h4>
+                </CardHeader>
+                <GridContainer>
+                    <GridItem xs={12} sm={12} md={5}>
+                      <CustomInput
+                        labelText="Zipcode"
+                        id="Zipcode"
+                        value={this.state.customer.zipcode}
+                        type="text"
+                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        formControlProps={{
+                          
+                          fullWidth: true,
+                          
+                        }}
+                      />
+                      
+                    </GridItem>
+                    
+                    <GridItem xs={12} sm={12} md={3}>
+                      <CustomInput
+                        labelText="Time needed"
+                        id="timeNeeded"
+                        type="text"
+                        value={this.state.customer.timeNeeded}
+                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Storage space"
+                        id="storageSpace"
+                        type="text"
+                        value={this.state.customer.storageSpace}
+                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                  </GridContainer>
+                  <CardBody>
+                  <GridContainer>
+                    <GridItem xs={12} sm={12} md={4}>
+                    <input className="zipcode-input" placeholder="Zipcode" type="text" id="Zipcode" value={this.state.customer.zipcode} onChange={this.handleZipcodeChanged.bind(this)}/>
+                    </GridItem>         
+                    <GridItem xs={12} sm={12} md={4}>
+                    <input className="use-time-input" placeholder="Use Time" type="text" id="TimeNeeded" value={this.state.customer.timeNeeded} onChange={this.handleTimeNeededChanged.bind(this)}/>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                    <input className="storage-space-input" placeholder="Storage Space" type="text" id="StorageSpace" value={this.state.customer.storageSpace} onChange={this.handleStorageSpaceChanged.bind(this)}/>
+                    </GridItem>
+                    </GridContainer>
                 </CardBody>
                 <CardFooter>
                
                   <Button color="primary"
                   onClick={this.handleButtonClicked.bind(this)}
-                   >Search</Button>
-                
+                   >Search</Button>                
                 </CardFooter>
               </Card>
             </GridItem>
@@ -375,60 +503,7 @@ export default class Icons extends React.Component {
             
               </Card>
             </GridItem>
-            <GridItem xs={6} sm={3} md={8}>
-              <Card>
-                
-                <CardHeader color="rose">
-                  <h4 >Attic space</h4>
-                </CardHeader>
-                <GridContainer>
-                    <GridItem xs={12} sm={12} md={5}>
-                      <CustomInput
-                        labelText="Zipcode"
-                        id="Zipcode"
-                        value={this.state.customer.zipcode}
-                        type="text"
-                        onChange={e => this.setState({ zipcode: e.target.value })}
-                        formControlProps={{
-                          
-                          fullWidth: true,
-                          
-                        }}
-                      />
-                      
-                    </GridItem>
-                    
-                    <GridItem xs={12} sm={12} md={3}>
-                      <CustomInput
-                        labelText="Time needed"
-                        id="timeNeeded"
-                        type="text"
-                        value={this.state.customer.timeNeeded}
-                        onChange={this.handleTimeNeededChanged.bind(this)}
-                        formControlProps={{
-                          fullWidth: true,
-                        }}
-                      />
-                    </GridItem>
-                    <GridItem xs={12} sm={12} md={4}>
-                      <CustomInput
-                        labelText="Storage space"
-                        id="storageSpace"
-                        type="text"
-                        value={this.state.customer.storageSpace}
-                        onChange={this.handleStorageSpaceChanged.bind(this)}
-                        formControlProps={{
-                          fullWidth: true,
-                        }}
-                      />
-                    </GridItem>
-                  </GridContainer>
-              
-              
-               
             
-              </Card>
-            </GridItem>
 
           </GridContainer>
         </div>
@@ -436,8 +511,9 @@ export default class Icons extends React.Component {
         
       );
     } 
-}
-Icons.propTypes = {
+}          
+
+Location.propTypes = {
   zipcode: PropTypes.string,
   timeNeeded: PropTypes.string,
   storageSpace: PropTypes.string
