@@ -129,10 +129,8 @@ export default class Location extends React.Component {
                           fullWidth: true,
                           
                         }}
-                      />
-                      
+                      />  
                     </GridItem>
-                    
                     <GridItem xs={12} sm={12} md={3}>
                       <CustomInput
                         labelText="Time needed"
@@ -158,15 +156,10 @@ export default class Location extends React.Component {
                       />
                     </GridItem>
                   </GridContainer>
-              
-              
-               
-            
               </Card>
             </GridItem>
             <GridItem xs={6} sm={3} md={8}>
-              <Card>
-                
+              <Card>     
                 <CardHeader color="rose">
                   <h4 >Heated Basement</h4>
                 </CardHeader>
@@ -183,10 +176,8 @@ export default class Location extends React.Component {
                           fullWidth: true,
                           
                         }}
-                      />
-                      
+                      />                      
                     </GridItem>
-                    
                     <GridItem xs={12} sm={12} md={3}>
                       <CustomInput
                         labelText="Time needed"
@@ -212,15 +203,10 @@ export default class Location extends React.Component {
                       />
                     </GridItem>
                   </GridContainer>
-              
-              
-               
-            
               </Card>
             </GridItem>
             <GridItem xs={6} sm={3} md={8}>
-              <Card>
-                
+              <Card>                
                 <CardHeader color="rose">
                   <h4 >Small Shed in the backyard</h4>
                 </CardHeader>
@@ -232,15 +218,11 @@ export default class Location extends React.Component {
                         value={this.state.customer.zipcode}
                         type="text"
                         onChange={e => this.setState({ zipcode: e.target.value })}
-                        formControlProps={{
-                          
-                          fullWidth: true,
-                          
+                        formControlProps={{                          
+                          fullWidth: true,                          
                         }}
-                      />
-                      
-                    </GridItem>
-                    
+                      />                      
+                    </GridItem>                    
                     <GridItem xs={12} sm={12} md={3}>
                       <CustomInput
                         labelText="Time needed"
@@ -266,15 +248,10 @@ export default class Location extends React.Component {
                       />
                     </GridItem>
                   </GridContainer>
-              
-              
-               
-            
               </Card>
             </GridItem>
             <GridItem xs={6} sm={3} md={8}>
               <Card>
-                
                 <CardHeader color="rose">
                   <h4 >Basement with easy access</h4>
                 </CardHeader>
@@ -286,15 +263,11 @@ export default class Location extends React.Component {
                         value={this.state.customer.zipcode}
                         type="text"
                         onChange={e => this.setState({ zipcode: e.target.value })}
-                        formControlProps={{
-                          
-                          fullWidth: true,
-                          
+                        formControlProps={{                          
+                          fullWidth: true,                          
                         }}
-                      />
-                      
-                    </GridItem>
-                    
+                      />                      
+                    </GridItem>                    
                     <GridItem xs={12} sm={12} md={3}>
                       <CustomInput
                         labelText="Time needed"
@@ -321,8 +294,7 @@ export default class Location extends React.Component {
                     </GridItem>
                   </GridContainer>
               <GridItem xs={6} sm={3} md={8}>
-              <Card>
-                
+              <Card>                
                 <CardHeader color="rose">
                   <h4 >Attic space</h4>
                 </CardHeader>
@@ -334,15 +306,11 @@ export default class Location extends React.Component {
                         value={this.state.customer.zipcode}
                         type="text"
                         onChange={e => this.setState({ zipcode: e.target.value })}
-                        formControlProps={{
-                          
-                          fullWidth: true,
-                          
+                        formControlProps={{                          
+                          fullWidth: true,                          
                         }}
-                      />
-                      
-                    </GridItem>
-                    
+                      />                      
+                    </GridItem>                    
                     <GridItem xs={12} sm={12} md={3}>
                       <CustomInput
                         labelText="Time needed"
@@ -373,12 +341,9 @@ export default class Location extends React.Component {
             </Card>
             </GridItem>         
           </GridContainer>
-        </div>
-
-        
+        </div>        
       );
     }
-   
 }
 
 Location.propTypes = {
