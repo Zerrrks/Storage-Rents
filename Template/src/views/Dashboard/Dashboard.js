@@ -87,7 +87,7 @@ export default class Dashboard extends React.Component {
             <GridItem xs={12} sm={12} md={8}>
               <Card>
                 <CardHeader color="primary">
-                  <h4 >Search for available storage</h4>
+                  <h4 >Search for Available Storage</h4>
                 </CardHeader>
                 <CardBody>
                   <GridContainer>

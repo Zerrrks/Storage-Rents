@@ -511,12 +511,67 @@ footer ul li a:hover {
 .zipcode-input{
   border: 0px;
   border-bottom: 1px solid grey;
+  width: 319px;
 }
 .use-time-input{
   border: 0px;
   border-bottom: 1px solid grey;
+  width: 319px;
 }
 .storage-space-input{
   border: 0px;
   border-bottom: 1px solid grey;
+  width: 319px;
+}
+.userName-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 500px;
+}
+.emailAddress-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 500px;
+}
+.firstName-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 500px;
+  padding-top: 10px;
+}
+.lastName-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 500px;
+  padding-top: 10px;
+}
+.lastName-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 500px;
+  padding-top: 10px;
+}
+.cityName-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 325px;
+  padding-top: 10px;
+}
+.countryName-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 325px;
+  padding-top: 10px;
+}
+.postalCode-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 325px;
+  padding-top: 10px;
+}
+.aboutMe-input{
+  border: 0px;
+  width: 1000px;
+  height: 100px;
+  padding-top: 10px;
 }
