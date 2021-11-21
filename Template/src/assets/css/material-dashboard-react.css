@@ -575,3 +575,57 @@ footer ul li a:hover {
   height: 100px;
   padding-top: 10px;
 }
+.locationName-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 325px;
+  padding-top: 10px;
+}
+.locationPrice-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 325px;
+  padding-top: 10px;
+}
+.squareFootage-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 325px;
+  padding-top: 10px;
+}
+.fullName-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 500px;
+  padding-top: 10px;
+}
+.streetName-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 500px;
+  padding-top: 10px;
+}
+.locationCity-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 325px;
+  padding-top: 10px;
+}
+.locationCountry-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 325px;
+  padding-top: 10px;
+}
+.locationpostalCode-input{
+  border: 0px;
+  border-bottom: 1px solid grey;
+  width: 325px;
+  padding-top: 10px;
+}
+.locationDetails-input{
+  border: 0px;
+  width: 1000px;
+  height: 100px;
+  padding-top: 10px;
+}

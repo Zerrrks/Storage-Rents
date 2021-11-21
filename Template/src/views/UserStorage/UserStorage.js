@@ -125,8 +125,8 @@ export default class UserStorage extends React.Component {
                 <GridItem xs={10} sm={10} md={4}>
                 <input className="locationPrice-input" placeholder="Location Price" type="text" id="locationPrice" value={this.state.customer.locationPrice} onChange={this.handlelocationPriceChanged.bind(this)}/>
                 </GridItem>
-                <GridItem xs={2} sm={2} md={2}>
-        `       <input className="squareFootage-input" placeholder="Sqaure Footage" type="text" id="squareFootage" value={this.state.customer.squareFootage} onChange={this.handlesquareFootageChanged.bind(this)}/>`
+                <GridItem xs={10} sm={10} md={4}>
+                <input className="squareFootage-input" placeholder="Square Footage" type="text" id="squareFootage" value={this.state.customer.squareFootage} onChange={this.handlesquareFootageChanged.bind(this)}/>
                 </GridItem>
               </GridContainer>
               <GridContainer>
