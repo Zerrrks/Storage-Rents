@@ -293,6 +293,8 @@ export default class Location extends React.Component {
                       />
                     </GridItem>
                   </GridContainer>
+                  </Card>
+            </GridItem>
               <GridItem xs={6} sm={3} md={8}>
               <Card>                
                 <CardHeader color="rose">
@@ -338,8 +340,7 @@ export default class Location extends React.Component {
                   </GridContainer>                          
               </Card>
             </GridItem>
-            </Card>
-            </GridItem>         
+                  
           </GridContainer>
         </div>        
       );
