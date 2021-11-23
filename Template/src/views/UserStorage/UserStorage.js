@@ -149,7 +149,7 @@ export default class UserStorage extends React.Component {
                 </GridItem>
               </GridContainer>
               <GridContainer>
-                <GridItem xs={12} sm={12} md={12}>
+                <GridItem xs={12} sm={12} md={12}><br></br>
                   <InputLabel style={{ color: "#AAAAAA" }}>Additional Details</InputLabel>
                   <input className="locationDetails-input" placeholder="Please enter your info." type="text" id="locationDetails" value={this.state.customer.locationDetails} onChange={this.handlelocationDetailsChanged.bind(this)}/>  
                 </GridItem>
