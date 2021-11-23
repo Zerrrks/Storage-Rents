@@ -29,6 +29,7 @@ import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
 import UserStorage from "views/UserStorage/UserStorage.js";
 import TableList from "views/TableList/TableList.js";
+import UserLogins from "views/Logins/UserLogins";
 //import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
 import Maps from "views/Maps/Maps.js";
@@ -58,6 +59,12 @@ const dashboardRoutes = [
     name: "User Storage",
     icon: "content_paste",
     component: UserStorage,
+    layout: "/admin",
+  },
+  { path: "/login",
+    name: "User login",
+    icon: "content_paste",
+    component: UserLogins,
     layout: "/admin",
   },
   {
