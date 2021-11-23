@@ -1,5 +1,5 @@
 import React from "react";
-
+//import basement from 'assets/img/basement.jpg';
 const Maps = () => {
   const mapRef = React.useRef(null);
   React.useEffect(() => {
@@ -138,24 +138,26 @@ const Maps = () => {
 
 //Marker 1    
     const contentString =
-      '<div class="info-window-content"><h2>Initial</h2>' +
-      "<p>IDFK</p></div>";
+      '<div class="info-window-content"><h3>Open Garage</h3>' +
+      "<img src = 'https://www.thespruce.com/thmb/OSikhwOUp996sGOElb_FwcgkwSs=/2576x2576/smart/filters:no_upscale()/upscale-residential-house-has-neat-garage-168531302-588389105f9b58bdb36b0226.jpg' style= 'height:150px;width:150px;'/></div>";
 //Marker 2    
     const contentString1 =
-      '<div class="info-window-content"><h2>1</h2>' +
-      "<p>Pooter</p></div>";
+      '<div class="info-window-content"><h3>Heated Basement</h3>' +
+      "<img src = 'https://images.squarespace-cdn.com/content/v1/58584a30b8a79be1adfc051b/1566254313871-GM9RDEVNN7TM9M8K1Y8B/Before%2B2.jpg' style= 'height:150px;width:200px;'/></div>";
 //Marker 3    
     const contentString2 =
-      '<div class="info-window-content"><h2>2</h2>' +
-      "<p>Weiner</p></div>";
+      '<div class="info-window-content"><h3>Backyard Shed</h3>' +
+      "<img src = 'https://dunsterhouse.co.uk/img/product-images/2/Adam-Shed-1824-Open-Main_l.jpg' style= 'height:150px;width:175px;'/></div>";
+   // const contentImg2 = 
+
 //Marker 4    
     const contentString3 =
-      '<div class="info-window-content"><h2>3</h2>' +
-      "<p>Butthole</p></div>";
+      '<div class="info-window-content"><h3>Basement</h3>' +
+      "<img src ='https://nexus.prod.postmedia.digital/wp-content/uploads/2020/01/SP.0110-a31-basement.jpg' style= 'height:150px;width:175px;' /> </div>";
 //Marker 5    
     const contentString4 =
-      '<div class="info-window-content"><h2>4</h2>' +
-      "<p>Butts</p></div>";
+      '<div class="info-window-content"><h3>Attic Space</h3>' +
+      "<img src ='https://583931-1890891-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2021/05/good-or-bad-using-your-attic-for-storage.jpg' style= 'height:150px;width:200px;'/> </div>";
 
 //Marker 1
     const infowindow = new google.maps.InfoWindow({
@@ -177,7 +179,7 @@ const Maps = () => {
     const infowindow4 = new google.maps.InfoWindow({
       content: contentString4,
     });
-    
+
 //Marker 1
     google.maps.event.addListener(marker, "click", function () {
       infowindow.open(map, marker);
