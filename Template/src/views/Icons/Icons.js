@@ -48,7 +48,8 @@ export default class Location extends React.Component {
       customer: {
         zipcode: props.zipcode,
         timeNeeded: props.timeNeeded,
-        storageSpace: props.storageSpace
+        storageSpace: props.storageSpace,
+        Address: props.Address
       }
     }
   }
@@ -74,6 +75,12 @@ export default class Location extends React.Component {
     this.setState({ customer: customer });
   }
 
+  handleAddressChanged(event) {
+    var customer    = this.state.customer;
+    customer.Address = event.target.value;
+
+    this.setState({ customer: customer });
+  }
   handleButtonClicked() {
     console.log(this.state.customer);
   }
@@ -99,6 +106,9 @@ export default class Location extends React.Component {
                     </GridItem>
                     <GridItem xs={12} sm={12} md={4}>
                     <input className="storage-space-input" placeholder="Storage Space" type="text" id="StorageSpace" value={this.state.customer.storageSpace} onChange={this.handleStorageSpaceChanged.bind(this)}/>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                    <input className="address-input" placeholder="Address" type="text" id="Address" value={this.state.customer.Address} onChange={this.handleAddressChanged.bind(this)}/>
                     </GridItem>
                     </GridContainer>
                 </CardBody>
@@ -155,6 +165,18 @@ export default class Location extends React.Component {
                         }}
                       />
                     </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Address"
+                        id="Address"
+                        type="text"
+                        value={this.state.customer.Address}
+                        onChange={this.handleAddressChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
                   </GridContainer>
               </Card>
             </GridItem>
@@ -197,6 +219,18 @@ export default class Location extends React.Component {
                         type="text"
                         value={this.state.customer.storageSpace}
                         onChange={this.handleStorageSpaceChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Address"
+                        id="Address"
+                        type="text"
+                        value={this.state.customer.Address}
+                        onChange={this.handleAddressChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -247,6 +281,18 @@ export default class Location extends React.Component {
                         }}
                       />
                     </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Address"
+                        id="Address"
+                        type="text"
+                        value={this.state.customer.Address}
+                        onChange={this.handleAddressChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
                   </GridContainer>
               </Card>
             </GridItem>
@@ -287,6 +333,18 @@ export default class Location extends React.Component {
                         type="text"
                         value={this.state.customer.storageSpace}
                         onChange={this.handleStorageSpaceChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Address"
+                        id="Address"
+                        type="text"
+                        value={this.state.customer.Address}
+                        onChange={this.handleAddressChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -337,10 +395,21 @@ export default class Location extends React.Component {
                         }}
                       />
                     </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                      <CustomInput
+                        labelText="Address"
+                        id="Address"
+                        type="text"
+                        value={this.state.customer.Address}
+                        onChange={this.handleAddressChanged.bind(this)}
+                        formControlProps={{
+                          fullWidth: true,
+                        }}
+                      />
+                    </GridItem>
                   </GridContainer>                          
               </Card>
-            </GridItem>
-                  
+            </GridItem>      
           </GridContainer>
         </div>        
       );
@@ -350,5 +419,6 @@ export default class Location extends React.Component {
 Location.propTypes = {
   zipcode: PropTypes.string,
   timeNeeded: PropTypes.string,
-  storageSpace: PropTypes.string
+  storageSpace: PropTypes.string,
+  Address: PropTypes.string
 }
