@@ -63,6 +63,10 @@ html * {
 }
 body {
   background-color: #eeeeee;
+  background-image: url("srlogo.gif");
+  background-repeat:no-repeat;
+  background-position: 67%;
+  background-size: 52% 80%;
   color: #3c4858;
   margin: 0;
   font-family: Roboto, Helvetica, Arial, sans-serif;

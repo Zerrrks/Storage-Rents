@@ -27,7 +27,7 @@ import GridContainer from "components/Grid/GridContainer.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardIcon from "components/Card/CardIcon.js";
-import logo from 'assets/img/srlogo.png'
+//import logo from 'assets/img/srlogo.png'
 import { makeStyles } from "@material-ui/core/styles";
 import Icon from "@material-ui/core/Icon";
 
@@ -119,16 +119,7 @@ export default function Dashboard() {
             </CardHeader>
           </Card>
         </GridItem>
-        <GridItem xs={10} sm={10} md={6}>
-          <Card>
-            <CardHeader color= "info" stats icon>
-              <CardIcon color="info">
-                <Icon>info_outline</Icon>
-              </CardIcon>
-              <img src={logo}></img>;
-            </CardHeader>
-          </Card>
-        </GridItem>
+        
       </GridContainer>
     </div>
   );
