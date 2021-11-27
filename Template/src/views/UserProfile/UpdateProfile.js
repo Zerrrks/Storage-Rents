@@ -83,6 +83,7 @@ const UpdateProfile = () => {
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={10}>
                                 <input 
+                                    className="userName-input"
                                     placeholder="Username"
                                     type="text"
                                     name="username"
@@ -94,6 +95,7 @@ const UpdateProfile = () => {
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={10}>
                                 <input 
+                                    className="emailAddress-input"
                                     placeholder="Email Address"
                                     type="text"
                                     name="email"
@@ -105,6 +107,7 @@ const UpdateProfile = () => {
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={10}>
                                 <input 
+                                    className="firstName-input"
                                     placeholder="First Name"
                                     type="text"
                                     name="first_name"
@@ -116,6 +119,7 @@ const UpdateProfile = () => {
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={10}>
                                 <input 
+                                    className="lastName-input"
                                     placeholder="Last Name"
                                     type="text"
                                     name="last_name"
@@ -127,6 +131,7 @@ const UpdateProfile = () => {
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={10}>
                                 <input 
+                                    className="streetName-input"
                                     placeholder="Street Address"
                                     type="text"
                                     name="addy"
@@ -138,6 +143,7 @@ const UpdateProfile = () => {
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={10}>
                                 <input 
+                                    className="postalCode-input"
                                     placeholder="Postal Code"
                                     type="number"
                                     name="postal_code"
@@ -149,6 +155,7 @@ const UpdateProfile = () => {
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={10}>
                                 <input 
+                                    className="cityName-input"
                                     placeholder="City"
                                     type="text"
                                     name="city"
@@ -160,6 +167,7 @@ const UpdateProfile = () => {
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={10}>
                                 <input 
+                                    className="countryName-input"
                                     placeholder="Country"
                                     type="text"
                                     name="country"
@@ -172,6 +180,7 @@ const UpdateProfile = () => {
                             <GridItem xs={12} sm={12} md={10}>
                                 <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
                                 <input 
+                                    className="aboutMe-input"
                                     placeholder="Please enter your info."
                                     type="text"
                                     name="info"
