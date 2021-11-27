@@ -197,17 +197,21 @@ export default function AdminNavbarLinks() {
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
+                      <a href="/admin/user">
                       Profile
+                      </a>
                     </MenuItem>
                     <MenuItem
                       onClick={handleCloseProfile}
                       className={classes.dropdownItem}
                     >
-                      Settings
+                      <a href="/admin/storage">
+                      Storage
+                      </a>
                     </MenuItem>
                     <Divider light />
                     <MenuItem
-                      onClick={handleCloseProfile}
+                      onClick={handleCloseProfile} 
                       className={classes.dropdownItem}
                     >
                       Logout
