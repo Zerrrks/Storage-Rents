@@ -42,8 +42,8 @@ import Store from "@material-ui/icons/Store";
 } from "variables/charts.js";
 */
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
-import { Button } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
+//import { Button } from "@material-ui/core";
+//import { useHistory } from "react-router-dom";
 
 
 
@@ -58,10 +58,10 @@ export default function Dashboard() {
 
     
   
-    function handleClick() {
-      const history = useHistory();
-      history.push('/Dashboard');
-    }
+ //   function handleClick() {
+ //     const history = useHistory();
+ //     history.push('/Dashboard');
+ //   }
 
                //={window.location.href='/'}>
              
@@ -77,10 +77,13 @@ export default function Dashboard() {
                 <Icon>content_copy</Icon>
               </CardIcon>
               <h1 className={classes.cardTitle}>Have something to store?</h1>
-              <Button color="primary" className="px-4" onClick={handleClick}>
+            <a href="/admin/user">
                   Login
-                </Button>
-              <h2 className={classes.cardTitle}>Signup</h2>
+                </a>
+             <br></br>
+             <a> 
+               Signup
+                </a>
             </CardHeader>
             
           </Card>
@@ -92,8 +95,9 @@ export default function Dashboard() {
                 <Store />
               </CardIcon>
               <h1 className={classes.cardTitle}>Have something to store?</h1>
-              <h2 className={classes.cardTitle}>Login</h2>
-              <h2 className={classes.cardTitle}>Signup</h2>
+            <a href="/admin/storage">
+            My Storage
+            </a>
             </CardHeader>
 
           </Card>
@@ -105,7 +109,13 @@ export default function Dashboard() {
                 <Icon>info_outline</Icon>
               </CardIcon>
               <h1 className={classes.cardTitle}>Want to view locations near you?</h1>
-              <h2 className={classes.cardTitle}>View Locations</h2>
+              <a href="/admin/icons">
+              View Locations
+              </a>
+              <br></br>
+              <a href="/admin/maps">
+              View Map
+              </a>
             </CardHeader>
           </Card>
         </GridItem>
