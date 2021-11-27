@@ -107,6 +107,9 @@ export default class UserStorage extends React.Component {
 
     this.setState({ customer: customer });
   }
+  handleButtonClicked() {
+    console.log(this.state.customer);
+  }
   render() {
   return (
     <div>
@@ -156,7 +159,7 @@ export default class UserStorage extends React.Component {
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary">Update Storage Details</Button>
+              <Button onClick={this.handleButtonClicked.bind(this)} color="primary">Update Storage Details</Button>
             </CardFooter>
           </Card>
         </GridItem>
