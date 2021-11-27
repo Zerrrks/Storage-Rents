@@ -629,3 +629,18 @@ footer ul li a:hover {
   height: 100px;
   padding-top: 10px;
 }
+.iconsLink{
+  border-bottom: 1px solid grey;
+}
+.storageLink{
+  border-bottom: 1px solid grey;
+}
+.loginLink{
+  border-bottom: 1px solid grey;
+}
+.signupLink{
+  border-bottom: 1px solid grey;
+}
+.mapLink{
+  border-bottom: 1px solid grey;
+}

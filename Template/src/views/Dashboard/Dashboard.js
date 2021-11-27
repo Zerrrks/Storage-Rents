@@ -77,11 +77,11 @@ export default function Dashboard() {
                 <Icon>content_copy</Icon>
               </CardIcon>
               <h1 className={classes.cardTitle}>Have something to store?</h1>
-            <a href="/admin/user">
+            <a className="loginLink" href="/admin/user">
                   Login
                 </a>
              <br></br>
-             <a> 
+             <a className="signupLink"> 
                Signup
                 </a>
             </CardHeader>
@@ -95,7 +95,7 @@ export default function Dashboard() {
                 <Store />
               </CardIcon>
               <h1 className={classes.cardTitle}>Have something to store?</h1>
-            <a href="/admin/storage">
+            <a className="storageLink" href="/admin/storage">
             My Storage
             </a>
             </CardHeader>
@@ -109,11 +109,11 @@ export default function Dashboard() {
                 <Icon>info_outline</Icon>
               </CardIcon>
               <h1 className={classes.cardTitle}>Want to view locations near you?</h1>
-              <a href="/admin/icons">
+              <a className="iconsLink" href="/admin/icons">
               View Locations
               </a>
               <br></br>
-              <a href="/admin/maps">
+              <a className="mapLink" href="/admin/maps">
               View Map
               </a>
             </CardHeader>
