@@ -43,6 +43,9 @@ import Store from "@material-ui/icons/Store";
 */
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 import { Button } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
+
+
 
 const useStyles = makeStyles(styles);
 
@@ -53,7 +56,12 @@ const useStyles = makeStyles(styles);
 export default function Dashboard() {
   const classes = useStyles();
 
-
+    
+  
+    function handleClick() {
+      const history = useHistory();
+      history.push('/Dashboard');
+    }
 
                //={window.location.href='/'}>
              
@@ -69,8 +77,7 @@ export default function Dashboard() {
                 <Icon>content_copy</Icon>
               </CardIcon>
               <h1 className={classes.cardTitle}>Have something to store?</h1>
-              <Button color="primary" className="px-4"
-                >
+              <Button color="primary" className="px-4" onClick={handleClick}>
                   Login
                 </Button>
               <h2 className={classes.cardTitle}>Signup</h2>
