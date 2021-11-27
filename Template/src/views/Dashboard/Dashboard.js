@@ -78,11 +78,11 @@ export default function Dashboard() {
               </CardIcon>
               <h1 className={classes.cardTitle}>Have something to store?</h1>
             <a className="loginLink" href="/admin/user">
-                  Login
+            <h3>Login</h3>
                 </a>
              <br></br>
              <a className="signupLink"> 
-               Signup
+               <h3>Signup</h3>
                 </a>
             </CardHeader>
             
@@ -96,7 +96,7 @@ export default function Dashboard() {
               </CardIcon>
               <h1 className={classes.cardTitle}>Have something to store?</h1>
             <a className="storageLink" href="/admin/storage">
-            My Storage
+            <h3>My Storage</h3>
             </a>
             </CardHeader>
 
@@ -110,11 +110,11 @@ export default function Dashboard() {
               </CardIcon>
               <h1 className={classes.cardTitle}>Want to view locations near you?</h1>
               <a className="iconsLink" href="/admin/icons">
-              View Locations
+              <h3>View Locations</h3>
               </a>
               <br></br>
               <a className="mapLink" href="/admin/maps">
-              View Map
+              <h3>View Map</h3>
               </a>
             </CardHeader>
           </Card>
