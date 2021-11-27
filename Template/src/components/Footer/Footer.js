@@ -18,23 +18,13 @@ export default function Footer(props) {
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a href="#home" className={classes.block}>
+              <a href="/admin/Dashboard" className={classes.block}>
                 Home
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#company" className={classes.block}>
+              <a href="/admin/Dashboard" className={classes.block}>
                 Company
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="#portfolio" className={classes.block}>
-                Portfolio
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="#blog" className={classes.block}>
-                Blog
               </a>
             </ListItem>
           </List>
@@ -47,9 +37,9 @@ export default function Footer(props) {
               target="_blank"
               className={classes.a}
             >
-              Creative Tim
+              Storage Rents
             </a>
-            , made with love for a better web
+            , made with love for better storage.
           </span>
         </p>
       </div>
