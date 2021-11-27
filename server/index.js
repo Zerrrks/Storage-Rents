@@ -18,9 +18,11 @@ app.post("/prof", async (req, res) => {
         const { country } = req.body;
         const { postal_code } = req.body;
         const { info } = req.body;
+        const { email } = req.body;
+        const { addy } = req.body;
         const newProf = await pool.query(
-            "INSERT INTO prof (username, first_name, last_name, city, country, postal_code, info) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING * ",
-            [username, first_name, last_name, city, country, postal_code, info]
+            "INSERT INTO prof (username, first_name, last_name, city, country, postal_code, info, email, addy) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING * ",
+            [username, first_name, last_name, city, country, postal_code, info, email, addy]
         );
         res.json(newProf.rows[0]);
 
