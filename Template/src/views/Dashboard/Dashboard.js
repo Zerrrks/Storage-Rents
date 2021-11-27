@@ -67,7 +67,7 @@ export default function Dashboard() {
              
   
   return (
-    <div>
+    <div style={{ backgroundImage: "url(/srlogo.png})" }}>
       
       <GridContainer>
         <GridItem xs={6} sm={3} md={6}>
