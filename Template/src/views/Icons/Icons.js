@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 // @material-ui/core components
 //import { makeStyles } from "@material-ui/core/styles";
@@ -7,14 +7,14 @@ import React from "react";
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
-import Button from "components/CustomButtons/Button.js";
+//import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 //import CardAvatar from "components/Card/CardAvatar.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
+//import CardBody from "components/Card/CardBody.js";
+//import CardFooter from "components/Card/CardFooter.js";
 
-
+import LocationRoute from "./LocationRoute"
 
 //import avatar from "assets/img/faces/marc.jpg";
 
@@ -32,93 +32,15 @@ import CardFooter from "components/Card/CardFooter.js";
 
 
 //const classes = useStyles();
-
-
-
-var PropTypes = require('prop-types');
     
-export default class Location extends React.Component {
-
-  constructor(props) {
-    super(props);
-    
- 
-
-    this.state = {
-      customer: {
-        zipcode: props.zipcode,
-        timeNeeded: props.timeNeeded,
-        storageSpace: props.storageSpace,
-        Address: props.Address
-      }
-    }
-  }
-
-    handleZipcodeChanged(event) {
-    var customer        = this.state.customer;
-    customer.zipcode  = event.target.value;
-
-    this.setState({ customer: customer });
-  }
-
-  handleTimeNeededChanged(event) {
-    var customer      = this.state.customer;
-    customer.timeNeeded = event.target.value;
-
-    this.setState({ customer: customer });
-  }
-
-  handleStorageSpaceChanged(event) {
-    var customer    = this.state.customer;
-    customer.storageSpace = event.target.value;
-
-    this.setState({ customer: customer });
-  }
-
-  handleAddressChanged(event) {
-    var customer    = this.state.customer;
-    customer.Address = event.target.value;
-
-    this.setState({ customer: customer });
-  }
-  handleButtonClicked() {
-    console.log(this.state.customer);
-  }
-
- 
-
-  render() {
+export default function LocationsPage () {
     return (
-    <div>       
+      <div>       
           <GridContainer>
             <GridItem xs={12} sm={12} md={8}>
-              <Card>
-                <CardHeader color="primary">
-                  <h4 >Search for Available Storage</h4>
-                </CardHeader>
-                <CardBody>
-                  <GridContainer>
-                    <GridItem xs={12} sm={12} md={4}>
-                    <input className="zipcode-input" placeholder="Zipcode" type="text" id="Zipcode" value={this.state.customer.zipcode} onChange={this.handleZipcodeChanged.bind(this)}/>
-                    </GridItem>         
-                    <GridItem xs={12} sm={12} md={4}>
-                    <input className="use-time-input" placeholder="Use Time" type="text" id="TimeNeeded" value={this.state.customer.timeNeeded} onChange={this.handleTimeNeededChanged.bind(this)}/>
-                    </GridItem>
-                    <GridItem xs={12} sm={12} md={4}>
-                    <input className="storage-space-input" placeholder="Storage Space" type="text" id="StorageSpace" value={this.state.customer.storageSpace} onChange={this.handleStorageSpaceChanged.bind(this)}/>
-                    </GridItem>
-                    <GridItem xs={12} sm={12} md={4}>
-                    <input className="address-input" placeholder="Address" type="text" id="Address" value={this.state.customer.Address} onChange={this.handleAddressChanged.bind(this)}/>
-                    </GridItem>
-                    </GridContainer>
-                </CardBody>
-                <CardFooter>
-               
-                  <Button color="primary"
-                  onClick={this.handleButtonClicked.bind(this)}
-                   >Search</Button>                
-                </CardFooter>
-              </Card>
+              <Fragment>
+                <LocationRoute />
+              </Fragment>
             </GridItem>
             <GridItem xs={6} sm={3} md={8}>
               <Card>
@@ -131,9 +53,9 @@ export default class Location extends React.Component {
                       <CustomInput
                         labelText="Zipcode"
                         id="Zipcode"
-                        value={this.state.customer.zipcode}
+                        //value={this.state.customer.zipcode}
                         type="text"
-                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        //onChange={e => this.setState({ zipcode: e.target.value })}
                         formControlProps={{
                           
                           fullWidth: true,
@@ -146,8 +68,8 @@ export default class Location extends React.Component {
                         labelText="Time needed"
                         id="timeNeeded"
                         type="text"
-                        value={this.state.customer.timeNeeded}
-                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        //value={this.state.customer.timeNeeded}
+                        //onChange={this.handleTimeNeededChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -158,8 +80,8 @@ export default class Location extends React.Component {
                         labelText="Storage space"
                         id="storageSpace"
                         type="text"
-                        value={this.state.customer.storageSpace}
-                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                       // value={this.state.customer.storageSpace}
+                        //onChange={this.handleStorageSpaceChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -170,8 +92,8 @@ export default class Location extends React.Component {
                         labelText="Address"
                         id="Address"
                         type="text"
-                        value={this.state.customer.Address}
-                        onChange={this.handleAddressChanged.bind(this)}
+                        //value={this.state.customer.Address}
+                        //onChange={this.handleAddressChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -190,9 +112,9 @@ export default class Location extends React.Component {
                       <CustomInput
                         labelText="Zipcode"
                         id="Zipcode"
-                        value={this.state.customer.zipcode}
+                        //value={this.state.customer.zipcode}
                         type="text"
-                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        //onChange={e => this.setState({ zipcode: e.target.value })}
                         formControlProps={{
                           
                           fullWidth: true,
@@ -205,8 +127,8 @@ export default class Location extends React.Component {
                         labelText="Time needed"
                         id="timeNeeded"
                         type="text"
-                        value={this.state.customer.timeNeeded}
-                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        //value={this.state.customer.timeNeeded}
+                        //onChange={this.handleTimeNeededChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -217,8 +139,8 @@ export default class Location extends React.Component {
                         labelText="Storage space"
                         id="storageSpace"
                         type="text"
-                        value={this.state.customer.storageSpace}
-                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        //value={this.state.customer.storageSpace}
+                        //onChange={this.handleStorageSpaceChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -229,8 +151,8 @@ export default class Location extends React.Component {
                         labelText="Address"
                         id="Address"
                         type="text"
-                        value={this.state.customer.Address}
-                        onChange={this.handleAddressChanged.bind(this)}
+                        //value={this.state.customer.Address}
+                        //onChange={this.handleAddressChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -249,9 +171,9 @@ export default class Location extends React.Component {
                       <CustomInput
                         labelText="Zipcode"
                         id="Zipcode"
-                        value={this.state.customer.zipcode}
+                        //value={this.state.customer.zipcode}
                         type="text"
-                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        //onChange={e => this.setState({ zipcode: e.target.value })}
                         formControlProps={{                          
                           fullWidth: true,                          
                         }}
@@ -262,8 +184,8 @@ export default class Location extends React.Component {
                         labelText="Time needed"
                         id="timeNeeded"
                         type="text"
-                        value={this.state.customer.timeNeeded}
-                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        //value={this.state.customer.timeNeeded}
+                        //onChange={this.handleTimeNeededChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -274,8 +196,8 @@ export default class Location extends React.Component {
                         labelText="Storage space"
                         id="storageSpace"
                         type="text"
-                        value={this.state.customer.storageSpace}
-                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        //value={this.state.customer.storageSpace}
+                        //onChange={this.handleStorageSpaceChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -286,8 +208,8 @@ export default class Location extends React.Component {
                         labelText="Address"
                         id="Address"
                         type="text"
-                        value={this.state.customer.Address}
-                        onChange={this.handleAddressChanged.bind(this)}
+                        //value={this.state.customer.Address}
+                        //onChange={this.handleAddressChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -306,9 +228,9 @@ export default class Location extends React.Component {
                       <CustomInput
                         labelText="Zipcode"
                         id="Zipcode"
-                        value={this.state.customer.zipcode}
+                       // value={this.state.customer.zipcode}
                         type="text"
-                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        //onChange={e => this.setState({ zipcode: e.target.value })}
                         formControlProps={{                          
                           fullWidth: true,                          
                         }}
@@ -319,8 +241,8 @@ export default class Location extends React.Component {
                         labelText="Time needed"
                         id="timeNeeded"
                         type="text"
-                        value={this.state.customer.timeNeeded}
-                        onChange={this.handleTimeNeededChanged.bind(this)}
+                        //value={this.state.customer.timeNeeded}
+                       // onChange={this.handleTimeNeededChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -331,8 +253,8 @@ export default class Location extends React.Component {
                         labelText="Storage space"
                         id="storageSpace"
                         type="text"
-                        value={this.state.customer.storageSpace}
-                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        //value={this.state.customer.storageSpace}
+                       // onChange={this.handleStorageSpaceChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -343,8 +265,8 @@ export default class Location extends React.Component {
                         labelText="Address"
                         id="Address"
                         type="text"
-                        value={this.state.customer.Address}
-                        onChange={this.handleAddressChanged.bind(this)}
+                       // value={this.state.customer.Address}
+                       // onChange={this.handleAddressChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -363,9 +285,9 @@ export default class Location extends React.Component {
                       <CustomInput
                         labelText="Zipcode"
                         id="Zipcode"
-                        value={this.state.customer.zipcode}
+                        //value={this.state.customer.zipcode}
                         type="text"
-                        onChange={e => this.setState({ zipcode: e.target.value })}
+                        //onChange={e => this.setState({ zipcode: e.target.value })}
                         formControlProps={{                          
                           fullWidth: true,                          
                         }}
@@ -376,8 +298,8 @@ export default class Location extends React.Component {
                         labelText="Time needed"
                         id="timeNeeded"
                         type="text"
-                        value={this.state.customer.timeNeeded}
-                        onChange={this.handleTimeNeededChanged.bind(this)}
+                       // value={this.state.customer.timeNeeded}
+                        //onChange={this.handleTimeNeededChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -388,8 +310,8 @@ export default class Location extends React.Component {
                         labelText="Storage space"
                         id="storageSpace"
                         type="text"
-                        value={this.state.customer.storageSpace}
-                        onChange={this.handleStorageSpaceChanged.bind(this)}
+                        //value={this.state.customer.storageSpace}
+                       // onChange={this.handleStorageSpaceChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -400,8 +322,8 @@ export default class Location extends React.Component {
                         labelText="Address"
                         id="Address"
                         type="text"
-                        value={this.state.customer.Address}
-                        onChange={this.handleAddressChanged.bind(this)}
+                        //value={this.state.customer.Address}
+                        //onChange={this.handleAddressChanged.bind(this)}
                         formControlProps={{
                           fullWidth: true,
                         }}
@@ -414,11 +336,3 @@ export default class Location extends React.Component {
         </div>        
       );
     }
-}
-
-Location.propTypes = {
-  zipcode: PropTypes.string,
-  timeNeeded: PropTypes.string,
-  storageSpace: PropTypes.string,
-  Address: PropTypes.string
-}

@@ -8,6 +8,25 @@ app.use(express.json());
 
 //ROUTES//
 
+
+//create a location
+app.post("/locations", async (req, res) => {
+    try {
+        const { zipcode } = req.body;
+        const { storage_type } = req.body;
+        const { time_need } = req.body;
+        const { location_address } = req.body;
+        const newLocation = await pool.query(
+            "INSERT INTO locations (zipcode, storage_type, time_need, location_address) VALUES ($1, $2, $3, $4) RETURNING * ",
+            [zipcode, storage_type, time_need, location_address]
+        );
+        res.json(newLocation.rows[0]);
+
+    } catch (err) {
+        console.error(err.message);
+    }
+})
+
 //create a user
 app.post("/prof", async (req, res) => {
     try {
@@ -30,6 +49,48 @@ app.post("/prof", async (req, res) => {
         console.error(err.message);
     }
 })
+
+//get all locations
+
+app.get("/locations", async (req, res) => {
+    try {
+        const allLocations = await pool.query("SELECT * FROM locations");
+        res.json(allLocations.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+
+//get a location
+
+app.get("/locations/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const location = await pool.query("SELECT * FROM locations WHERE location_id = $1", [id]);
+        res.json(location.rows[0]);
+    } catch (err) {
+        console.error(err.message);
+    }
+})
+
+//update a location
+
+app.put("/locations/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { zipcode } = req.body;
+        const { storage_type } = req.body;
+        const { time_need } = req.body;
+        const { location_address } = req.body;
+        const updateLocation = await pool.query(
+            "UPDATE locations SET zipcode = $1, storage_type = $2, time_need = $3, location_address = $4 WHERE location_id = $5",
+            [zipcode, storage_type, time_need, location_address, id]
+        );
+        res.json("Profile was updated.");
+    } catch (err) {
+        console.error(err.message);
+    }
+});
 
 //get all users
 

@@ -14,6 +14,7 @@ import CardBody from "components/Card/CardBody.js";
 //import CardFooter from "components/Card/CardFooter.js";
 
 import UpdateProfile from "./UpdateProfile";
+import ProfileInfo from "./ProfileInfo";
 //import ListProfile from "./ListProfile";
 
 import avatar from "assets/img/faces/marc.jpg";
@@ -45,6 +46,11 @@ export default function UserProfile() {
     <div>
       <GridContainer>
         <GridContainer>
+          <GridItem>
+            <Fragment>
+              <ProfileInfo />
+            </Fragment>
+          </GridItem>
           <GridItem>
             <Fragment>
               <UpdateProfile />

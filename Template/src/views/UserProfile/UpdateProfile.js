@@ -40,7 +40,7 @@ const UpdateProfile = () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
             });
-
+            window.location = "/admin/user"
             console.log(response);
             console.log("please work.")
         } catch (err) {
