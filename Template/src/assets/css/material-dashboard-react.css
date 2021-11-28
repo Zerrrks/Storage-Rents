@@ -649,3 +649,8 @@ footer ul li a:hover {
 .mapLink{
   border-bottom: 1px solid grey;
 }
+.address-input{
+border: 0px;
+border-bottom: 1px solid grey;
+width: 319px;
+}
