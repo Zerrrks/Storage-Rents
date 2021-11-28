@@ -27,7 +27,7 @@ import GridContainer from "components/Grid/GridContainer.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardIcon from "components/Card/CardIcon.js";
-import logo from 'assets/img/srlogo.png'
+//import logo from 'assets/img/srlogo.png'
 import { makeStyles } from "@material-ui/core/styles";
 import Icon from "@material-ui/core/Icon";
 
@@ -42,7 +42,10 @@ import Store from "@material-ui/icons/Store";
 } from "variables/charts.js";
 */
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
-import { Button } from "@material-ui/core";
+//import { Button } from "@material-ui/core";
+//import { useHistory } from "react-router-dom";
+
+
 
 const useStyles = makeStyles(styles);
 
@@ -53,15 +56,21 @@ const useStyles = makeStyles(styles);
 export default function Dashboard() {
   const classes = useStyles();
 
-
+    
+  
+ //   function handleClick() {
+ //     const history = useHistory();
+ //     history.push('/Dashboard');
+ //   }
 
                //={window.location.href='/'}>
              
   
   return (
-    <div>
+    <div className="dashboard">
       
       <GridContainer>
+        
         <GridItem xs={6} sm={3} md={6}>
           <Card>
             <CardHeader color="rose" stats icon>
@@ -69,28 +78,31 @@ export default function Dashboard() {
                 <Icon>content_copy</Icon>
               </CardIcon>
               <h1 className={classes.cardTitle}>Have something to store?</h1>
-              <Button color="primary" className="px-4"
-                >
-                  Login
-                </Button>
-              <h2 className={classes.cardTitle}>Signup</h2>
-            </CardHeader>
-            
+            <a className="loginLink" href="/admin/user">
+            <h3>Login</h3>
+                </a>
+             <br></br>
+             <a className="signupLink"> 
+               <h3>Signup</h3>
+                </a>
+            </CardHeader>            
           </Card>
         </GridItem>
+        
         <GridItem xs={6} sm={2} md={6}>
           <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
                 <Store />
               </CardIcon>
-              <h1 className={classes.cardTitle}>Have something to store?</h1>
-              <h2 className={classes.cardTitle}>Login</h2>
-              <h2 className={classes.cardTitle}>Signup</h2>
+              <h1 className={classes.cardTitle}>Already have storage?</h1>
+            <a className="storageLink" href="/admin/storage">
+            <h3>My Storage</h3>
+            </a>
             </CardHeader>
-
           </Card>
         </GridItem>
+        
         <GridItem xs={10} sm={10} md={6}>
           <Card>
             <CardHeader color= "info" stats icon>
@@ -98,20 +110,17 @@ export default function Dashboard() {
                 <Icon>info_outline</Icon>
               </CardIcon>
               <h1 className={classes.cardTitle}>Want to view locations near you?</h1>
-              <h2 className={classes.cardTitle}>View Locations</h2>
+              <a className="iconsLink" href="/admin/icons">
+              <h3>View Locations</h3>
+              </a>
+              <br></br>
+              <a className="mapLink" href="/admin/maps">
+              <h3>View Map</h3>
+              </a>
             </CardHeader>
           </Card>
-        </GridItem>
-        <GridItem xs={10} sm={10} md={6}>
-          <Card>
-            <CardHeader color= "info" stats icon>
-              <CardIcon color="info">
-                <Icon>info_outline</Icon>
-              </CardIcon>
-              <img src={logo}></img>;
-            </CardHeader>
-          </Card>
-        </GridItem>
+        </GridItem> 
+
       </GridContainer>
     </div>
   );

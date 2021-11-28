@@ -69,7 +69,12 @@ body {
   font-weight: 300;
   line-height: 1.5em;
 }
-
+.dashboard{
+  background-image: url("srlogo.png");
+  background-repeat:no-repeat;
+  background-position: 50% ;
+  background-size:  40% 100%;
+}
 blockquote footer:before,
 blockquote small:before {
   content: "\2014 \00A0";
@@ -554,25 +559,25 @@ footer ul li a:hover {
 .cityName-input{
   border: 0px;
   border-bottom: 1px solid grey;
-  width: 325px;
-  padding-top: 10px;
+  width: 500px;
+  padding-top: 0px;
 }
 .countryName-input{
   border: 0px;
   border-bottom: 1px solid grey;
-  width: 325px;
-  padding-top: 10px;
+  width: 500px;
+  padding-top: 0px;
 }
 .postalCode-input{
   border: 0px;
   border-bottom: 1px solid grey;
-  width: 325px;
-  padding-top: 10px;
+  width: 500px;
+  padding-top: 0px;
 }
 .aboutMe-input{
   border: 0px;
-  width: 1000px;
-  height: 100px;
+  width: 500px;
+  height: 50px;
   padding-top: 10px;
 }
 .locationName-input{
@@ -628,4 +633,19 @@ footer ul li a:hover {
   width: 1000px;
   height: 100px;
   padding-top: 10px;
+}
+.iconsLink{
+  border-bottom: 1px solid grey;
+}
+.storageLink{
+  border-bottom: 1px solid grey;
+}
+.loginLink{
+  border-bottom: 1px solid grey;
+}
+.signupLink{
+  border-bottom: 1px solid grey;
+}
+.mapLink{
+  border-bottom: 1px solid grey;
 }
