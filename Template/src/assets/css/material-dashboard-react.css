@@ -63,17 +63,18 @@ html * {
 }
 body {
   background-color: #eeeeee;
-  background-image: url("srlogo.gif");
-  background-repeat:no-repeat;
-  background-position: 67%;
-  background-size: 52% 80%;
   color: #3c4858;
   margin: 0;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-weight: 300;
   line-height: 1.5em;
 }
-
+.dashboard{
+  background-image: url("srlogo.png");
+  background-repeat:no-repeat;
+  background-position: 50% ;
+  background-size:  40% 100%;
+}
 blockquote footer:before,
 blockquote small:before {
   content: "\2014 \00A0";

@@ -26,6 +26,7 @@ export default function Sidebar(props) {
   function activeRoute(routeName) {
     return location.pathname === routeName;
   }
+  
   const { color, image, logoText, routes } = props;
   var links = (
     <List className={classes.list}>

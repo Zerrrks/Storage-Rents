@@ -67,9 +67,10 @@ export default function Dashboard() {
              
   
   return (
-    <div style={{ backgroundImage: "url(/srlogo.png})" }}>
+    <div className="dashboard">
       
       <GridContainer>
+        
         <GridItem xs={6} sm={3} md={6}>
           <Card>
             <CardHeader color="rose" stats icon>
@@ -84,24 +85,24 @@ export default function Dashboard() {
              <a className="signupLink"> 
                <h3>Signup</h3>
                 </a>
-            </CardHeader>
-            
+            </CardHeader>            
           </Card>
         </GridItem>
+        
         <GridItem xs={6} sm={2} md={6}>
           <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
                 <Store />
               </CardIcon>
-              <h1 className={classes.cardTitle}>Have something to store?</h1>
+              <h1 className={classes.cardTitle}>Already have storage?</h1>
             <a className="storageLink" href="/admin/storage">
             <h3>My Storage</h3>
             </a>
             </CardHeader>
-
           </Card>
         </GridItem>
+        
         <GridItem xs={10} sm={10} md={6}>
           <Card>
             <CardHeader color= "info" stats icon>
@@ -118,8 +119,8 @@ export default function Dashboard() {
               </a>
             </CardHeader>
           </Card>
-        </GridItem>
-        
+        </GridItem> 
+
       </GridContainer>
     </div>
   );
