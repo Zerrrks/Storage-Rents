@@ -81,7 +81,7 @@ const UpdateProfile = () => {
                     
                     <CardBody>
                         <GridContainer>
-                            <GridItem xs={12} sm={12} md={10}>
+                            <GridItem xs={12} sm={12} md={10}><br></br>
                                 <input 
                                     className="userName-input"
                                     placeholder="Username"
@@ -93,7 +93,7 @@ const UpdateProfile = () => {
                             </GridItem>
                         </GridContainer>
                         <GridContainer>
-                            <GridItem xs={12} sm={12} md={10}>
+                            <GridItem xs={12} sm={12} md={10}><br></br>
                                 <input 
                                     className="emailAddress-input"
                                     placeholder="Email Address"
@@ -105,7 +105,7 @@ const UpdateProfile = () => {
                             </GridItem>
                         </GridContainer>
                         <GridContainer>
-                            <GridItem xs={12} sm={12} md={10}>
+                            <GridItem xs={12} sm={12} md={10}><br></br>
                                 <input 
                                     className="firstName-input"
                                     placeholder="First Name"
@@ -117,7 +117,7 @@ const UpdateProfile = () => {
                             </GridItem>
                         </GridContainer>
                         <GridContainer>
-                            <GridItem xs={12} sm={12} md={10}>
+                            <GridItem xs={12} sm={12} md={10}><br></br>
                                 <input 
                                     className="lastName-input"
                                     placeholder="Last Name"
@@ -129,7 +129,7 @@ const UpdateProfile = () => {
                             </GridItem>
                         </GridContainer>
                         <GridContainer>
-                            <GridItem xs={12} sm={12} md={10}>
+                            <GridItem xs={12} sm={12} md={10}><br></br>
                                 <input 
                                     className="streetName-input"
                                     placeholder="Street Address"
@@ -141,7 +141,7 @@ const UpdateProfile = () => {
                             </GridItem>
                         </GridContainer>
                         <GridContainer>
-                            <GridItem xs={12} sm={12} md={10}>
+                            <GridItem xs={12} sm={12} md={10}><br></br>
                                 <input 
                                     className="postalCode-input"
                                     placeholder="Postal Code"
@@ -153,7 +153,7 @@ const UpdateProfile = () => {
                             </GridItem>
                         </GridContainer>
                         <GridContainer>
-                            <GridItem xs={12} sm={12} md={10}>
+                            <GridItem xs={12} sm={12} md={10}><br></br>
                                 <input 
                                     className="cityName-input"
                                     placeholder="City"
@@ -165,7 +165,7 @@ const UpdateProfile = () => {
                             </GridItem>
                         </GridContainer>
                         <GridContainer>
-                            <GridItem xs={12} sm={12} md={10}>
+                            <GridItem xs={12} sm={12} md={10}><br></br>
                                 <input 
                                     className="countryName-input"
                                     placeholder="Country"
@@ -177,7 +177,7 @@ const UpdateProfile = () => {
                             </GridItem>
                         </GridContainer>
                         <GridContainer>
-                            <GridItem xs={12} sm={12} md={10}>
+                            <GridItem xs={12} sm={12} md={10}><br></br>
                                 <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
                                 <input 
                                     className="aboutMe-input"

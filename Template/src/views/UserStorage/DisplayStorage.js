@@ -17,11 +17,13 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 //import CardFooter from "components/Card/CardFooter.js";
 
-const ProfileInfo = () => {
+const DisplayStorage = () => {
     const [info, setInfo] = useState([]);
 
     async function getInfo() {
-        const res = await fetch("http://localhost:5000/prof/3");
+        const res = await fetch('http://localhost:5000/storage/1', {
+            method: "GET"
+        });
         const infoArray = await res.json();
         setInfo(infoArray);
     }
@@ -58,25 +60,24 @@ const ProfileInfo = () => {
             <GridItem xs={20} sm={20} md={15}>
                 <Card>
                     <CardHeader color="primary">
-                        <h4 className={classes.cardTitleWhite}>Profile</h4>
-                        <p className={classes.cardCategoryWhite}>Current profile information</p>
+                        <h4 className={classes.cardTitleWhite}>Your listed storage</h4>
+                        <p className={classes.cardCategoryWhite}>Current storage infomation</p>
                     </CardHeader>
                     <CardBody>
                         <GridContainer>
                             <Table
-                                //key={info.prof_id}
+                                //key={info.storage_id}
                                 tableHeaderColor="primary"
-                                tableHead={["Your information: "]}
                                 tableData={[
-                                    ["Username - ", info.username],
-                                    ["Email - ", info.email],
-                                    ["First Name - ", info.first_name], 
-                                    ["Last Name - ", info.last_name], 
-                                    ["Street Address - ", info.addy],
-                                    ["Postal Code - ", info.postal_code], 
-                                    ["City - ", info.city],
-                                    ["Country - ", info.country],
-                                    ["Info - ", info.info]
+                                    ["Location Details - ", info.location_name],
+                                    ["Location Price - ", info.location_price],
+                                    ["Square Footage - ", info.square_footage], 
+                                    ["Full Name - ", info.full_name], 
+                                    ["Street Address - ", info.street_name],
+                                    ["Postal Code - ", info.postal_c,], 
+                                    ["City - ", info.city_storage],
+                                    ["Country - ", info.country_storage],
+                                    ["Details - ", info.add_details]
                                 ]}
                             />
                         </GridContainer>
@@ -87,34 +88,4 @@ const ProfileInfo = () => {
     );
 };
 
-export default ProfileInfo;
-
-/*
-<table className="table mt-5">
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Email Address</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Street Address</th>
-            <th>Postal Code</th>
-            <th>City</th>
-            <th>Country</th>
-            <th>Info</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr key={info.prof_id}>
-              <td>{info.username}</td>
-              <td>{info.first_name}</td>
-              <td>{info.last_name}</td>
-              <td>{info.addy}</td>
-              <td>{info.postal_code}</td>
-              <td>{info.city}</td>
-              <td>{info.country}</td>
-              <td>{info.info}</td>
-            </tr>
-        </tbody>
-      </table>
-*/
+export default DisplayStorage;

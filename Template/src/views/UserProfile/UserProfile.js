@@ -1,25 +1,25 @@
 import React, { Fragment } from "react";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+//import { makeStyles } from "@material-ui/core/styles";
 //import InputLabel from "@material-ui/core/InputLabel";
 // core components
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
 //import CustomInput from "components/CustomInput/CustomInput.js";
 //import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
+//import Card from "components/Card/Card.js";
 //import CardHeader from "components/Card/CardHeader.js";
-import CardAvatar from "components/Card/CardAvatar.js";
-import CardBody from "components/Card/CardBody.js";
+//import CardAvatar from "components/Card/CardAvatar.js";
+//import CardBody from "components/Card/CardBody.js";
 //import CardFooter from "components/Card/CardFooter.js";
 
 import UpdateProfile from "./UpdateProfile";
 import ProfileInfo from "./ProfileInfo";
 //import ListProfile from "./ListProfile";
 
-import avatar from "assets/img/faces/marc.jpg";
+//import avatar from "assets/img/faces/marc.jpg";
 
-const styles = {
+/*const styles = {
   cardCategoryWhite: {
     color: "rgba(255,255,255,.62)",
     margin: "0",
@@ -36,12 +36,12 @@ const styles = {
     marginBottom: "3px",
     textDecoration: "none",
   },
-};
+}; */
 
-const useStyles = makeStyles(styles);
+//const useStyles = makeStyles(styles);
 
 export default function UserProfile() {
-  const classes = useStyles();
+  //const classes = useStyles();
   return (
     <div>
       <GridContainer>
@@ -57,6 +57,12 @@ export default function UserProfile() {
             </Fragment>
           </GridItem>
         </GridContainer>
+      </GridContainer>
+    </div>
+  );
+}
+
+/*
         <GridItem xs={12} sm={12} md={4}>
           <Card profile>
             <CardAvatar profile>
@@ -72,8 +78,5 @@ export default function UserProfile() {
               </p>
             </CardBody>
           </Card>
-        </GridItem>
-      </GridContainer>
-    </div>
-  );
-}
+        </GridItem> 
+*/
