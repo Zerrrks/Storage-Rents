@@ -69,14 +69,14 @@ const DisplayStorage = () => {
                                 //key={info.storage_id}
                                 tableHeaderColor="primary"
                                 tableData={[
-                                    ["Location Details - ", info.location_name],
+                                    ["Location Description - ", info.location_name],
                                     ["Location Price - ", info.location_price],
                                     ["Square Footage - ", info.square_footage], 
                                     ["Full Name - ", info.full_name], 
                                     ["Street Address - ", info.street_name],
                                     ["Postal Code - ", info.postal_c,], 
                                     ["City - ", info.city_storage],
-                                    ["Country - ", info.country_storage],
+                                    ["State - ", info.country_storage],
                                     ["Details - ", info.add_details]
                                 ]}
                             />

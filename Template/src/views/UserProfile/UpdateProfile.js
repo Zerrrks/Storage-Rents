@@ -168,7 +168,7 @@ const UpdateProfile = () => {
                             <GridItem xs={12} sm={12} md={10}><br></br>
                                 <input 
                                     className="countryName-input"
-                                    placeholder="Country"
+                                    placeholder="State"
                                     type="text"
                                     name="country"
                                     value={country}

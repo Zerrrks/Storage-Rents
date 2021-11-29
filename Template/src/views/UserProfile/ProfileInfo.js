@@ -75,7 +75,7 @@ const ProfileInfo = () => {
                                     ["Street Address - ", info.addy],
                                     ["Postal Code - ", info.postal_code], 
                                     ["City - ", info.city],
-                                    ["Country - ", info.country],
+                                    ["State - ", info.country],
                                     ["Info - ", info.info]
                                 ]}
                             />

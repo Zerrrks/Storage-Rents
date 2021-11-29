@@ -147,7 +147,7 @@ const UpdateStorage = () => {
                   <GridItem xs={12} sm={12} md={4}>
                     <input
                       className="locationCountry-input"
-                      placeholder="Country"
+                      placeholder="State"
                       type="text"
                       name="country_storage"
                       value={country_storage}
