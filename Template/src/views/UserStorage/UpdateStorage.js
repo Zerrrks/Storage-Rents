@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-
+//import Geofunction from "./Geofunction";
 // @material-ui/core components
 //import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -43,6 +43,7 @@ const UpdateStorage = () => {
             window.location = "/admin/storage"
             console.log(response);
             console.log("please work.")
+//            Geofunction(street_name)
         } catch (err) {
             console.error(err.message);
         }
@@ -189,6 +190,7 @@ const UpdateStorage = () => {
         </GridContainer>
         </Fragment>
     )
+    
 };
 
 export default UpdateStorage;
