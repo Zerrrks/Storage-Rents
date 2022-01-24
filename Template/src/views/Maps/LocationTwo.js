@@ -12,18 +12,18 @@ import CardHeader from "components/Card/CardHeader.js";
 //import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-export default function LocationOne () {
+export default function LocationTwo () {
 return (
 <GridItem xs={20} sm={20} md={15}>
                 <Card>
                     <CardHeader color="primary">
-                    <h1 className={classes.cardTitle}>Open Garage</h1>
+                    <h1 className={classes.cardTitle}>Heated Basement</h1>
                     </CardHeader>
                     
                     <CardBody>
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={10}><br></br>
-                            <img src = 'https://www.thespruce.com/thmb/OSikhwOUp996sGOElb_FwcgkwSs=/2576x2576/smart/filters:no_upscale()/upscale-residential-house-has-neat-garage-168531302-588389105f9b58bdb36b0226.jpg' style={{height:300, width:300, justifyContent: 'center', aligntItems: 'center', }}/>
+                            <img src = 'https://images.squarespace-cdn.com/content/v1/58584a30b8a79be1adfc051b/1566254313871-GM9RDEVNN7TM9M8K1Y8B/Before%2B2.jpg' style={{height:300, width:300, justifyContent: 'center', aligntItems: 'center', }}/>
                             </GridItem>
                         </GridContainer>
                         <GridContainer>
@@ -66,7 +66,7 @@ return (
 
                             </GridItem>
                             <CardFooter>
-                            <a href="mailto:JohnnySinner@storagerents.com">Contact Location</a>;
+                            <a href="mailto:JohnnySinner@storagerents.com">Contact Location</a>
                             </CardFooter>
                         </GridContainer>
                     </CardBody>
