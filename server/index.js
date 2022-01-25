@@ -28,7 +28,7 @@ app.post("/locations", async (req, res) => {
     }
 })
 
-//create a user
+//create a profile
 app.post("/prof", async (req, res) => {
     try {
         const { username } = req.body;
@@ -164,7 +164,7 @@ app.put("/locations/:id", async (req, res) => {
     }
 });
 
-//get all users
+//get all profiles
 
 app.get("/prof", async (req, res) => {
     try {
@@ -175,7 +175,7 @@ app.get("/prof", async (req, res) => {
     }
 });
 
-//get a user
+//get a profile
 
 app.get("/prof/:id", async (req, res) => {
     try {
@@ -187,7 +187,7 @@ app.get("/prof/:id", async (req, res) => {
     }
 })
 
-//update a user
+//update a profile
 
 app.put("/prof/:id", async (req, res) => {
     try {
@@ -211,8 +211,65 @@ app.put("/prof/:id", async (req, res) => {
     }
 });
 
-//delete a user
+//create a user
 
+app.post("/users", async (req, res) => {
+    try {
+        const { usernamex } = req.body;
+        const { passwordx } = req.body;
+        const newUser = await pool.query(
+            "INSERT INTO users (usernamex, passwordx) VALUES ($1, $2) RETURNING * ",
+            [usernamex, passwordx]
+        );
+        res.json(newUser.rows[0]);
+
+    } catch (err) {
+        console.error(err.message);
+    }
+})
+
+//update a user
+
+app.put("/users/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { usernamex } = req.body;
+        const { passwordx } = req.body;
+        const updateUser = await pool.query(
+            "UPDATE prof SET usernamex = $1, passwordx = $2 WHERE user_id = $3",
+            [usernamex, passwordx, id]
+        );
+        res.json("User was updated.");
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+
+//get a user
+
+app.get("/users/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const user = await pool.query("SELECT * FROM users WHERE user_id = $1", [id]);
+        res.json(user.rows[0]);
+    } catch (err) {
+        console.error(err.message);
+    }
+})
+
+//get all users
+
+app.get("/users", async (req, res) => {
+    try {
+        const allUser = await pool.query("SELECT * FROM users");
+        res.json(allUser.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+
+//delete a user 
+/*
 app.delete("/users/:id", async (req, res) => {
     try {
         const { id } = req.params;
@@ -224,7 +281,7 @@ app.delete("/users/:id", async (req, res) => {
     } catch (err) {
         console.error(err.message);
     }
-})
+}) */
 
 app.listen(5000, () => {
     console.log("Server has started on port 5000");
