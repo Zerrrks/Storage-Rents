@@ -21,6 +21,11 @@ import Person from "@material-ui/icons/Person";
 //import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import BubbleChart from "@material-ui/icons/BubbleChart";
 import LocationOn from "@material-ui/icons/LocationOn";
+import LocationOne from "views/Maps/LocationOne.js";
+import LocationTwo from "views/Maps/LocationTwo.js";
+import LocationThree from "views/Maps/LocationThree.js";
+import LocationFour from "views/Maps/LocationFour.js";
+import LocationFive from "views/Maps/LocationFive.js";
 //import Notifications from "@material-ui/icons/Notifications";
 //import Unarchive from "@material-ui/icons/Unarchive";
 //import Language from "@material-ui/icons/Language";
@@ -108,6 +113,42 @@ const dashboardRoutes = [
     rtlName: "خرائط",
     icon: LocationOn,
     component: Maps,
+    layout: "/admin",
+  },
+  // These routes are for redirection from the Maps page. Keep them last so we don't get random blank space in the sidebar.
+  {
+    path: "/locationone",
+    name: "",
+    icon: "",
+    component: LocationOne,
+    layout: "/admin",
+  },
+  {
+    path: "/locationtwo",
+    name: "",
+    icon: "",
+    component: LocationTwo,
+    layout: "/admin",
+  },
+  {
+    path: "/locationthree",
+    name: "",
+    icon: "",
+    component: LocationThree,
+    layout: "/admin",
+  },
+  {
+    path: "/locationfour",
+    name: "",
+    icon: "",
+    component: LocationFour,
+    layout: "/admin",
+  },
+  {
+    path: "/locationfive",
+    name: "",
+    icon: "",
+    component: LocationFive,
     layout: "/admin",
   },
   /*{
