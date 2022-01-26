@@ -2,7 +2,8 @@ CREATE DATABASE storage_rents;
 
 CREATE TABLE users(
     user_id SERIAL PRIMARY KEY,
-    alias VARCHAR(255)
+    usernamex VARCHAR(255),
+    passwordx VARCHAR(255)
 );
 
 ALTER TABLE prof
