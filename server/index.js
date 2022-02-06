@@ -8,6 +8,9 @@ app.use(express.json());
 
 //ROUTES//
 
+//register and login
+
+app.use("/auth", require("./routes/jwtAuth"));
 
 //create a location
 app.post("/locations", async (req, res) => {

@@ -57,7 +57,7 @@ const dashboardRoutes = [
   },
   {
     path: "/login",
-    name: "Login",
+    name: "Login/Register",
     icon: Person,
     component: login,
     layout: "/admin",

@@ -78,11 +78,11 @@ export default function Dashboard() {
                 <Icon>content_copy</Icon>
               </CardIcon>
               <h1 className={classes.cardTitle}>Have something to store?</h1>
-            <a className="loginLink" href="/admin/user">
+            <a className="loginLink" href="/admin/login">
             <h3>Login</h3>
                 </a>
              <br></br>
-             <a className="signupLink"> 
+             <a className="signupLink" href="/admin/login"> 
                <h3>Signup</h3>
                 </a>
             </CardHeader>            
