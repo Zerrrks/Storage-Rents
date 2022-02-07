@@ -1,15 +1,15 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-
 import { toast } from "react-toastify";
 
-const Login = ({ setAuth }) => {
+const Register = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
     email: "",
-    password: ""
+    password: "",
+    name: ""
   });
 
-  const { email, password } = inputs;
+  const { email, password, name } = inputs;
 
   const onChange = e =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
@@ -17,9 +17,9 @@ const Login = ({ setAuth }) => {
   const onSubmitForm = async e => {
     e.preventDefault();
     try {
-      const body = { email, password };
+      const body = { email, password, name };
       const response = await fetch(
-        "http://localhost:5000/auth/login",
+        "http://localhost:5000/auth/register",
         {
           method: "POST",
           headers: {
@@ -28,13 +28,12 @@ const Login = ({ setAuth }) => {
           body: JSON.stringify(body)
         }
       );
-
       const parseRes = await response.json();
 
       if (parseRes.jwtToken) {
         localStorage.setItem("token", parseRes.jwtToken);
         setAuth(true);
-        toast.success("Logged in Successfully");
+        toast.success("Register Successfully");
       } else {
         setAuth(false);
         toast.error(parseRes);
@@ -46,34 +45,37 @@ const Login = ({ setAuth }) => {
 
   return (
     <Fragment>
-      <h1 className="mt-5 text-center">Login</h1>
+      <h1 className="mt-5 text-center">Register</h1>
       <form onSubmit={onSubmitForm}>
         <input
-          placeholder="Email"
           type="text"
           name="email"
           value={email}
+          placeholder="email"
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
-        <br></br>
-        <br></br>
         <input
-          placeholder="Password"
           type="password"
           name="password"
           value={password}
+          placeholder="password"
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
-        <br></br>
-        <br></br>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          placeholder="name"
+          onChange={e => onChange(e)}
+          className="form-control my-3"
+        />
         <button className="btn btn-success btn-block">Submit</button>
       </form>
-      <br></br>
-      <Link to="/register">Register</Link>
+      <Link to="/login">login</Link>
     </Fragment>
   );
 };
 
-export default Login;
+export default Register;

@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const pool = require("../db");
 const bcrypt = require("bcrypt");
-const jwtGenerator = require("../utilities/jwtGenerator");
+const jwtGenerator = require("../utils/jwtGenerator");
 const validInfo = require("../middleware/validInfo");
 const authorization = require("../middleware/authorization");
 
@@ -67,7 +67,7 @@ router.post("/login", validInfo, async (req, res) => {
     }
 });
 
-router.get("/is-verify", authorization, async (req, res) => {
+router.post("/verify", authorization, async (req, res) => {
     try {
         res.json(true); 
     } catch (err) {

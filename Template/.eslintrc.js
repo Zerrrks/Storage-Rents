@@ -18,4 +18,7 @@ module.exports = {
     "plugin:react/recommended",
     
   ],
+  rules: {
+    "react/prop-types": "off"
+  }
 };

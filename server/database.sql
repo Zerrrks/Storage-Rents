@@ -8,6 +8,9 @@ CREATE TABLE users(
     user_password VARCHAR(255) NOT NULL
 );
 
+INSERT INTO users (user_name, user_email, user_password)
+VALUES ('Zerks', 'zerksmurf@gmail.com', 'weebman123');
+
 ALTER TABLE prof
     ADD addy VARCHAR(1000);
 
