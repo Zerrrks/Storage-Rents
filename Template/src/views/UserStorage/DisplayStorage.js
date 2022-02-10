@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
-
+//import { history } from "history";
+  
 import Table from "components/Table/Table.js";
 import GridItem from "components/Grid/GridItem";
 import GridContainer from "components/Grid/GridContainer";
@@ -15,11 +16,20 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 //import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+//import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 //import CardFooter from "components/Card/CardFooter.js";
-
+//import storageFinder from "../../components/storageFinder";
+//const cors = require("cors");
 const DisplayStorage = () => {
+   // useEffect(async () => {
+    //    try {
+   //         const response = await storageFinder.get("/")
+    //        console.log(response);
+   //     }   catch (err) {}
+  //  }, [])
     const [info, setInfo] = useState([]);
-
+    let history = useHistory
     async function getInfo() {
         const res = await fetch('http://localhost:5000/storage/1', {
             method: "GET"
@@ -31,7 +41,9 @@ const DisplayStorage = () => {
     useEffect(() => {
         getInfo();
     }, []);
-
+    const handleUpdate = (storage_id) => {
+        history.push(`/storage/${storage_id}/`);
+    };
     const styles = {
         cardCategoryWhite: {
             color: "rgba(255,255,255,.62)",
@@ -50,6 +62,7 @@ const DisplayStorage = () => {
             textDecoration: "none",
         },
     };
+
     const useStyles = makeStyles(styles);
 
     const classes = useStyles();
@@ -83,6 +96,9 @@ const DisplayStorage = () => {
                         </GridContainer>
                     </CardBody>
                 </Card>
+                <button onClick={() => handleUpdate(info.storage_id)}>
+         Edit Storage Details 
+        </button>
             </GridItem>
         </Fragment>
     );
