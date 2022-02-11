@@ -13,7 +13,6 @@ import CardHeader from "components/Card/CardHeader.js";
 //import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-
 const UpdateStorage = () => {
     const [inputs, setInputs] = useState({
         location_name: "",
@@ -43,8 +42,9 @@ const UpdateStorage = () => {
             window.location = "/admin/storage"
             console.log(response);
             console.log("please work.")
-//          Geofunction(street_name)
-        } catch (err) {
+//          
+        } 
+        catch (err) {
             console.error(err.message);
         }
     };
