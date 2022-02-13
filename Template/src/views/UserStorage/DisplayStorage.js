@@ -100,6 +100,8 @@ const DisplayStorage = () => {
          Edit Storage Details 
         </button>
             </GridItem>
+            <br></br>
+        <a href="/Admin/addstorage">Add Storage</a>
         </Fragment>
     );
 };
