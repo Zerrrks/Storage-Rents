@@ -77,6 +77,19 @@ app.post("/storage", async (req, res) => {
         console.error(err.message);
     }
 })
+// Delete storage
+app.delete("/storage/:storage_id", async (req, res) => {
+    try {
+        const deleteProf = await pool.query("DELETE FROM storage where storage_id = $1", [
+            req.params.storage_id,
+        ]);
+        res.status(204).json({
+            status: "success",
+        });
+    } catch (err) {
+        console.error(err.message);
+    }
+});
 
 //update a storage
 

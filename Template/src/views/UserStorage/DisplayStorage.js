@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-
-  
+import  Button  from "components/CustomButtons/Button.js";  
 import Table from "components/Table/Table.js";
 import GridItem from "components/Grid/GridItem";
 import GridContainer from "components/Grid/GridContainer";
@@ -16,6 +15,7 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 //import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
+import FindStorage from "hooks/FindStorage";
 //import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 //import CardFooter from "components/Card/CardFooter.js";
 //const cors = require("cors");
@@ -29,7 +29,7 @@ const DisplayStorage = () => {
     const [info, setInfo] = useState([]);
   //  let history = useHistory
     async function getInfo() {
-        const res = await fetch('http://localhost:5000/storage/1', {
+        const res = await fetch('http://localhost:5000/storage/7', {
             method: "GET"
         });
         const infoArray = await res.json();
@@ -65,6 +65,16 @@ const DisplayStorage = () => {
 
     const classes = useStyles();
 
+    const handleDelete = async (storage_id) => {
+        try {
+          const response = await FindStorage.delete(`/${storage_id}`);
+          console.log(response);
+          window.location = "/admin/storage"
+        } catch (err){
+//
+        }
+    }
+
     return (
         <Fragment>
             {" "}
@@ -94,7 +104,8 @@ const DisplayStorage = () => {
                         </GridContainer>
                     </CardBody>
                 </Card>
-            </GridItem>      
+            </GridItem>  
+            <Button onClick={() => handleDelete(info.storage_id)}> Delete Storage </Button>
         </Fragment>
     );
 };

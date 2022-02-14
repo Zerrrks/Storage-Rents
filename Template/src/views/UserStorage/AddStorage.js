@@ -55,7 +55,7 @@ const AddStorage = () => {
                         <input value={city_storage} onChange={e => setCity_Storage(e.target.value)} type="text" className="form-control" placeholder="City"/>
                     </div>
                     <div className="row">
-                        <input value={country_storage} onChange={e => setCountry_Storage(e.target.value)} type="text" className="form-control" placeholder="Zipcode"/>
+                        <input value={country_storage} onChange={e => setCountry_Storage(e.target.value)} type="text" className="form-control" placeholder="Country"/>
                     </div>
                     <div className="row">
                         <input value={postal_c} onChange={e => setPostal_C(e.target.value)} type="text" className="form-control" placeholder="Postal Code"/>
