@@ -39,6 +39,9 @@ import UserStorage from "views/UserStorage/UserStorage.js";
 import Icons from "views/Icons/Icons.js";
 import Maps from "views/Maps/Maps.js";
 import login from "views/loginPage/login";
+import register from "views/loginPage/register";
+
+
 //import NotificationsPage from "views/Notifications/Notifications.js";
 //import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 // core components/views for RTL layout
@@ -57,12 +60,18 @@ const dashboardRoutes = [
   },
   {
     path: "/login",
-    name: "Login/Register",
+    name: "Login",
     icon: Person,
     component: login,
     layout: "/admin",
   },
-  
+  {
+    path: "/register",
+    name: "Register",
+    icon: Person,
+    component: register,
+    layout: "/admin",
+  },
   {
     path: "/user",
     name: "User Profile",

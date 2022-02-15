@@ -12,9 +12,9 @@ import { toast } from "react-toastify";
 
 //components
 
-import Login from "./login";
-import Register from "./register";
-import Dashboard from "./dashboard";
+import Login from "/login";
+import Register from "/register";
+import Dashboard from "/dashboard";
 
 toast.configure();
 

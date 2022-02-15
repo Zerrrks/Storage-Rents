@@ -31,7 +31,7 @@ ReactDOM.render(
       <Route exact path="/admin/addstorage" component={AddStorage} />
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
-      <Redirect from="/" to="/admin/login" />
+      <Redirect from="/" to="/admin/dashboard" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

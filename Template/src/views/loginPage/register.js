@@ -55,6 +55,8 @@ const Register = ({ setAuth }) => {
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
+        <br></br>
+        <br></br>
         <input
           type="password"
           name="password"
@@ -63,6 +65,8 @@ const Register = ({ setAuth }) => {
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
+        <br></br>
+        <br></br>
         <input
           type="text"
           name="name"
@@ -71,8 +75,11 @@ const Register = ({ setAuth }) => {
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
+        <br></br>
+        <br></br>
         <button className="btn btn-success btn-block">Submit</button>
       </form>
+      <br></br>
       <Link to="/login">login</Link>
     </Fragment>
   );
