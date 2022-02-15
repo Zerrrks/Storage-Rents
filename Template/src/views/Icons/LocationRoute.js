@@ -69,7 +69,7 @@ const LocationRoute = () => {
     
             for (var i = 0; i < data.length; i++){
                 var row = `<tr>
-                                <td>${data[i].zipcode}</td>
+                                <td>${setData[i].zipcode}</td>
                                 <td>${data[i].storage_type}</td>
                                 <td>${data[i].size}</td>
                                 <td>${data[i].location_address}</td>
