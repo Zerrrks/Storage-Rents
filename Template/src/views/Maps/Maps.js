@@ -9,7 +9,6 @@ import React from "react";
   //     }   catch (err) {}
  //  }, [])
    const [info, setInfo] = useState([]);
-   let history = useHistory
    async function getInfo() {
        const res = await fetch('http://localhost:5000/storage/1', {
            method: "GET"
@@ -21,9 +20,7 @@ import React from "react";
    useEffect(() => {
        getInfo();
    }, []);
-   const handleUpdate = (storage_id) => {
-       history.push(`/storage/${storage_id}/`);
-   };*/
+*/
 const Maps = () => {
   const mapRef = React.useRef(null);
   React.useEffect(() => {
@@ -124,7 +121,13 @@ const Maps = () => {
 
     map = new google.maps.Map(map, mapOptions);
 
-//Marker 1
+    /*const marker = new google.maps.Marker({
+      position: myLatlng[e],
+      map: map,
+      animation: google.maps.Animation.DROP,
+      title: location_name,
+    });*/
+    //Marker 1
     const marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
