@@ -14,19 +14,109 @@ import CardHeader from "components/Card/CardHeader.js";
 //import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
+import axios from "axios";
+//import axios from "axios";
+
+
 
 
 const LocationRoute = () => {
     //location id 3
-    const [info3, setInfo3] = useState([]);
+    const [data, setData] = useState([]);
 
-    async function getInfo3() {
-        const res = await fetch(`http://localhost:5000/locations/3`, {
-            method: "GET"
+
+    useEffect(() => {
+        (async () => {
+            const result = await axios.get(`http://localhost:5000/locations`, {
+                method: "GET"
+            });
+          
+          console.log(result.data) + console.log("data here")
+          
+          const dataArray = JSON.stringify(result)
+          console.log(dataArray)
+          setData(result);
+
+          buildTable(setData)
+         
+        })();
+/*
+        (async () => {
+            try {
+               const body = {zipcode, storage_type, size, city, location_address, lat, long};
+           const result = await axios.get("http://localhost:5000/prof/3",
+            {
+               method: "GET",
+               headers: { "Content-Type": "application/json" },
+               body: JSON.stringify(body)
+           });
+           window.location = "/admin/locations"
+           console.log(result);
+           console.log("please work.")
+           setData(result);
+           buildTable(setData)
+       } catch (err) {
+           console.error(err.message);
+*/
+    
         });
-        const info3Array = await res.json();
+       
+
+
+        function buildTable(data){
+            
+            var table = document.getElementById('myTable')
+    
+            for (var i = 0; i < data.length; i++){
+                var row = `<tr>
+                                <td>${setData[i].zipcode}</td>
+                                <td>${data[i].storage_type}</td>
+                                <td>${data[i].size}</td>
+                                <td>${data[i].location_address}</td>
+                                <td>${data[i].lat}</td>
+                                <td>${data[i].long}</td>
+                          </tr>`
+                          if(document.getElementById("zipcode") != null){
+                            table.innerHTML += row;
+                        }
+                table.innerHTML += row
+
+            }
+        }
+ /*
+        const [info4, setInfo4] = useState([]);
+
+        async function getInfo4() {
+            const res = await fetch(`http://localhost:5000/locations/4`, {
+                method: "GET"
+            });
+            const info4Array = await res.json();
+            setInfo4(info4Array);
+     
+       const info3Array = await res.json();
         setInfo3(info3Array);
-    }
+        
+       // console.log(info3Array)
+    
+
+    const onSubmitForm = async e => {
+        e.preventDefault();
+        try {
+            const body = { username, first_name, last_name, city, country, info, addy, email, postal_code };
+            const response = await fetch("http://localhost:5000/prof/3", {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body)
+            });
+            window.location = "/admin/user"
+            console.log(response);
+            console.log("please work.")
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
+
+    const response = 
 
     useEffect(() => {
         getInfo3();
@@ -91,6 +181,7 @@ const LocationRoute = () => {
     useEffect(() => {
         getInfo7();
     }, []);
+    */
 
     const styles = {
         cardCategoryWhite: {
@@ -168,15 +259,15 @@ const LocationRoute = () => {
                 </CardHeader>
                 <CardBody>
                     <GridContainer>
-                        <Table
+                        <Table id="myTable"
                             tableHeaderColor="primary"
                             tableHead={[ " Storage Type ", " Size (sqft) ", " Location Address ", " Zipcode "]}
                             tableData={[
-                                [info3.storage_type, info3.size, info3.location_address, info3.zipcode],
-                                [info4.storage_type, info4.size, info4.location_address, info4.zipcode],
-                                [info5.storage_type, info5.size, info5.location_address, info5.zipcode],
-                                [info6.storage_type, info6.size, info6.location_address, info6.zipcode],
-                                [info7.storage_type, info7.size, info7.location_address, info7.zipcode],
+                                [data.storage_type, data.size, data.location_address, data.zipcode],
+                               /* [data.storage_type, data.size, data.location_address, data.zipcode],
+                                [data.storage_type, data.size, data.location_address, data.zipcode],
+                                [data.storage_type, data.size, data.location_address, data.zipcode],
+                                [data.storage_type, data.size, data.location_address, data.zipcode],*/
                             ]}
                         />
                     </GridContainer>

@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 //import { makeStyles } from "@material-ui/core/styles";
 //import InputLabel from "@material-ui/core/InputLabel";
 
-//import UpdateStorage from "./UpdateStorage";
+import UpdateStorage from "./UpdateStorage";
 import DisplayStorage from "./DisplayStorage";
 
 // core components
@@ -45,6 +45,10 @@ export default function UserStorage() {
         <Fragment>
           <DisplayStorage />
         </Fragment>
+        <Fragment>
+          <UpdateStorage />
+        </Fragment>
+        <a href="/Admin/addstorage">Add Storage</a>
       </div>
     );
   }

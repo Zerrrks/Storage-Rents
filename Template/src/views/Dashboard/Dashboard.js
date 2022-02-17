@@ -13,7 +13,7 @@
 //import BugReport from "@material-ui/icons/BugReport";
 //import Code from "@material-ui/icons/Code";
 //import Cloud from "@material-ui/icons/Cloud";
- // core components
+// core components
 // @material-ui/icons
 //import Table from "components/Table/Table.js";
 //import Tasks from "components/Tasks/Tasks.js";
@@ -32,9 +32,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Icon from "@material-ui/core/Icon";
 
 import Store from "@material-ui/icons/Store";
+import Dashnoti from "views/loginPage/dashboard";
 
-
- //import { bugs, website, server } from "variables/general.js";
+//import { bugs, website, server } from "variables/general.js";
 /*import {
   dailySalesChart,
   emailsSubscriptionChart,
@@ -50,27 +50,23 @@ import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js"
 const useStyles = makeStyles(styles);
 
 
-
-
-
 export default function Dashboard() {
   const classes = useStyles();
 
-    
-  
- //   function handleClick() {
- //     const history = useHistory();
- //     history.push('/Dashboard');
- //   }
 
-               //={window.location.href='/'}>
-             
-  
+
+
+
   return (
     <div className="dashboard">
+      <GridContainer>
+        <GridItem>
+          <Dashnoti />
+        </GridItem>
+      </GridContainer>
       
       <GridContainer>
-        
+
         <GridItem xs={6} sm={3} md={6}>
           <Card>
             <CardHeader color="rose" stats icon>
@@ -78,17 +74,17 @@ export default function Dashboard() {
                 <Icon>content_copy</Icon>
               </CardIcon>
               <h1 className={classes.cardTitle}>Have something to store?</h1>
-            <a className="loginLink" href="/admin/login">
-            <h3>Login</h3>
-                </a>
-             <br></br>
-             <a className="signupLink" href="/admin/login"> 
-               <h3>Signup</h3>
-                </a>
-            </CardHeader>            
+              <a className="loginLink" href="/admin/login">
+                <h3>Login</h3>
+              </a>
+              <br></br>
+              <a className="signupLink" href="/admin/login">
+                <h3>Signup</h3>
+              </a>
+            </CardHeader>
           </Card>
         </GridItem>
-        
+
         <GridItem xs={6} sm={2} md={6}>
           <Card>
             <CardHeader color="success" stats icon>
@@ -96,32 +92,32 @@ export default function Dashboard() {
                 <Store />
               </CardIcon>
               <h1 className={classes.cardTitle}>Already have storage?</h1>
-            <a className="storageLink" href="/admin/storage">
-            <h3>My Storage</h3>
-            </a>
+              <a className="storageLink" href="/admin/storage">
+                <h3>My Storage</h3>
+              </a>
             </CardHeader>
           </Card>
         </GridItem>
-        
+
         <GridItem xs={10} sm={10} md={6}>
           <Card>
-            <CardHeader color= "info" stats icon>
+            <CardHeader color="info" stats icon>
               <CardIcon color="info">
                 <Icon>info_outline</Icon>
               </CardIcon>
               <h1 className={classes.cardTitle}>Want to view locations near you?</h1>
               <a className="iconsLink" href="/admin/icons">
-              <h3>View Locations</h3>
+                <h3>View Locations</h3>
               </a>
               <br></br>
               <a className="mapLink" href="/admin/maps">
-              <h3>View Map</h3>
+                <h3>View Map</h3>
               </a>
             </CardHeader>
           </Card>
-        </GridItem> 
+        </GridItem>
 
       </GridContainer>
     </div>
   );
-  }
+}
