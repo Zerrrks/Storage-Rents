@@ -1,6 +1,29 @@
 import React from "react";
 
 //import basement from 'assets/img/basement.jpg';
+/*const DisplayStorage = () => {
+  // useEffect(async () => {
+   //    try {
+  //         const response = await storageFinder.get("/")
+   //        console.log(response);
+  //     }   catch (err) {}
+ //  }, [])
+   const [info, setInfo] = useState([]);
+   let history = useHistory
+   async function getInfo() {
+       const res = await fetch('http://localhost:5000/storage/1', {
+           method: "GET"
+       });
+       const infoArray = await res.json();
+       setInfo(infoArray);
+   }
+
+   useEffect(() => {
+       getInfo();
+   }, []);
+   const handleUpdate = (storage_id) => {
+       history.push(`/storage/${storage_id}/`);
+   };*/
 const Maps = () => {
   const mapRef = React.useRef(null);
   React.useEffect(() => {

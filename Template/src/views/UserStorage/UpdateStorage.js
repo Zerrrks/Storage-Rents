@@ -13,6 +13,8 @@ import CardHeader from "components/Card/CardHeader.js";
 //import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
+const Geocodio = require('geocodio-library-node');
+const geocoder = new Geocodio('7f919baa291d25f6a558211155f21b6dd6b6522');
 const UpdateStorage = () => {
     const [inputs, setInputs] = useState({
         location_name: "",
@@ -23,9 +25,11 @@ const UpdateStorage = () => {
         city_storage: "",
         country_storage: "",
         postal_c: "",
-        add_details: ""
+        add_details: "",
+        lat: "", 
+        lng: ""
     });
-    const { location_name, location_price, square_footage, full_name, street_name, city_storage, country_storage, postal_c, add_details } = inputs;
+    const { location_name, location_price, square_footage, full_name, street_name, city_storage, country_storage, postal_c, add_details, lat, lng } = inputs;
 
     const onChange = e => 
         setInputs({ ...inputs, [e.target.name]: e.target.value });
@@ -33,12 +37,23 @@ const UpdateStorage = () => {
     const onSubmitForm = async e => {
         e.preventDefault();
         try {
-            const body = { location_name, location_price, square_footage, full_name, street_name, city_storage, country_storage, postal_c, add_details }; //lat, lng
+          geocoder
+          .geocode(street_name+", "+city_storage+", "+country_storage)
+        //.reverse([39.9612, -82.9988])
+
+          .then(response => {
+            if (response.results.length > 0){
+            response.results[0].location.lat=lat;
+            response.results[0].location.lng=lng;
+            }
+          })
+            const body = { location_name, location_price, square_footage, full_name, street_name, city_storage, country_storage, postal_c, add_details, lat, lng }; //lat, lng
             const response = await fetch("http://localhost:5000/storage/1", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
             });
+
             window.location = "/admin/storage"
             console.log(response);
             console.log("please work.")
