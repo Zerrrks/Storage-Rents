@@ -21,7 +21,7 @@ import axios from "axios";
 
 
 const LocationRoute = () => {
-    //location id 3
+
     const [data, setData] = useState([]);
 
 
@@ -36,46 +36,125 @@ const LocationRoute = () => {
           const dataArray = JSON.stringify(result)
           console.log(dataArray)
           setData(result);
+          console.log(setData)
 
-          buildTable(setData)
+          buildTable(result.data)
+
+          
          
         })();
-/*
-        (async () => {
-            try {
-               const body = {zipcode, storage_type, size, city, location_address, lat, long};
-           const result = await axios.get("http://localhost:5000/prof/3",
-            {
-               method: "GET",
-               headers: { "Content-Type": "application/json" },
-               body: JSON.stringify(body)
-           });
-           window.location = "/admin/locations"
-           console.log(result);
-           console.log("please work.")
-           setData(result);
-           buildTable(setData)
-       } catch (err) {
-           console.error(err.message);
-*/
-    
         });
-       
 
+        const styles = {
+            cardCategoryWhite: {
+                color: "rgba(255,255,255,.62)",
+                margin: "0",
+                fontSize: "14px",
+                marginTop: "0",
+                marginBottom: "0",
+            },
+            cardTitleWhite: {
+                color: "#FFFFFF",
+                marginTop: "0px",
+                minHeight: "auto",
+                fontWeight: "300",
+                fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+                marginBottom: "3px",
+                textDecoration: "none",
+            },
+        };
+        const useStyles = makeStyles(styles);
+    
+        const classes = useStyles();
+   
+    return (
+        <Fragment>
+            <Card>
+                <CardHeader color="primary">
+                    <h4>Filter Available Storage</h4>
+                </CardHeader>
+                <CardBody>
+                    <GridContainer>
+                        <GridItem xs={12} sm={12} md={4}>
+                            <input
+                                className="zipcode-input"
+                                placeholder="Zipcode"
+                                type="text"
+                                name="zipcode"
+                                //value={zipcode}
+                                //onChange={e => onChange(e)}
+                            />
+                        </GridItem>
+                        <GridItem xs={12} sm={12} md={4}>
+                            <input
+                                className="storage-space-input"
+                                placeholder="Storage Space"
+                                type="text"
+                                name="storage_type"
+                                //value={storage_type}
+                                //onChange={e => onChange(e)}
+                            />
+                        </GridItem>
+                        <GridItem xs={12} sm={12} md={4}>
+                            <input
+                                className="address-input"
+                                placeholder="Address"
+                                type="text"
+                                name="location_address"
+                                //value={location_address}
+                                //onChange={e => onChange(e)}
+                            />
+                        </GridItem>
+                    </GridContainer>
+                </CardBody>
+                <CardFooter>
+
+                    <Button color="primary"
+                    
+                    >Search</Button>
+                </CardFooter>
+            </Card>
+            <br></br>
+            <Card>
+                <CardHeader color="primary">
+                    <h4 className={classes.cardTitleWhite}>Current Available Locations</h4>
+                </CardHeader>
+                <CardBody>
+                    
+                        <Table id="myTable"
+                            tableHeaderColor="primary"
+                            tableHead={[ " Storage Type ", " Size (sqft) ", " Location Address ", " Zipcode "]}
+                            tableData={[
+                                [data.storage_type, data.size, data.location_address, data.zipcode],
+                               /* [data.storage_type, data.size, data.location_address, data.zipcode],
+                                [data.storage_type, data.size, data.location_address, data.zipcode],
+                                [data.storage_type, data.size, data.location_address, data.zipcode],
+                                [data.storage_type, data.size, data.location_address, data.zipcode],*/
+                            ]}
+                        />
+                    
+                </CardBody>
+            </Card>
+        </Fragment>
+
+        
+    )
+
+    
 
         function buildTable(data){
             
-            var table = document.getElementById('myTable')
+            var table = document.getElementById('myTable').innerHTML
     
             for (var i = 0; i < data.length; i++){
                 var row = `<tr>
-                                <td>${setData[i].zipcode}</td>
+                                <td>${data[i].zipcode}</td>
                                 <td>${data[i].storage_type}</td>
-                                <td>${data[i].size}</td>
                                 <td>${data[i].location_address}</td>
-                                <td>${data[i].lat}</td>
-                                <td>${data[i].long}</td>
+                                <td>${data[i].size}</td>
+                               
                           </tr>`
+                          console.log(data[i].zipcode);
                           if(document.getElementById("zipcode") != null){
                             table.innerHTML += row;
                         }
@@ -83,6 +162,14 @@ const LocationRoute = () => {
 
             }
         }
+    }
+
+      
+    
+       
+
+    export default LocationRoute;
+
  /*
         const [info4, setInfo4] = useState([]);
 
@@ -183,101 +270,7 @@ const LocationRoute = () => {
     }, []);
     */
 
-    const styles = {
-        cardCategoryWhite: {
-            color: "rgba(255,255,255,.62)",
-            margin: "0",
-            fontSize: "14px",
-            marginTop: "0",
-            marginBottom: "0",
-        },
-        cardTitleWhite: {
-            color: "#FFFFFF",
-            marginTop: "0px",
-            minHeight: "auto",
-            fontWeight: "300",
-            fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-            marginBottom: "3px",
-            textDecoration: "none",
-        },
-    };
-    const useStyles = makeStyles(styles);
-
-    const classes = useStyles();
-
-    return (
-        <Fragment>
-            <Card>
-                <CardHeader color="primary">
-                    <h4>Filter Available Storage</h4>
-                </CardHeader>
-                <CardBody>
-                    <GridContainer>
-                        <GridItem xs={12} sm={12} md={4}>
-                            <input
-                                className="zipcode-input"
-                                placeholder="Zipcode"
-                                type="text"
-                                name="zipcode"
-                                //value={zipcode}
-                                //onChange={e => onChange(e)}
-                            />
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={4}>
-                            <input
-                                className="storage-space-input"
-                                placeholder="Storage Space"
-                                type="text"
-                                name="storage_type"
-                                //value={storage_type}
-                                //onChange={e => onChange(e)}
-                            />
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={4}>
-                            <input
-                                className="address-input"
-                                placeholder="Address"
-                                type="text"
-                                name="location_address"
-                                //value={location_address}
-                                //onChange={e => onChange(e)}
-                            />
-                        </GridItem>
-                    </GridContainer>
-                </CardBody>
-                <CardFooter>
-
-                    <Button color="primary"
-                    
-                    >Search</Button>
-                </CardFooter>
-            </Card>
-            <br></br>
-            <Card>
-                <CardHeader color="primary">
-                    <h4 className={classes.cardTitleWhite}>Current Available Locations</h4>
-                </CardHeader>
-                <CardBody>
-                    <GridContainer>
-                        <Table id="myTable"
-                            tableHeaderColor="primary"
-                            tableHead={[ " Storage Type ", " Size (sqft) ", " Location Address ", " Zipcode "]}
-                            tableData={[
-                                [data.storage_type, data.size, data.location_address, data.zipcode],
-                               /* [data.storage_type, data.size, data.location_address, data.zipcode],
-                                [data.storage_type, data.size, data.location_address, data.zipcode],
-                                [data.storage_type, data.size, data.location_address, data.zipcode],
-                                [data.storage_type, data.size, data.location_address, data.zipcode],*/
-                            ]}
-                        />
-                    </GridContainer>
-                </CardBody>
-            </Card>
-        </Fragment>
-    )
-};
-
-export default LocationRoute;
+    
 
 
 /*
