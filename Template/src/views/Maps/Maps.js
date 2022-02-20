@@ -20,7 +20,51 @@ import React from "react";
    useEffect(() => {
        getInfo();
    }, []);
-*/
+
+
+   const [data, setData] = useState([]);
+
+
+    useEffect(() => {
+        (async () => {
+            const result = await axios.get(`http://localhost:5000/locations`, {
+                method: "GET"
+            });
+          
+          console.log(result.data) + console.log("data here")
+          
+          const dataArray = JSON.stringify(result)
+          console.log(dataArray)
+          setData(result);
+
+          buildTable(setData)
+         
+        })();
+
+
+                function buildTable(data){
+            
+            var table = document.getElementById('myTable')
+    
+            for (var i = 0; i < data.length; i++){
+                var row = `<tr>
+                                <td>${setData[i].zipcode}</td>
+                                <td>${data[i].storage_type}</td>
+                                <td>${data[i].size}</td>
+                                <td>${data[i].location_address}</td>
+                                <td>${data[i].lat}</td>
+                                <td>${data[i].long}</td>
+                          </tr>`
+                          if(document.getElementById("zipcode") != null){
+                            table.innerHTML += row;
+                        }
+                table.innerHTML += row
+
+            }
+        }
+
+
+        */
 const Maps = () => {
   const mapRef = React.useRef(null);
   React.useEffect(() => {
