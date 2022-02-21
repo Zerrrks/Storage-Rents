@@ -143,7 +143,7 @@ const LocationRoute = () => {
     
 
         function buildTable(data){
-            
+            if(document.getElementById('myTable') != null){
             var table = document.getElementById('myTable').innerHTML
     
             for (var i = 0; i < data.length; i++){
@@ -162,6 +162,7 @@ const LocationRoute = () => {
 
             }
         }
+    }
     }
 
       
