@@ -16,9 +16,11 @@ import CardHeader from "components/Card/CardHeader.js";
 //import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import FindStorage from "hooks/FindStorage";
+import { InputLabel } from "@material-ui/core";
 //import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 //import CardFooter from "components/Card/CardFooter.js";
 //const cors = require("cors");
+
 const DisplayStorage = () => {
    // useEffect(async () => {
     //    try {
@@ -29,7 +31,7 @@ const DisplayStorage = () => {
     const [info, setInfo] = useState([]);
   //  let history = useHistory
     async function getInfo() {
-        const res = await fetch('http://localhost:5000/storage/7', {
+        const res = await fetch('http://localhost:5000/storage/16', {
             method: "GET"
         });
         const infoArray = await res.json();
@@ -64,12 +66,12 @@ const DisplayStorage = () => {
     const useStyles = makeStyles(styles);
 
     const classes = useStyles();
-
+    
     const handleDelete = async (storage_id) => {
         try {
           const response = await FindStorage.delete(`/${storage_id}`);
           console.log(response);
-          window.location = "/admin/storage"
+          setInfo({});
         } catch (err){
 //
         }
@@ -90,22 +92,23 @@ const DisplayStorage = () => {
                                 //key={info.storage_id}
                                 tableHeaderColor="primary"
                                 tableData={[
-                                    ["Location Description - ", info.location_name],
-                                    ["Location Price - ", info.location_price],
-                                    ["Square Footage - ", info.square_footage], 
-                                    ["Full Name - ", info.full_name], 
-                                    ["Street Address - ", info.street_name],
-                                    ["Postal Code - ", info.postal_c,], 
-                                    ["City - ", info.city_storage],
-                                    ["State - ", info.country_storage],
-                                    ["Details - ", info.add_details]
+                                    ["Location Description: ", info.location_name],
+                                    ["Location Price: ", info.location_price],
+                                    ["Square Footage: ", info.square_footage], 
+                                    ["Full Name: ", info.full_name], 
+                                    ["Street Address: ", info.street_name],
+                                    ["Postal Code: ", info.postal_c,], 
+                                    ["City: ", info.city_storage],
+                                    ["State: ", info.country_storage],
                                 ]}
                             />
-                        </GridContainer>
+                    <InputLabel style={{ color: "#AAAAAA" }}> <br></br>Additional Details</InputLabel>
+                    <Table tableData={[[info.add_details],]}/>
+                        </GridContainer><br></br>
+                        <Button color = "primary" onClick={() => handleDelete(info.storage_id)}> Delete Storage </Button>
                     </CardBody>
                 </Card>
             </GridItem>  
-            <Button onClick={() => handleDelete(info.storage_id)}> Delete Storage </Button>
         </Fragment>
     );
 };
