@@ -89,15 +89,31 @@ const Maps = () => {
     let lat5 = "40.05"; 
     let lng5 = "-82.93"; 
     const myLatlng = new google.maps.LatLng(lat,lng);
+//  const myLatlng[e] = new google.maps.LatLng(lat[e],lng[e]);
     const myLatlng1 = new google.maps.LatLng(lat1,lng1);
     const myLatlng2 = new google.maps.LatLng(lat2,lng2);
     const myLatlng3 = new google.maps.LatLng(lat3,lng3);
     const myLatlng4 = new google.maps.LatLng(lat4,lng4);
     //center
     const myLatlng5 = new google.maps.LatLng(lat5,lng5);
-    
+/* Average LatLng for center
+      var totalLat = 0;
+      for(var i = 0; i < lat.length; i++) {
+      totalLat += lat[i];
+}
+    var avgLat = totalLat / lat.length;
+
+      var totalLng = 0;
+      for(var i = 0; i < lng.length; i++) {
+      totalLng += lng[i];
+}
+    var avgLng = totalLng / lng.length;
+    const avgLatLng = new google.maps.LatLng(avgLat, avgLng);
+*/
+
     const mapOptions = {
       zoom: 11.4,
+//    center: avgLatLng
       center: myLatlng5,
       center1:myLatlng1,
       center2:myLatlng2,
@@ -164,14 +180,14 @@ const Maps = () => {
     };
 
     map = new google.maps.Map(map, mapOptions);
-
-    /*const marker = new google.maps.Marker({
+//Table Marker Setup
+/*  const marker[e] = new google.maps.Marker({
       position: myLatlng[e],
       map: map,
       animation: google.maps.Animation.DROP,
       title: location_name,
     });*/
-    //Marker 1
+//Marker 1
     const marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
@@ -206,7 +222,7 @@ const Maps = () => {
       animation: google.maps.Animation.DROP,
       title: "Attic Space",
     });
-
+//May not need content strings
 //Marker 1    
     const contentString =
       '<div class="info-window-content"><h3><a className="locationoneLink" href="/admin/locationone">Open Garage</a></h3>' +
@@ -234,7 +250,12 @@ const Maps = () => {
       '<div class="info-window-content"><h3><a className="locationfiveLink" href="/admin/locationfive">Attic Space</a></h3>' +
       "<img src ='https://583931-1890891-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2021/05/good-or-bad-using-your-attic-for-storage.jpg' style= 'height:150px;width:200px;'/> </div>"+
       '<a href="mailto:JohnnySinner@storagerents.com">Contact Location</a>';
-
+//Table Marker Setup
+/*
+      const infowindow[e] = new google.maps.InfoWindow({
+      content: //location_name[e] + "img[e]" + "contact[e]",
+    });
+*/
 //Marker 1
     const infowindow = new google.maps.InfoWindow({
       content: contentString,
@@ -255,7 +276,11 @@ const Maps = () => {
     const infowindow4 = new google.maps.InfoWindow({
       content: contentString4,
     });
-
+//Table Marker Setup
+/*
+    google.maps.event.addListener(marker[e], "click", function () {
+      infowindow[e].open(map, marker[e]);
+    });*/
 //Marker 1
     google.maps.event.addListener(marker, "click", function () {
       infowindow.open(map, marker);
