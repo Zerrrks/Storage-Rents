@@ -102,12 +102,12 @@ app.put("/storage/:id", async (req, res) => {
         const { full_name } = req.body;
         const { street_name } = req.body;
         const { city_storage } = req.body;
-        const { country_storage } = req.body;
+        const { state_storage } = req.body;
         const { postal_c } = req.body;
         const { add_details } = req.body;
         const updateStorage = await pool.query(
             "UPDATE storage SET location_name = $1, location_price = $2, square_footage = $3, full_name = $4, street_name = $5, city_storage = $6, country_storage = $7, postal_c = $8, add_details = $9 WHERE storage_id = $10",
-            [location_name, location_price, square_footage, full_name, street_name, city_storage, country_storage, postal_c, add_details, id]
+            [location_name, location_price, square_footage, full_name, street_name, city_storage, state_storage, postal_c, add_details, id]
         );
         res.json("Storage was updated.");
     } catch (err) {

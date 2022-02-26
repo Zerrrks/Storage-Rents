@@ -52,3 +52,29 @@ CREATE TABLE locations(
 );
 
 DELETE FROM locations WHERE location_id = 1;
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE users(
+  user_id UUID DEFAULT uuid_generate_v4(),
+  user_name VARCHAR(255) NOT NULL,
+  user_email VARCHAR(255) NOT NULL UNIQUE,
+  user_password VARCHAR(255) NOT NULL,
+  PRIMARY KEY (user_id)
+);
+
+CREATE TABLE storage(
+  storage_id SERIAL,
+  user_id UUID,
+  location_name VARCHAR(255) NOT NULL,
+  location_price VARCHAR(255) NOT NULL,
+  square_footage VARCHAR(255) NOT NULL,
+  full_name VARCHAR(255) NOT NULL,
+  street_name VARCHAR(255) NOT NULL,
+  city_storage VARCHAR(255) NOT NULL,
+  state_storage VARCHAR(255) NOT NULL,
+  postal_c VARCHAR(255) NOT NULL,
+  add_details VARCHAR(1000) NOT NULL,
+  PRIMARY KEY (storage_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
+);

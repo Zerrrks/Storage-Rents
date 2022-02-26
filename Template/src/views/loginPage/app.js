@@ -12,9 +12,9 @@ import { toast } from "react-toastify";
 
 //components
 
-import Login from "/login";
-import Register from "/register";
-import Dashboard from "/dashboard";
+import Login from "./login";
+import Register from "./register";
+import Dashboard from "./dashboard";
 
 toast.configure();
 
@@ -51,34 +51,34 @@ function App() {
           <Switch>
             <Route
               exact
-              path="/login"
+              path="/admin/login"
               render={props =>
                 !isAuthenticated ? (
                   <Login {...props} setAuth={setAuth} />
                 ) : (
-                  <Redirect to="/dashboard" />
+                  <Redirect to="/admin/dashboard" />
                 )
               }
             />
             <Route
               exact
-              path="/register"
+              path="/admin/register"
               render={props =>
                 !isAuthenticated ? (
                   <Register {...props} setAuth={setAuth} />
                 ) : (
-                  <Redirect to="/dashboard" />
+                  <Redirect to="/admin/dashboard" />
                 )
               }
             />
             <Route
               exact
-              path="/dashboard"
+              path="admin/dashboard"
               render={props =>
                 isAuthenticated ? (
                   <Dashboard {...props} setAuth={setAuth} />
                 ) : (
-                  <Redirect to="/login" />
+                  <Redirect to="/admin/login" />
                 )
               }
             />

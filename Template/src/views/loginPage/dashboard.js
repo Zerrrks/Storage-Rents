@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-const Dashboard = ({ setAuth }) => {
+const Dash = ({ setAuth }) => {
   const [name, setName] = useState("");
 
   const getProfile = async () => {
     try {
       const res = await fetch("http://localhost:5000/dashboard/", {
-        method: "POST",
+        method: "GET",
         headers: { jwt_token: localStorage.token }
       });
 
@@ -44,4 +44,4 @@ const Dashboard = ({ setAuth }) => {
   );
 };
 
-export default Dashboard;
+export default Dash;
