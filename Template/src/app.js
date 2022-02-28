@@ -12,9 +12,10 @@ import { toast } from "react-toastify";
 
 //components
 
-import Login from "./login";
-import Register from "./register";
-import Dashboard from "./dashboard";
+import Login from "./views/loginPage/login";
+import Register from "./views/loginPage/register";
+import Dashboard from "./views/loginPage/dashboard";
+import Landing from "./views/loginPage/landing";
 
 toast.configure();
 
@@ -22,6 +23,7 @@ function App() {
   const checkAuthenticated = async () => {
     try {
       const res = await fetch("http://localhost:5000/auth/verify", {
+        credentials: "include",
         method: "POST",
         headers: { jwt_token: localStorage.token }
       });
@@ -51,6 +53,17 @@ function App() {
           <Switch>
             <Route
               exact
+              path="/admin/landing"
+              render={props =>
+                !isAuthenticated ? (
+                  <Landing {...props} />
+                ) : (
+                  <Redirect to="/admin/dashboard" />
+                )
+              }
+            />
+            <Route
+              exact
               path="/admin/login"
               render={props =>
                 !isAuthenticated ? (
@@ -73,7 +86,7 @@ function App() {
             />
             <Route
               exact
-              path="admin/dashboard"
+              path="/admin/dashboard"
               render={props =>
                 isAuthenticated ? (
                   <Dashboard {...props} setAuth={setAuth} />

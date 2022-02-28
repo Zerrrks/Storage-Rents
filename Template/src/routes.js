@@ -20,12 +20,7 @@ import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
 //import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import BubbleChart from "@material-ui/icons/BubbleChart";
-import LocationOn from "@material-ui/icons/LocationOn";
-import LocationOne from "views/Maps/LocationOne.js";
-import LocationTwo from "views/Maps/LocationTwo.js";
-import LocationThree from "views/Maps/LocationThree.js";
-import LocationFour from "views/Maps/LocationFour.js";
-import LocationFive from "views/Maps/LocationFive.js";
+
 //import Notifications from "@material-ui/icons/Notifications";
 //import Unarchive from "@material-ui/icons/Unarchive";
 //import Language from "@material-ui/icons/Language";
@@ -37,9 +32,9 @@ import UserStorage from "views/UserStorage/UserStorage.js";
 //import UserLogins from "views/Logins/UserLogins";
 //import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
-import Maps from "views/Maps/Maps.js";
-import login from "views/loginPage/login";
-import register from "views/loginPage/register";
+
+import Landing from "views/loginPage/landing";
+
 
 
 //import NotificationsPage from "views/Notifications/Notifications.js";
@@ -59,17 +54,10 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/login",
-    name: "Login",
+    path: "/landing",
+    name: "Login/Register",
     icon: Person,
-    component: login,
-    layout: "/admin",
-  },
-  {
-    path: "/register",
-    name: "Register",
-    icon: Person,
-    component: register,
+    component: Landing,
     layout: "/admin",
   },
   {
@@ -116,74 +104,6 @@ const dashboardRoutes = [
     component: Icons,
     layout: "/admin",
   },
-  {
-    path: "/maps",
-    name: "Maps",
-    rtlName: "خرائط",
-    icon: LocationOn,
-    component: Maps,
-    layout: "/admin",
-  },
-  // These routes are for redirection from the Maps page. Keep them last so we don't get random blank space in the sidebar.
-  {
-    path: "/locationone",
-    name: "",
-    icon: "",
-    component: LocationOne,
-    layout: "/admin",
-  },
-  {
-    path: "/locationtwo",
-    name: "",
-    icon: "",
-    component: LocationTwo,
-    layout: "/admin",
-  },
-  {
-    path: "/locationthree",
-    name: "",
-    icon: "",
-    component: LocationThree,
-    layout: "/admin",
-  },
-  {
-    path: "/locationfour",
-    name: "",
-    icon: "",
-    component: LocationFour,
-    layout: "/admin",
-  },
-  {
-    path: "/locationfive",
-    name: "",
-    icon: "",
-    component: LocationFive,
-    layout: "/admin",
-  },
-  /*{
-    path: "/notifications",
-    name: "Notifications",
-    rtlName: "إخطارات",
-    icon: Notifications,
-    component: NotificationsPage,
-    layout: "/admin",
-  },
-/*  {
-    path: "/rtl-page",
-    name: "RTL Support",
-    rtlName: "پشتیبانی از راست به چپ",
-    icon: Language,
-    component: RTLPage,
-    layout: "/rtl",
-    },
-  {
-    path: "/upgrade-to-pro",
-    name: "Upgrade To PRO",
-    rtlName: "التطور للاحترافية",
-    icon: Unarchive,
-    component: UpgradeToPro,
-    layout: "/admin",
-  },*/
 ];
 
 export default dashboardRoutes;

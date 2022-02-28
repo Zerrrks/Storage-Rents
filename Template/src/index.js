@@ -25,13 +25,21 @@ import RTL from "layouts/RTL.js";
 
 import "assets/css/material-dashboard-react.css?v=1.10.0";
 import AddStorage from "views/UserStorage/AddStorage.js"
+import Login from "views/loginPage/login.js";
+import Register from "views/loginPage/register";
+//import App from "./app";
+
+//ReactDOM.render(<App />, document.getElementById("root"));
+
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route exact path="/admin/addstorage" component={AddStorage} />
+      <Route exact path="/admin/login" component={Login} />
+      <Route exact path="/admin/register" component={Register} />
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
-      <Redirect from="/" to="/admin/dashboard" />
+      <Redirect from="/" to="/admin/landing" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

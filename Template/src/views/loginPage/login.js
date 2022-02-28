@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-
 import { toast } from "react-toastify";
 
 const Login = ({ setAuth }) => {
@@ -21,6 +20,7 @@ const Login = ({ setAuth }) => {
       const response = await fetch(
         "http://localhost:5000/auth/login",
         {
+          credentials: "include",
           method: "POST",
           headers: {
             "Content-type": "application/json"

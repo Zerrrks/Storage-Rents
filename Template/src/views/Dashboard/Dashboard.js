@@ -29,10 +29,10 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardIcon from "components/Card/CardIcon.js";
 //import logo from 'assets/img/srlogo.png'
 import { makeStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
+//import Icon from "@material-ui/core/Icon";
 
 import Store from "@material-ui/icons/Store";
-import Dashnoti from "views/loginPage/dashboard";
+import Dash from "views/loginPage/dashboard";
 
 //import { bugs, website, server } from "variables/general.js";
 /*import {
@@ -45,28 +45,24 @@ import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js"
 //import { Button } from "@material-ui/core";
 //import { useHistory } from "react-router-dom";
 
-
-
-const useStyles = makeStyles(styles);
-
-
-export default function Dashboard() {
-  const classes = useStyles();
-
-
-
-
-
-  return (
-    <div className="dashboard">
-      <GridContainer>
-        <GridItem>
-          <Dashnoti />
+/*<GridItem xs={10} sm={10} md={6}>
+          <Card>
+            <CardHeader color="info" stats icon>
+              <CardIcon color="info">
+                <Icon>info_outline</Icon>
+              </CardIcon>
+              <h1 className={classes.cardTitle}>Want to view locations near you?</h1>
+              <a className="iconsLink" href="/admin/icons">
+                <h3>View Locations</h3>
+              </a>
+              <br></br>
+              <a className="mapLink" href="/admin/maps">
+                <h3>View Map</h3>
+              </a>
+            </CardHeader>
+          </Card>
         </GridItem>
-      </GridContainer>
-      
-      <GridContainer>
-
+        
         <GridItem xs={6} sm={3} md={6}>
           <Card>
             <CardHeader color="rose" stats icon>
@@ -84,6 +80,28 @@ export default function Dashboard() {
             </CardHeader>
           </Card>
         </GridItem>
+        
+        */
+
+const useStyles = makeStyles(styles);
+
+
+export default function Dashboard() {
+  const classes = useStyles();
+
+
+
+
+
+  return (
+    <div className="dashboard">
+      <GridContainer>
+        <GridItem>
+          <Dash />
+        </GridItem>
+      </GridContainer>
+      
+      <GridContainer>
 
         <GridItem xs={6} sm={2} md={6}>
           <Card>
@@ -94,24 +112,6 @@ export default function Dashboard() {
               <h1 className={classes.cardTitle}>Already have storage?</h1>
               <a className="storageLink" href="/admin/storage">
                 <h3>My Storage</h3>
-              </a>
-            </CardHeader>
-          </Card>
-        </GridItem>
-
-        <GridItem xs={10} sm={10} md={6}>
-          <Card>
-            <CardHeader color="info" stats icon>
-              <CardIcon color="info">
-                <Icon>info_outline</Icon>
-              </CardIcon>
-              <h1 className={classes.cardTitle}>Want to view locations near you?</h1>
-              <a className="iconsLink" href="/admin/icons">
-                <h3>View Locations</h3>
-              </a>
-              <br></br>
-              <a className="mapLink" href="/admin/maps">
-                <h3>View Map</h3>
               </a>
             </CardHeader>
           </Card>

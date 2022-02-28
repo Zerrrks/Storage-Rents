@@ -21,6 +21,7 @@ const Register = ({ setAuth }) => {
       const response = await fetch(
         "http://localhost:5000/auth/register",
         {
+          credentials: "include",
           method: "POST",
           headers: {
             "Content-type": "application/json"
