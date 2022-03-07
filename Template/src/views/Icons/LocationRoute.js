@@ -15,14 +15,44 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import axios from "axios";
+
 //import axios from "axios";
+
 
 
 
 
 const LocationRoute = () => {
 
-    const [data, setData] = useState([]);
+   
+    const [dataArray, setDataArray] = useState([]);
+
+    useEffect(() => {
+      (async () => {
+            const result = await axios.get(`http://localhost:5000/locations`, {
+                method: "GET"
+            });
+          
+          console.log([result.data]) + console.log("data here")
+          
+          const dataArray =(result.data);
+          console.log(dataArray)  
+          setDataArray(dataArray)
+          console.log(setDataArray)  
+          return(setDataArray)
+          
+ 
+        })();
+
+       
+    } );
+
+
+    
+   
+     
+/*
+    buildTable(data)
 
 
     useEffect(() => {
@@ -37,38 +67,127 @@ const LocationRoute = () => {
           console.log(dataArray)
           setData(result);
           console.log(setData)
-
-          buildTable(result.data)
+*/
+          
 
           
          
-        })();
-        });
+       
 
-        const styles = {
-            cardCategoryWhite: {
-                color: "rgba(255,255,255,.62)",
-                margin: "0",
-                fontSize: "14px",
-                marginTop: "0",
-                marginBottom: "0",
-            },
-            cardTitleWhite: {
-                color: "#FFFFFF",
-                marginTop: "0px",
-                minHeight: "auto",
-                fontWeight: "300",
-                fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-                marginBottom: "3px",
-                textDecoration: "none",
-            },
-        };
-        const useStyles = makeStyles(styles);
+    /*    function buildTable(){
+
+           
+
+
+   
+
+            if(document.getElementById('myTable') != null){
     
-        const classes = useStyles();
+            for (var i = 0; i < data.length; i++){
+                var row = `<tr>
+                                <td>${dataArray[i].zipcode}</td>
+                                <td>${dataArray[i].storage_type}</td>
+                                <td>${dataArray[i].location_address}</td>
+                                <td>${dataArray[i].size}</td>
+                               
+                          </tr>`
+                         
+                          if(document.getElementById("zipcode") != null){
+                            table.innerHTML += row;
+                        }
+                table.innerHTML += row
+    
+                return (
+                    <td>{dataArray.zipcode}</td>
+             
+                    );
+                }
+                
+                  
+               
+            }
+        }
+const App = () => {
+    return <div className="app-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Zipcode</th>
+                    <th>Storage Type</th>
+                    <th>Location Address</th>
+                    <th>Size</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>test1</td>
+                    <td>test2</td>
+                    <td>test3</td>
+                    <td>test4</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+}
+*/
+
+const styles = {
+    cardCategoryWhite: {
+        color: "rgba(255,255,255,.62)",
+        margin: "0",
+        fontSize: "14px",
+        marginTop: "0",
+        marginBottom: "0",
+    },
+    cardTitleWhite: {
+        color: "#FFFFFF",
+        marginTop: "0px",
+        minHeight: "auto",
+        fontWeight: "300",
+        fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+        marginBottom: "3px",
+        textDecoration: "none",
+    },
+};
+const useStyles = makeStyles(styles);
+
+const classes = useStyles();
+
    
     return (
+        
         <Fragment>
+             
+        <div className="app-container">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Storage Type</th>
+                    <th>Location Address</th>
+                    <th>Size</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                {dataArray.map((dataArray)=> (  <li key={dataArray.key} >
+                <tr>
+                    <td>{setDataArray.zipcode}</td>
+                    <td>{setDataArray.storage_type}</td>
+                    <td>{setDataArray.location_address}</td>
+                    <td>{setDataArray.Size}</td>
+                    
+                </tr>
+                </li>
+                ))}
+               
+            </tbody>
+        </table>
+
+    </div>
+        
             <Card>
                 <CardHeader color="primary">
                     <h4>Filter Available Storage</h4>
@@ -125,8 +244,8 @@ const LocationRoute = () => {
                             tableHeaderColor="primary"
                             tableHead={[ " Storage Type ", " Size (sqft) ", " Location Address ", " Zipcode "]}
                             tableData={[
+                                /*[data.storage_type, data.size, data.location_address, data.zipcode],
                                 [data.storage_type, data.size, data.location_address, data.zipcode],
-                               /* [data.storage_type, data.size, data.location_address, data.zipcode],
                                 [data.storage_type, data.size, data.location_address, data.zipcode],
                                 [data.storage_type, data.size, data.location_address, data.zipcode],
                                 [data.storage_type, data.size, data.location_address, data.zipcode],*/
@@ -142,28 +261,13 @@ const LocationRoute = () => {
 
     
 
-        function buildTable(data){
-            if(document.getElementById('myTable') != null){
-            var table = document.getElementById('myTable').innerHTML
     
-            for (var i = 0; i < data.length; i++){
-                var row = `<tr>
-                                <td>${data[i].zipcode}</td>
-                                <td>${data[i].storage_type}</td>
-                                <td>${data[i].location_address}</td>
-                                <td>${data[i].size}</td>
-                               
-                          </tr>`
-                          console.log(data[i].zipcode);
-                          if(document.getElementById("zipcode") != null){
-                            table.innerHTML += row;
-                        }
-                table.innerHTML += row
+    }
 
-            }
-        }
-    }
-    }
+
+
+
+
 
       
     
