@@ -12,11 +12,6 @@
     "chartist": "0.10.1",
     "classnames": "2.3.1",
     "cors": "^2.8.5",
-<<<<<<< HEAD
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
-=======
->>>>>>> parent of f55320a4 (Update)
     "geocodio-library-node": "^1.4.0",
     "history": "5.0.0",
     "perfect-scrollbar": "1.5.1",
