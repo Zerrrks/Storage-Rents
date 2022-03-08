@@ -3,7 +3,7 @@
   "version": "1.10.0",
   "description": "Material Dashboard React. Coded by Creative Tim",
   "private": false,
-  "main": "index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "@material-ui/core": "4.11.4",
     "@material-ui/icons": "4.11.2",
@@ -34,7 +34,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "lint:check": "eslint . --ext=js,jsx;  exit 0",
@@ -71,6 +71,5 @@
       "not op_mini all"
     ],
     "development": []
-  },
-  "proxy": "http://localhost:5000"
+  }
 }
