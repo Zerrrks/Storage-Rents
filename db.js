@@ -10,7 +10,7 @@ const devConfig = {
     
 };
 
-const proConfig =    process.env.DATABASE_URL; //addon
+const proConfig =    process.env.PG_HOST; //addon
 
 const pool = new Pool({
     connectionString: process.env.NODE_ENV === "production" ? proConfig : devConfig
