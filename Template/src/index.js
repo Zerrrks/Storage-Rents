@@ -17,7 +17,7 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // core components
 import Admin from "layouts/Admin.js";
@@ -27,9 +27,11 @@ import "assets/css/material-dashboard-react.css?v=1.10.0";
 import AddStorage from "views/UserStorage/AddStorage.js"
 import Login from "views/loginPage/login.js";
 import Register from "views/loginPage/register";
-//import App from "./app";
+import App from "./app";
 
-//ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
+
+//<Redirect from="/" to="/admin/landing" />
 
 ReactDOM.render(
   <BrowserRouter>
@@ -39,7 +41,6 @@ ReactDOM.render(
       <Route exact path="/admin/register" component={Register} />
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
-      <Redirect from="/" to="/admin/landing" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

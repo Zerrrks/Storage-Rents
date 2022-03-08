@@ -32,7 +32,7 @@ import { makeStyles } from "@material-ui/core/styles";
 //import Icon from "@material-ui/core/Icon";
 
 import Store from "@material-ui/icons/Store";
-import Dash from "views/loginPage/dashboard";
+import Dash from "views/loginPage/welcome";
 
 //import { bugs, website, server } from "variables/general.js";
 /*import {

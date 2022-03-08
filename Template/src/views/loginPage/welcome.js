@@ -7,7 +7,6 @@ const Dash = ({ setAuth }) => {
   const getProfile = async () => {
     try {
       const res = await fetch("http://localhost:5000/dashboard/", {
-        credentials: "include",
         method: "GET",
         headers: { jwt_token: localStorage.token }
       });
