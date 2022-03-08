@@ -311,9 +311,6 @@ app.delete("/users/:id", async (req, res) => {
         console.error(err.message);
     }
 }) */
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "Template/build/index.html"));
-  });
 
 app.listen(PORT, () => {
     console.log(`Server has started on port ${PORT}`);

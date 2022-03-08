@@ -4,15 +4,15 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "16.13.2",
-    "npm": "8.1.2"
+    "node": "10.14.2",
+    "npm": "6.14.2"
   },
   "scripts": {
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm build"
 
   },
-  "author": "binny",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
