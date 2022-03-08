@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": {
-    "node": "10.14.2",
-    "npm": "6.14.2"
-  },
   "scripts": {
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm build"
@@ -22,6 +18,6 @@
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.15",
     "pg": "^8.7.1"
-  }
-  
+  },
+  "proxy": "http://localhost:5000"
 }
