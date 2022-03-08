@@ -18,6 +18,9 @@ app.use(express.json());
 
 app.use("/auth", require("./routes/jwtAuth"));
 app.use("/dashboard", require("./routes/dashboard"));
+app.use(cors());
+app.use(express.json())
+
 if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname, "Template/build")));
 }
@@ -102,7 +105,7 @@ app.delete("/storage/:storage_id", async (req, res) => {
 
 //update a storage
 
-app.put("/storage/:id", async (req, res) => {
+app.put("/storage/id", async (req, res) => {
     try {
         const { id } = req.params;
         const { location_name } = req.body;
