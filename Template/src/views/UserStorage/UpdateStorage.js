@@ -48,7 +48,7 @@ const UpdateStorage = () => {
             }
           })
             const body = { location_name, location_price, square_footage, full_name, street_name, city_storage, country_storage, postal_c, add_details, lat, lng }; //lat, lng
-            const response = await fetch("http://localhost:5000/storage/1", {
+            const response = await fetch("/storage/1", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)

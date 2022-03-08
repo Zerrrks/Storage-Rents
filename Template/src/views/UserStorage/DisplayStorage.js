@@ -31,7 +31,7 @@ const DisplayStorage = () => {
     const [info, setInfo] = useState([]);
   //  let history = useHistory
     async function getInfo() {
-        const res = await fetch('http://localhost:5000/storage/16', {
+        const res = await fetch('/storage/16' , { //`/storage/${id}`
             method: "GET"
         });
         const infoArray = await res.json();

@@ -1,11 +1,19 @@
 const Pool = require("pg").Pool;
+require("dotenv").config();
+
+const devConfig = {
+    user: process.env.PG_USER,
+    password: process.env.PG_PASSWORD,
+    host: process.env.PG_HOST,
+    database: process.env.PG_DATABASE,
+    port: process.env.PG_PORT
+    
+};
+
+const proConfig =    process.env.PG_HOST; //addon
 
 const pool = new Pool({
-    user: "postgres",
-    password: "password123",
-    host: "storage-rents.ck7d6vneh0q0.us-east-2.rds.amazonaws.com",
-    port: 5432,
-    database: "sr_db"
+    connectionString: process.env.NODE_ENV === "production" ? proConfig : devConfig
 });
 
 pool.connect();
