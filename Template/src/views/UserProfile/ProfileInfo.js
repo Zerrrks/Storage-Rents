@@ -21,7 +21,7 @@ const ProfileInfo = () => {
     const [info, setInfo] = useState([]);
 
     async function getInfo() {
-        const res = await fetch("/prof/3"); //`/prof/${id}`
+        const res = await fetch("http://localhost:5000/prof/3");
         const infoArray = await res.json();
         setInfo(infoArray);
     }

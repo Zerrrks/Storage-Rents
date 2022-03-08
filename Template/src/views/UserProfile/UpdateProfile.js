@@ -35,7 +35,7 @@ const UpdateProfile = () => {
         e.preventDefault();
         try {
             const body = { username, first_name, last_name, city, country, info, addy, email, postal_code };
-            const response = await fetch("/prof/", { //`/prof/${id}`
+            const response = await fetch("http://localhost:5000/prof/3", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)

@@ -10,7 +10,7 @@ import React from "react";
  //  }, [])
    const [info, setInfo] = useState([]);
    async function getInfo() {
-       const res = await fetch(`/storage/${id}`, {
+       const res = await fetch('http://localhost:5000/storage/1', {
            method: "GET"
        });
        const infoArray = await res.json();
@@ -27,7 +27,7 @@ import React from "react";
 
     useEffect(() => {
         (async () => {
-            const result = await axios.get(`/locations`, {
+            const result = await axios.get(`http://localhost:5000/locations`, {
                 method: "GET"
             });
           
