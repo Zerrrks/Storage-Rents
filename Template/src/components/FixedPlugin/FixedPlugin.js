@@ -31,7 +31,7 @@ export default function FixedPlugin(props) {
 }
 
 FixedPlugin.propTypes = {
-  invisible: true,
+  setAuth: PropTypes.bool,
   bgImage: PropTypes.string,
   handleFixedClick: PropTypes.func,
   rtlActive: PropTypes.bool,
