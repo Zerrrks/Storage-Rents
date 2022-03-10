@@ -47,6 +47,9 @@ const Register = ({ setAuth }) => {
     <Fragment>
       <h1 className="mt-5 text-center">Register</h1>
       <form onSubmit={onSubmitForm}>
+      <Link to="/admin/landing">Back</Link>
+      <br></br>
+      <br></br>
         <input
           type="text"
           name="email"

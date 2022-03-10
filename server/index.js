@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
+const corsConfig = {
+    credentials: true,
+    origin: true,
+};
 const cors = require("cors");
 const pool = require("./db");
 
-app.use(cors());
+app.use(cors(corsConfig));
 app.use(express.json());
 
 //ROUTES//
