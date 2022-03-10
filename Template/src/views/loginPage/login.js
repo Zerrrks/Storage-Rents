@@ -47,6 +47,9 @@ const Login = ({ setAuth }) => {
     <Fragment>
       <h1 className="mt-5 text-center">Login</h1>
       <form onSubmit={onSubmitForm}>
+      <Link to="/admin/landing">Back</Link>
+      <br></br>
+      <br></br>
         <input
           placeholder="Email"
           type="text"
