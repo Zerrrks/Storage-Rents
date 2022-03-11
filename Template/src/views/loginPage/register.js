@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+//import { Navigate } from "react-router-dom/cjs/react-router-dom.min";
 import { toast } from "react-toastify";
 
-const Register = ({ setAuth }) => {
+const Register = ({ setAuth = function(){} }) => {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",

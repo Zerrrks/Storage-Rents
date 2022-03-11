@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-const Dash = ({ setAuth }) => {
+
+
+const Dash = ({ setAuth = function(){} }) => {
   const [name, setName] = useState("");
 
   const getProfile = async () => {

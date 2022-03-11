@@ -17,6 +17,13 @@ import Register from "./views/loginPage/register";
 import Dashboard from "./views/loginPage/welcome";
 import Landing from "./views/loginPage/landing";
 
+// other components
+import Admin from "layouts/Admin.js";
+import RTL from "layouts/RTL.js";
+
+import "assets/css/material-dashboard-react.css?v=1.10.0";
+import AddStorage from "views/UserStorage/AddStorage.js"
+
 toast.configure();
 
 function App() {
@@ -50,7 +57,11 @@ function App() {
       <Router>
         <div className="container">
           <Switch>
-          <Redirect to="/admin/landing" />
+            <Route exact path="/admin/addstorage" component={AddStorage} />
+            <Route exact path="/admin/login" component={Login} />
+            <Route exact path="/admin/register" component={Register} />
+            <Route path="/admin" component={Admin} />
+            <Route path="/rtl" component={RTL} />
             <Route
               exact
               path="/admin/landing"
@@ -95,6 +106,7 @@ function App() {
                 )
               }
             />
+            <Redirect from="/" to="/admin/landing" />
           </Switch>
         </div>
       </Router>
