@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 //import { Navigate } from "react-router-dom/cjs/react-router-dom.min";
 import { toast } from "react-toastify";
-
+const delay = ms => new Promise(res => setTimeout(res, ms));
 const Register = ({ setAuth = function(){} }) => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -42,6 +42,9 @@ const Register = ({ setAuth = function(){} }) => {
     } catch (err) {
       console.error(err.message);
     }
+    await delay(2500);
+    console.log("Waited 2.5s");
+    document.location.reload(true);
   };
 
   return (

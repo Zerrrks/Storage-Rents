@@ -19,8 +19,6 @@ import Landing from "./views/loginPage/landing";
 
 // other components
 import Admin from "layouts/Admin.js";
-import RTL from "layouts/RTL.js";
-
 import "assets/css/material-dashboard-react.css?v=1.10.0";
 import AddStorage from "views/UserStorage/AddStorage.js"
 
@@ -56,15 +54,15 @@ function App() {
     <Fragment>
       <Router>
         <div className="container">
-          <Switch>
-            <Route exact path="/admin/addstorage" component={AddStorage} />
-            <Route exact path="/admin/login" component={Login} />
-            <Route exact path="/admin/register" component={Register} />
-            <Route path="/admin" component={Admin} />
-            <Route path="/rtl" component={RTL} />
+        
+          <Switch>   
+          <Route exact path="/addstorage" component={AddStorage} />
+          <Route path="/admin" component={Admin} />  
+          </Switch>
+
             <Route
-              exact
-              path="/admin/landing"
+              
+              exact path="/landing"
               render={props =>
                 !isAuthenticated ? (
                   <Landing {...props} />
@@ -74,8 +72,8 @@ function App() {
               }
             />
             <Route
-              exact
-              path="/admin/login"
+              
+             exact path="/login"
               render={props =>
                 !isAuthenticated ? (
                   <Login {...props} Auth={setAuth} />
@@ -85,8 +83,8 @@ function App() {
               }
             />
             <Route
-              exact
-              path="/admin/register"
+              
+              exact path="/register"
               render={props =>
                 !isAuthenticated ? (
                   <Register {...props} Auth={setAuth} />
@@ -96,18 +94,17 @@ function App() {
               }
             />
             <Route
-              exact
-              path="/admin/dashboard"
+              
+             exact path="/admin/dashboard"
               render={props =>
                 isAuthenticated ? (
                   <Dashboard {...props} Auth={setAuth} />
                 ) : (
-                  <Redirect to="/admin/landing" />
+                  <Redirect to="/landing" />
                 )
               }
             />
-            <Redirect from="/" to="/admin/landing" />
-          </Switch>
+            <Redirect from="/" to="/landing" />
         </div>
       </Router>
     </Fragment>

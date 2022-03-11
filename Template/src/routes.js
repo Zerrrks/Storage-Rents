@@ -33,7 +33,7 @@ import UserStorage from "views/UserStorage/UserStorage.js";
 //import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
 
-import Landing from "views/loginPage/landing";
+//import Landing from "views/loginPage/landing";
 
 
 
@@ -53,13 +53,13 @@ const dashboardRoutes = [
     component: DashboardPage,
     layout: "/admin",
   },
-  {
-    path: "/landing",
-    name: "Login/Register",
-    icon: Person,
-    component: Landing,
-    layout: "/admin",
-  },
+  //{
+ //   path: "/landing",
+ //   name: "Login/Register",
+ //   icon: Person,
+ //   component: Landing,
+ //   layout: "/admin",
+//},
   {
     path: "/user",
     name: "User Profile",

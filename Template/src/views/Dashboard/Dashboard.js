@@ -30,7 +30,7 @@ import CardIcon from "components/Card/CardIcon.js";
 //import logo from 'assets/img/srlogo.png'
 import { makeStyles } from "@material-ui/core/styles";
 //import Icon from "@material-ui/core/Icon";
-
+import { Link } from "react-router-dom";
 import Store from "@material-ui/icons/Store";
 import Dash from "views/loginPage/welcome";
 
@@ -109,10 +109,9 @@ export default function Dashboard() {
               <CardIcon color="success">
                 <Store />
               </CardIcon>
+              <Link to="/admin/storage">
               <h1 className={classes.cardTitle}>Already have storage?</h1>
-              <a className="storageLink" href="/admin/storage">
-                <h3>My Storage</h3>
-              </a>
+              </Link>
             </CardHeader>
           </Card>
         </GridItem>

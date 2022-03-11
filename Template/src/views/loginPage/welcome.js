@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 
-
+const delay = ms => new Promise(res => setTimeout(res, ms));
 const Dash = ({ setAuth = function(){} }) => {
   const [name, setName] = useState("");
 
@@ -29,6 +29,9 @@ const Dash = ({ setAuth = function(){} }) => {
     } catch (err) {
       console.error(err.message);
     }
+    await delay(2500);
+   console.log("Waited 2.5s");
+    document.location.reload(true);
   };
 
   useEffect(() => {

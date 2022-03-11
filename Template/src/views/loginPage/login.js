@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-
+const delay = ms => new Promise(res => setTimeout(res, ms));
 const Login = ({ setAuth = function(){} }) => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -41,6 +41,9 @@ const Login = ({ setAuth = function(){} }) => {
     } catch (err) {
       console.error(err.message);
     }
+    await delay(2500);
+    console.log("Waited 2.5s");
+    document.location.reload(true);
   };
 
   return (

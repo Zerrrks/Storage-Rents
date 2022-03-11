@@ -7,12 +7,12 @@ const Landing = () => {
       <h1>Welcome to Storage Rents</h1>
       <p>Login or Register Here</p>
       <br></br>
-      <Link to="/admin/login" className="btn btn-primary">
+      <Link to="/login" className="btn btn-primary">
         Login
       </Link>
       <br></br>
       <br></br>
-      <Link to="/admin/register" className="btn btn-primary ml-3">
+      <Link to="/register" className="btn btn-primary ml-3">
         Register
       </Link>
     </div>
