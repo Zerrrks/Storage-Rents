@@ -1,10 +1,12 @@
-import React, { Fragment } from "react";
+import React, { useEffect, useState } from "react";
+
 // @material-ui/core components
 //import { makeStyles } from "@material-ui/core/styles";
 //import InputLabel from "@material-ui/core/InputLabel";
 
-import UpdateStorage from "./UpdateStorage";
-import DisplayStorage from "./DisplayStorage";
+//import UpdateStorage from "./UpdateStorage";
+//import AddStorage from "./AddStorage";
+//import DisplayStorage from "./DisplayStorage";
 
 // core components
 //import GridItem from "components/Grid/GridItem.js";
@@ -38,17 +40,49 @@ import DisplayStorage from "./DisplayStorage";
 
 //const useStyles = makeStyles(styles);
 
+// <DisplayStorage />
 
-export default function UserStorage() {
-    return (
-      <div>
-        <Fragment>
-          <DisplayStorage />
-        </Fragment>
-        <Fragment>
-          <UpdateStorage />
-        </Fragment>
-        <a href="/Admin/addstorage">Add Storage</a>
+
+import InputStorage from "./storagecomp/InputStorage";
+import ListStorage from "./storagecomp/ListStorage";
+
+const UserStorage = () => {
+  const [name, setName] = useState("");
+  const [allStorage, setAllStorage] = useState([]);
+  const [storageChange, setStorageChange] = useState(false);
+
+  const getProfile = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/units/", {
+        method: "GET",
+        headers: { jwt_token: localStorage.token },
+      });
+
+      const parseData = await res.json();
+      setName(parseData.user_name); 
+      setAllStorage(parseData);
+
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  useEffect(() => {
+    getProfile();
+    setStorageChange(false);
+  }, [storageChange]);
+
+  return (
+    <div>
+      <div className="d-flex mt-5 justify-content-around">
+        <h2>{name} - Storage List</h2>
       </div>
-    );
-  }
+
+      <InputStorage setStorageChange={setStorageChange} />
+      <ListStorage allStorage={allStorage} setStorageChange={setStorageChange} />
+    </div>
+  );
+};
+
+export default UserStorage;
+
