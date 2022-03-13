@@ -40,7 +40,7 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
         <tbody>
           {storage.length !== 0 &&
             storage.storage_id !== null &&
-            storage.map(storage => (
+            [storage].map(storage => (
               <tr key={storage.storage_id}>
                 <td>{storage.location_name}</td>
                 <td>
@@ -55,7 +55,7 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
                   </button>
                 </td>
               </tr>
-            ))}
+            ))};
         </tbody>
       </table>
     </Fragment>
