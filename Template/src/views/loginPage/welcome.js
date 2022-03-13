@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-
+import  Button  from "components/CustomButtons/Button.js"; 
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 const Dash = ({ setAuth = function(){} }) => {
@@ -30,7 +30,7 @@ const Dash = ({ setAuth = function(){} }) => {
       console.error(err.message);
     }
     await delay(2500);
-   console.log("Waited 2.5s");
+   console.log("2.5 seconds later...");
     document.location.reload(true);
   };
 
@@ -40,11 +40,10 @@ const Dash = ({ setAuth = function(){} }) => {
 
   return (
     <div>
-      <h1 className="mt-5">Dashboard</h1>
       <h2>Welcome {name}</h2>
-      <button onClick={e => logout(e)} className="btn btn-primary">
+      <Button onClick={e => logout(e)} color="warning" className="btn btn-primary">
         Logout
-      </button>
+      </Button>
     </div>
   );
 };

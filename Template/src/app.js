@@ -20,7 +20,8 @@ import Landing from "./views/loginPage/landing";
 // other components
 import Admin from "layouts/Admin.js";
 import "assets/css/material-dashboard-react.css?v=1.10.0";
-import AddStorage from "views/UserStorage/AddStorage.js"
+import AddStorage from "views/UserStorage/AddStorage.js";
+
 
 toast.configure();
 

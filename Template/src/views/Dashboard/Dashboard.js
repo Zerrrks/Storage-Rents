@@ -19,7 +19,6 @@
 //import Tasks from "components/Tasks/Tasks.js";
 //import CustomTabs from "components/CustomTabs/CustomTabs.js";
 //import Danger from "components/Typography/Danger.js";
-//import CardBody from "components/Card/CardBody.js";
 //import CardFooter from "components/Card/CardFooter.js";
 import React from "react";
 import GridItem from "components/Grid/GridItem.js";
@@ -33,7 +32,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import Store from "@material-ui/icons/Store";
 import Dash from "views/loginPage/welcome";
-
+import ListStorage from "components/StorageList/StorageList";
 //import { bugs, website, server } from "variables/general.js";
 /*import {
   dailySalesChart,
@@ -106,14 +105,15 @@ export default function Dashboard() {
         <GridItem xs={6} sm={2} md={6}>
           <Card>
             <CardHeader color="success" stats icon>
-              <CardIcon color="success">
+              <CardIcon color="info">
                 <Store />
               </CardIcon>
-              <Link to="/admin/storage">
-              <h1 className={classes.cardTitle}>Already have storage?</h1>
-              </Link>
+              
+              <h1 className={classes.cardTitle}><Link to="/admin/storage">User Storage</Link></h1>
             </CardHeader>
+            <ListStorage />
           </Card>
+          
         </GridItem>
 
       </GridContainer>

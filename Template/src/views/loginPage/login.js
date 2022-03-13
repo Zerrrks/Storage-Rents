@@ -1,7 +1,13 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import  Button  from "components/CustomButtons/Button.js";
 const delay = ms => new Promise(res => setTimeout(res, ms));
+
+
+
+
+
 const Login = ({ setAuth = function(){} }) => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -48,9 +54,8 @@ const Login = ({ setAuth = function(){} }) => {
 
   return (
     <Fragment>
-      <h1 className="mt-5 text-center">Login</h1>
-      <form onSubmit={onSubmitForm}>
-      <Link to="/admin/landing">Back</Link>
+      <h1 align="center" className="mt-5 text-center">Login</h1>
+      <form align="center" onSubmit={onSubmitForm}>
       <br></br>
       <br></br>
         <input
@@ -73,10 +78,12 @@ const Login = ({ setAuth = function(){} }) => {
         />
         <br></br>
         <br></br>
-        <button className="btn btn-success btn-block">Submit</button>
+        <Button color="info" className="btn btn-success btn-block" onClick={onSubmitForm}>Submit</Button>
       </form>
       <br></br>
-      <Link to="/admin/register">Register</Link>
+      <p align="center">
+      <Link  to="/landing">Go Back</Link> <Link to="/register">Register</Link>
+      </p>
     </Fragment>
   );
 };

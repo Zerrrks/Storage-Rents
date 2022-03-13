@@ -2,7 +2,12 @@ import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 //import { Navigate } from "react-router-dom/cjs/react-router-dom.min";
 import { toast } from "react-toastify";
+import  Button  from "components/CustomButtons/Button.js";
+
 const delay = ms => new Promise(res => setTimeout(res, ms));
+
+
+
 const Register = ({ setAuth = function(){} }) => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -49,16 +54,15 @@ const Register = ({ setAuth = function(){} }) => {
 
   return (
     <Fragment>
-      <h1 className="mt-5 text-center">Register</h1>
-      <form onSubmit={onSubmitForm}>
-      <Link to="/admin/landing">Back</Link>
+      <h1 align="center" className="mt-5 text-center">Register</h1>
+      <form align="center" onSubmit={onSubmitForm}>
       <br></br>
       <br></br>
         <input
           type="text"
           name="email"
           value={email}
-          placeholder="email"
+          placeholder="Email"
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
@@ -68,7 +72,7 @@ const Register = ({ setAuth = function(){} }) => {
           type="password"
           name="password"
           value={password}
-          placeholder="password"
+          placeholder="Password"
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
@@ -78,16 +82,18 @@ const Register = ({ setAuth = function(){} }) => {
           type="text"
           name="name"
           value={name}
-          placeholder="name"
+          placeholder="Name"
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
         <br></br>
         <br></br>
-        <button className="btn btn-success btn-block">Submit</button>
+        <Button color="info" className="btn btn-success btn-block" onClick={onSubmitForm}>Submit</Button>
       </form>
       <br></br>
-      <Link to="/admin/login">login</Link>
+      <p align="center">
+      <Link to="/landing">Back</Link> <Link to="/login">Login</Link>
+      </p>
     </Fragment>
   );
 };
