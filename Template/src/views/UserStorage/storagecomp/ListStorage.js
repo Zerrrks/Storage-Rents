@@ -38,17 +38,11 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
           </tr>
         </thead>
         <tbody>
-          {/*<tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr> */}
-
           {storage.length !== 0 &&
-            storage[0].storage_id !== null &&
+            storage.storage_id !== null &&
             storage.map(storage => (
               <tr key={storage.storage_id}>
-                <td>{storage.storage_name}</td>
+                <td>{storage.location_name}</td>
                 <td>
                   <EditStorage storage={storage} setStorageChange={setStorageChange} />
                 </td>

@@ -13,7 +13,7 @@ router.get("/", authorize, async (req, res) => {
             [req.user]
         );
 
-        res.json(user.rows);
+        res.json(user.rows[0]);
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server error");
@@ -36,7 +36,7 @@ router.post("/storage", authorize, async (req, res) => {
         const { postal_c } = req.body;
         const { add_details } = req.body;
         const newProf = await pool.query(
-            "INSERT INTO storage (user_id, location_name, location_price, square_footage, full_name, street_name, city_storage, country_storage, postal_c, add_details) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING * ",
+            "INSERT INTO storage (user_id, location_name, location_price, square_footage, full_name, street_name, city_storage, state_storage, postal_c, add_details) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING * ",
             [req.user, location_name, location_price, square_footage, full_name, street_name, city_storage, state_storage, postal_c, add_details]
         );
         res.json(newProf.rows[0]);

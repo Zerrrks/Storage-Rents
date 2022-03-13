@@ -16,6 +16,7 @@ import Login from "./views/loginPage/login";
 import Register from "./views/loginPage/register";
 import Dash from "./views/loginPage/welcome";
 import Landing from "./views/loginPage/landing";
+import UserStorage from "./views/UserStorage/UserStorage";
 
 // other components
 import Admin from "layouts/Admin.js";
@@ -58,6 +59,7 @@ function App() {
           <Redirect from="/" to="/landing" />
           <Switch>
             <Route exact path="/addstorage" component={AddStorage} />
+          
             <Route path="/admin" component={Admin} />
           </Switch>
           <Route
@@ -97,6 +99,16 @@ function App() {
                 <Dash {...props} Auth={setAuth} />
               ) : (
                 <Redirect to="/landing" />
+              )
+            }
+          />
+          <Route
+            exact path="/admin/storage"
+            render={props =>
+              isAuthenticated ? (
+                <UserStorage {...props} Auth={setAuth} />
+              ) : (
+                <Redirect to="/admin/storage" />
               )
             }
           />

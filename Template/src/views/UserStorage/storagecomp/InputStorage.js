@@ -18,7 +18,7 @@ const InputStorage = ({ setStorageChange }) => {
 
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("jwt_token", localStorage.token);
-
+            
             const body = {
                 location_name,
                 location_price,
@@ -37,7 +37,7 @@ const InputStorage = ({ setStorageChange }) => {
             });
 
             const parseResponse = await response.json();
-
+            console.log(body);
             console.log(parseResponse);
 
             setStorageChange(true);
