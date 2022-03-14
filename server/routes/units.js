@@ -35,11 +35,11 @@ router.post("/storage", authorize, async (req, res) => {
         const { state_storage } = req.body;
         const { postal_c } = req.body;
         const { add_details } = req.body;
-        const newProf = await pool.query(
+        const newStorage = await pool.query(
             "INSERT INTO storage (user_id, location_name, location_price, square_footage, full_name, street_name, city_storage, state_storage, postal_c, add_details) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING * ",
             [req.user, location_name, location_price, square_footage, full_name, street_name, city_storage, state_storage, postal_c, add_details]
         );
-        res.json(newProf.rows[0]);
+        res.json(newStorage.rows[0]);
 
     } catch (err) {
         console.error(err.message);
@@ -48,7 +48,8 @@ router.post("/storage", authorize, async (req, res) => {
 // Delete storage
 router.delete("/storage/:id", authorize, async (req, res) => {
     try {
-        const deleteProf = await pool.query("DELETE FROM storage where storage_id = $1 AND user_id = $2",
+        const { id } = req.params;
+        const deleteStorage = await pool.query("DELETE FROM storage where storage_id = $1 AND user_id = $2",
             [id, req.user]
         );
         res.status(204).json({
@@ -74,7 +75,7 @@ router.put("/storage/:id", authorize, async (req, res) => {
         const { postal_c } = req.body;
         const { add_details } = req.body;
         const updateStorage = await pool.query(
-            "UPDATE storage SET location_name = $1, location_price = $2, square_footage = $3, full_name = $4, street_name = $5, city_storage = $6, country_storage = $7, postal_c = $8, add_details = $9 WHERE storage_id = $10 AND user_id = $11 RETURNING *",
+            "UPDATE storage SET location_name = $1, location_price = $2, square_footage = $3, full_name = $4, street_name = $5, city_storage = $6, state_storage = $7, postal_c = $8, add_details = $9 WHERE storage_id = $10 AND user_id = $11 RETURNING *",
             [location_name, location_price, square_footage, full_name, street_name, city_storage, state_storage, postal_c, add_details, id, req.user]
         );
         res.json("Storage was updated.");

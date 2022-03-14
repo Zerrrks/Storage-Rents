@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import EditStorage from "./EditStorage";
+//import Table from "components/Table/Table.js";
 
 const ListStorage = ({ allStorage, setStorageChange }) => {
   console.log(allStorage);
@@ -14,7 +15,7 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
         headers: { jwt_token: localStorage.token }
       });
 
-      setStorage(storage.filter(storage => storage.storage_id !== id));
+      setStorage([storage].filter(storage => storage.storage_id !== id));
     } catch (err) {
       console.error(err.message);
     }
@@ -26,20 +27,43 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
 
   console.log(storage);
 
+  /*
+ <Fragment>
+       {" "}
+       <Table
+         tableHeaderColor="primary"
+         tableHead={[" Storage Type/Description ", " Edit ", " Delete "]}
+         tableData={[
+           [
+             storage.location_name,
+             <EditStorage key={storage.storage_id} storage={storage} setStorageChange={setStorageChange} />,
+             <button
+               key={storage.storage_id}
+               className="btn btn-danger"
+               onClick={() => deleteStorage(storage.storage_id)}
+             >
+               Delete
+             </button>
+               ]
+         ]}
+       />
+     </Fragment>
+ */
+
   return (
     <Fragment>
       {" "}
       <table className="table mt-5">
         <thead>
           <tr>
-            <th>Storage Name/Description</th>
+            <th>Description</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {storage.length !== 0 &&
-            storage.storage_id !== null &&
+            storage[0].storage_id !== null &&
             [storage].map(storage => (
               <tr key={storage.storage_id}>
                 <td>{storage.location_name}</td>
@@ -55,7 +79,7 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
                   </button>
                 </td>
               </tr>
-            ))};
+            ))}
         </tbody>
       </table>
     </Fragment>
