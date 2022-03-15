@@ -48,6 +48,7 @@ router.post("/storage", authorize, async (req, res) => {
 // Delete storage
 router.delete("/storage/:id", authorize, async (req, res) => {
     try {
+        const { id } = req.params;
         const deleteProf = await pool.query("DELETE FROM storage where storage_id = $1 AND user_id = $2",
             [id, req.user]
         );

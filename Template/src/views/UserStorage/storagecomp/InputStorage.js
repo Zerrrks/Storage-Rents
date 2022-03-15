@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 
+
 const InputStorage = ({ setStorageChange }) => {
     const [location_name, set_location_name] = useState("");
     const [location_price, set_location_price] = useState("");
@@ -43,6 +44,7 @@ const InputStorage = ({ setStorageChange }) => {
             setStorageChange(true);
             set_location_name("");
             set_location_price("");
+            set_square_footage("");
             set_full_name("");
             set_street_name("");
             set_city_storage("");
@@ -50,7 +52,6 @@ const InputStorage = ({ setStorageChange }) => {
             set_postal_c("");
             set_add_details("");
 
-            // window.location = "/";
         } catch (err) {
             console.error(err.message);
         }
