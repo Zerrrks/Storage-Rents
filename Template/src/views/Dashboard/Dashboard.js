@@ -20,7 +20,7 @@
 //import CustomTabs from "components/CustomTabs/CustomTabs.js";
 //import Danger from "components/Typography/Danger.js";
 //import CardFooter from "components/Card/CardFooter.js";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import Card from "components/Card/Card.js";
@@ -32,7 +32,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import Store from "@material-ui/icons/Store";
 import Dash from "views/loginPage/welcome";
-import ListStorage from "components/StorageList/StorageList";
+import StorageList from "components/StorageList/StorageList";
 //import { bugs, website, server } from "variables/general.js";
 /*import {
   dailySalesChart,
@@ -89,11 +89,35 @@ export default function Dashboard() {
   const classes = useStyles();
 
 
+  const [allStorage, setAllStorage] = useState([]);
+
+  const getProfile = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/units/", {
+        method: "GET",
+        headers: { jwt_token: localStorage.token },
+      });
+
+      const parseData = await res.json();
+ 
+      setAllStorage(parseData);
+
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
+
 
 
 
   return (
-    <div className="dashboard">
+    <div>
+
       <GridContainer>
         <GridItem>
           <Dash />
@@ -102,7 +126,7 @@ export default function Dashboard() {
       
       <GridContainer>
 
-        <GridItem xs={6} sm={2} md={6}>
+        <GridItem xs={6} sm={2} md={10}>
           <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="info">
@@ -111,7 +135,8 @@ export default function Dashboard() {
               
               <h1 className={classes.cardTitle}><Link to="/admin/storage">User Storage</Link></h1>
             </CardHeader>
-            <ListStorage />
+            <StorageList allStorage={allStorage}  />
+            <br></br>
           </Card>
           
         </GridItem>

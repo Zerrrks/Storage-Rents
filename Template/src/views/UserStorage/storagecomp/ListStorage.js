@@ -6,15 +6,15 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
   const [storage, setStorage] = useState([]); //useState to set storage to
 
   //delete Storage function
+  const deleteStorage = async (id) => {
 
-  async function deleteStorage(id) {
     try {
-      await fetch(`http://localhost:5000/units/storage/${id}`, {
+     await fetch(`http://localhost:5000/units/storage/${id}`, {
         method: "DELETE",
         headers: { jwt_token: localStorage.token }
       });
 
-      setStorage(storage.filter(storage => storage.storage_id !== id));
+    setStorage([storage].filter(storage => [storage].storage_id !== id));
     } catch (err) {
       console.error(err.message);
     }
@@ -38,8 +38,8 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
           </tr>
         </thead>
         <tbody>
-          {storage.length !== 0 &&
-            storage.storage_id !== null &&
+          {[storage].length !== 0 &&
+            [storage].storage_id !== null &&
             [storage].map(storage => (
               <tr key={storage.storage_id}>
                 <td>{storage.location_name}</td>
