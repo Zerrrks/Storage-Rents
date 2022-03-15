@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect,useMemo } from "react";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -16,36 +16,54 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import axios from "axios";
 
+import sortedTable from "components/reactTable/sortedTable";
+
+
 //import axios from "axios";
 
 
 
 
 
-const LocationRoute = () => {
+const LocationRoute = () => { 
 
    
-    const [dataArray, setDataArray] = useState([]);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
       (async () => {
-            const result = await axios.get(`http://localhost:5000/locations`, {
-                method: "GET"
-            });
-          
-          console.log([result.data]) + console.log("data here")
-          
-          const dataArray =(result.data);
-          console.log(dataArray)  
-          setDataArray(dataArray)
-          console.log(setDataArray)  
-          return(setDataArray)
-          
- 
-        })();
+            const result = await axios.get(`"http://localhost:5000/locations"`)
+                setData(result.data)
+                console.log(result.data)
+             
+                
+        });
 
-       
-    } );
+    } )
+    sortedTable()
+
+    
+/*
+        router.get( authorize, async (req, res) => {
+            try {
+          
+              // get todo name and description for a specified user id
+              const user = await pool.query(
+                "SELECT * from location",
+                [req.user.id]
+              );
+          
+              res.json(location.rows);
+            } catch (err) {
+              console.error(err.message);
+              res.status(500).send("Server error");
+            }
+          });
+
+       */
+ 
+
+
 
 
     
@@ -133,6 +151,51 @@ const App = () => {
 }
 */
 
+const columns = useMemo(
+    () => [
+      {
+        // first group - TV Show
+        Header: "TV Show",
+        // First group columns
+        columns: [
+          {
+            Header: "Name",
+            accessor: "show.name"
+          },
+          {
+            Header: "Type",
+            accessor: "show.type"
+          }
+        ]
+      },
+      {
+        // Second group - Details
+        Header: "Details",
+        // Second group columns
+        columns: [
+          {
+            Header: "Language",
+            accessor: "show.language"
+          },
+          {
+            Header: "Genre(s)",
+            accessor: "show.genres"
+          },
+          {
+            Header: "Runtime",
+            accessor: "show.runtime"
+          },
+          {
+            Header: "Status",
+            accessor: "show.status"
+          }
+        ]
+      }
+    ],
+    []
+  );
+
+
 const styles = {
     cardCategoryWhite: {
         color: "rgba(255,255,255,.62)",
@@ -155,39 +218,16 @@ const useStyles = makeStyles(styles);
 
 const classes = useStyles();
 
+
+
    
     return (
-        
+
         <Fragment>
-             
-        <div className="app-container">
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Storage Type</th>
-                    <th>Location Address</th>
-                    <th>Size</th>
-                </tr>
-
-            </thead>
-            <tbody>
-                {dataArray.map((dataArray)=> (  <li key={dataArray.key} >
-                <tr>
-                    <td>{setDataArray.zipcode}</td>
-                    <td>{setDataArray.storage_type}</td>
-                    <td>{setDataArray.location_address}</td>
-                    <td>{setDataArray.Size}</td>
-                    
-                </tr>
-                </li>
-                ))}
-               
-            </tbody>
-        </table>
-
+            
+            <div className="App">
+      <Table columns={columns} data={data} />
     </div>
-        
             <Card>
                 <CardHeader color="primary">
                     <h4>Filter Available Storage</h4>
