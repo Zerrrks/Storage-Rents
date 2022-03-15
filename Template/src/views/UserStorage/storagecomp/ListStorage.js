@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import EditStorage from "./EditStorage";
+//import Table from "../../../components/Table/Table";
 
 const ListStorage = ({ allStorage, setStorageChange }) => {
   console.log(allStorage);
@@ -25,6 +26,30 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
   }, [allStorage]);
 
   console.log(storage);
+
+/*
+ <Fragment>
+       {" "}
+       <Table
+         tableHeaderColor="primary"
+         tableHead={[" Storage Type/Description ", " Edit ", " Delete "]}
+         tableData={[
+           [
+             storage.location_name,
+             <EditStorage key={storage.storage_id} storage={storage} setStorageChange={setStorageChange} />,
+             <button
+               key={storage.storage_id}
+               className="btn btn-danger"
+               onClick={() => deleteStorage(storage.storage_id)}
+             >
+               Delete
+             </button>
+               ]
+         ]}
+       />
+     </Fragment>
+ */
+
 
   return (
     <Fragment>

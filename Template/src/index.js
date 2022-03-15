@@ -18,7 +18,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 //import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-
+import 'bootstrap/dist/css/bootstrap.css';
 // core components
 //import Admin from "layouts/Admin.js";
 //import RTL from "layouts/RTL.js";

@@ -38,7 +38,7 @@ export default function CustomTable(props) {
           {tableData.map((prop, key) => {
             return (
               <TableRow key={key} className={classes.tableBodyRow}>
-                {prop.map((prop, key) => {
+                {[prop].map((prop, key) => {
                   return (
                     <TableCell className={classes.tableCell} key={key}>
                       {prop}
