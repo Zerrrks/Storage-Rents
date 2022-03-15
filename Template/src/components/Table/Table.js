@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import PropTypes from "prop-types";
 // @material-ui/core components
@@ -71,3 +72,4 @@ CustomTable.propTypes = {
   tableHead: PropTypes.arrayOf(PropTypes.string),
   tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
 };
+*/
