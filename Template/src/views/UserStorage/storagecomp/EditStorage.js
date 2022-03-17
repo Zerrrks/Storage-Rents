@@ -51,6 +51,10 @@ const EditStorage = ({ storage, setStorageChange }) => {
         }
     };
 
+    function commitChanges() {
+        editText(storage.storage_id);
+        handleClose();
+    }
     
     /*
         return (
@@ -246,7 +250,7 @@ const EditStorage = ({ storage, setStorageChange }) => {
                     />
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={editText(storage.storage_id)}>
+                    <Button variant="primary" onClick={commitChanges}>
                         Commit Changes
                     </Button>
                     <Button variant="secondary" onClick={handleClose}>
