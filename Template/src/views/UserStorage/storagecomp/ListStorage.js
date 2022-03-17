@@ -80,7 +80,7 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
                   </button>
                 </td>
               </tr>
-            ))};
+            ))}
         </tbody>
       </table>
     </Fragment>
