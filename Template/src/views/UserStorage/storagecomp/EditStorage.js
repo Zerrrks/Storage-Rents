@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
-//import Modal from 'react-bootstrap/Modal';
-//import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 
 const EditStorage = ({ storage, setStorageChange }) => {
@@ -44,131 +44,129 @@ const EditStorage = ({ storage, setStorageChange }) => {
     const [state_storage, set_state_storage] = useState(storage.state_storage);
     const [postal_c, set_postal_c] = useState(storage.postal_c);
     const [add_details, set_add_details] = useState(storage.add_details);
-
-    return (
-        <Fragment>
-            <button
-                type="button"
-                className="btn btn-warning"
-                data-toggle="modal"
-                data-target={`#id${storage.storage_id}`}
-            >
-                Edit Storage
-            </button>
-            <div
-                className="modal"
-                id={`id${storage.storage_id}`}
-                onClick={set_location_name(storage.location_name)}
-            >
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h4 className="modal-title">Edit Storage</h4>
-                            <button
-                                type="button"
-                                className="close"
-                                data-dismiss="modal"
-                                onClick={() => {
-                                    set_location_name(storage.location_name);
-                                    set_location_price(storage.location_price);
-                                    set_square_footage(storage.square_footage);
-                                    set_full_name(storage.full_name);
-                                    set_street_name(storage.street_name);
-                                    set_city_storage(storage.city_storage);
-                                    set_state_storage(storage.state_storage);
-                                    set_postal_c(storage.postal_c);
-                                    set_add_details(storage.add_details);
-                                }}
-                            >
-                                &times;
-                            </button>
-                        </div>
-
-                        <div className="modal-body">
-                            <input
-                                type="text"
-                                className="form-control"
-                                value={location_name}
-                                onChange={(e) => set_location_name(e.target.value)}
-                            />
-                            <input
-                                type="text"
-                                className="form-control"
-                                value={location_price}
-                                onChange={(e) => set_location_price(e.target.value)}
-                            />
-                            <input
-                                type="text"
-                                className="form-control"
-                                value={square_footage}
-                                onChange={(e) => set_square_footage(e.target.value)}
-                            />
-                            <input
-                                type="text"
-                                className="form-control"
-                                value={full_name}
-                                onChange={(e) => set_full_name(e.target.value)}
-                            />
-                            <input
-                                type="text"
-                                className="form-control"
-                                value={street_name}
-                                onChange={(e) => set_street_name(e.target.value)}
-                            />
-                            <input
-                                type="text"
-                                className="form-control"
-                                value={city_storage}
-                                onChange={(e) => set_city_storage(e.target.value)}
-                            />
-                            <input
-                                type="text"
-                                className="form-control"
-                                value={state_storage}
-                                onChange={(e) => set_state_storage(e.target.value)}
-                            />
-                            <input
-                                type="text"
-                                className="form-control"
-                                value={postal_c}
-                                onChange={(e) => set_postal_c(e.target.value)}
-                            />
-                            <input
-                                type="text"
-                                className="form-control"
-                                value={add_details}
-                                onChange={(e) => set_add_details(e.target.value)}
-                            />
-                        </div>
-
-                        <div className="modal-footer">
-                            <button
-                                type="button"
-                                className="btn btn-warning"
-                                data-dismiss="modal"
-                                onClick={editText(storage.storage_id)}
-                            >
-                                Commit Changes
-                            </button>
-                            <button
-                                type="button"
-                                className="btn btn-danger"
-                                data-dismiss="modal"
-                                onClick={set_location_name(storage.location_name)}
-                            >
-                                Cancel
-                            </button>
+    /*
+        return (
+            <Fragment>
+                <button
+                    type="button"
+                    className="btn btn-warning"
+                    data-toggle="modal"
+                    data-target={`#id${storage.storage_id}`}
+                >
+                    Edit Storage
+                </button>
+                <div
+                    className="modal"
+                    id={`id${storage.storage_id}`}
+                    onClick={set_location_name(storage.location_name)}
+                >
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h4 className="modal-title">Edit Storage</h4>
+                                <button
+                                    type="button"
+                                    className="close"
+                                    data-dismiss="modal"
+                                    onClick={() => {
+                                        set_location_name(storage.location_name);
+                                        set_location_price(storage.location_price);
+                                        set_square_footage(storage.square_footage);
+                                        set_full_name(storage.full_name);
+                                        set_street_name(storage.street_name);
+                                        set_city_storage(storage.city_storage);
+                                        set_state_storage(storage.state_storage);
+                                        set_postal_c(storage.postal_c);
+                                        set_add_details(storage.add_details);
+                                    }}
+                                >
+                                    &times;
+                                </button>
+                            </div>
+    
+                            <div className="modal-body">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={location_name}
+                                    onChange={(e) => set_location_name(e.target.value)}
+                                />
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={location_price}
+                                    onChange={(e) => set_location_price(e.target.value)}
+                                />
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={square_footage}
+                                    onChange={(e) => set_square_footage(e.target.value)}
+                                />
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={full_name}
+                                    onChange={(e) => set_full_name(e.target.value)}
+                                />
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={street_name}
+                                    onChange={(e) => set_street_name(e.target.value)}
+                                />
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={city_storage}
+                                    onChange={(e) => set_city_storage(e.target.value)}
+                                />
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={state_storage}
+                                    onChange={(e) => set_state_storage(e.target.value)}
+                                />
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={postal_c}
+                                    onChange={(e) => set_postal_c(e.target.value)}
+                                />
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={add_details}
+                                    onChange={(e) => set_add_details(e.target.value)}
+                                />
+                            </div>
+    
+                            <div className="modal-footer">
+                                <button
+                                    type="button"
+                                    className="btn btn-warning"
+                                    data-dismiss="modal"
+                                    onClick={() => editText(storage.storage_id)}
+                                >
+                                    Commit Changes
+                                </button>
+                                <button
+                                    type="button"
+                                    className="btn btn-danger"
+                                    data-dismiss="modal"
+                                    onClick={() => set_location_name(storage.location_name)}
+                                >
+                                    Cancel
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </Fragment>
-    );
-};
-
-export default EditStorage;
-
-/*const [show, setShow] = useState(false);
+            </Fragment>
+        );
+    };
+    */
+    const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -253,4 +251,6 @@ export default EditStorage;
                 </Modal.Footer>
             </Modal>
         </Fragment>
-    ); */
+    );
+}
+export default EditStorage;
