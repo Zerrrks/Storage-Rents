@@ -52,7 +52,9 @@ const StorageList = () => {
                         {
                             fontSize: 20,
                             overflow: 'visible',
-                            textAlign: 'center',
+                            textAlign: 'Center',
+                            
+                            
                     }
                     }>{storage.location_name}</td>  
                  <td style={
@@ -60,9 +62,9 @@ const StorageList = () => {
                             fontSize: 20,
                             overflow: 'visible',
                             borderLeft: 'solid',
-                            borderWidth: '1px',
-                            borderColor: 'gray',
-                            textAlign: 'center',
+                            
+                            
+                            textAlign: 'left',
                     }
                     }>{storage.add_details}</td>      
                  </tr>
