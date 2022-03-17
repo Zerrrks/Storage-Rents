@@ -7,6 +7,7 @@ const EditStorage = ({ storage, setStorageChange }) => {
     //editText function
     const editText = async (id) => {
         try {
+            console.log("bobs mom");
             const body = {
                 location_name,
                 location_price,
@@ -176,12 +177,12 @@ const EditStorage = ({ storage, setStorageChange }) => {
             <Button
                 variant="primary"
                 data-target={`#id${storage.storage_id}`}
-                onClick={handleShow}
+                onClick={ handleShow }
             >
                 Edit Storage
             </Button>
 
-            <Modal show={show} onHide={handleClose} onExit>
+            <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Edit your storage info:</Modal.Title>
                 </Modal.Header>
