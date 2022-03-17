@@ -32,7 +32,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import Store from "@material-ui/icons/Store";
 import Dash from "views/loginPage/welcome";
-import StorageList from "components/StorageList/StorageList";
+//import StorageList from "components/StorageList/StorageList";
+import StorageTable from "components/reactTable/StorageTable";
+import { columns } from "components/StorageList/Column";
 //import { bugs, website, server } from "variables/general.js";
 /*import {
   dailySalesChart,
@@ -41,6 +43,7 @@ import StorageList from "components/StorageList/StorageList";
 } from "variables/charts.js";
 */
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
+import axios from "axios";
 //import { Button } from "@material-ui/core";
 //import { useHistory } from "react-router-dom";
 
@@ -85,10 +88,10 @@ import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js"
 const useStyles = makeStyles(styles);
 
 
-export default function Dashboard() {
+  export default function Dashboard() {
   const classes = useStyles();
 
-
+  const [data, setData] = useState([]);
   const [allStorage, setAllStorage] = useState([]);
 
   const getProfile = async () => {
@@ -104,20 +107,28 @@ export default function Dashboard() {
 
     } catch (err) {
       console.error(err.message);
+      console.log(allStorage);
     }
   };
 
-  useEffect(() => {
+  useEffect(() => { 
+    try {
+    axios.get('http://localhost:5000/units/storage', { headers: { jwt_token: localStorage.token,}})
+      .then((res) => {
+        setData(res.data);
+      }).catch((err) => {
+        window.alert(err)
+      }) } catch (e) {
+        console.log('error')
+      }
     getProfile();
   }, []);
 
 
 
-
-
   return (
     <div>
-
+<StorageTable columns={columns} data={data}  />
       <GridContainer>
         <GridItem>
           <Dash />
@@ -132,10 +143,9 @@ export default function Dashboard() {
               <CardIcon color="info">
                 <Store />
               </CardIcon>
-              
+
               <h1 className={classes.cardTitle}><Link to="/admin/storage">User Storage</Link></h1>
             </CardHeader>
-            <StorageList allStorage={allStorage}  />
             <br></br>
           </Card>
           
