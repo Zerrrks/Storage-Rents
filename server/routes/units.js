@@ -9,7 +9,7 @@ router.get("/", authorize, async (req, res) => {
 
         // get storage for a specified user id
         const user = await pool.query(
-            "SELECT u.user_name, s.storage_id, s.location_name, s.location_price, s.square_footage, s.full_name, s.city_storage, s.state_storage, s.postal_c, s.add_details FROM users AS u LEFT JOIN storage AS s ON u.user_id = s.user_id WHERE u.user_id = $1",
+            "SELECT u.user_name, s.storage_id, s.location_name, s.location_price, s.square_footage, s.full_name, s.street_name, s.city_storage, s.state_storage, s.postal_c, s.add_details FROM users AS u LEFT JOIN storage AS s ON u.user_id = s.user_id WHERE u.user_id = $1",
             [req.user]
         );
 

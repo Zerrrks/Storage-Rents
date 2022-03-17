@@ -4,7 +4,22 @@ import Button from 'react-bootstrap/Button';
 
 
 const EditStorage = ({ storage, setStorageChange }) => {
-    //editText function
+    
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const [location_name, set_location_name] = useState(storage.location_name);
+    const [location_price, set_location_price] = useState(storage.location_price);
+    const [square_footage, set_square_footage] = useState(storage.square_footage);
+    const [full_name, set_full_name] = useState(storage.full_name);
+    const [street_name, set_street_name] = useState(storage.street_name);
+    const [city_storage, set_city_storage] = useState(storage.city_storage);
+    const [state_storage, set_state_storage] = useState(storage.state_storage);
+    const [postal_c, set_postal_c] = useState(storage.postal_c);
+    const [add_details, set_add_details] = useState(storage.add_details);
+
     const editText = async (id) => {
         try {
             console.log("bobs mom");
@@ -36,15 +51,7 @@ const EditStorage = ({ storage, setStorageChange }) => {
         }
     };
 
-    const [location_name, set_location_name] = useState(storage.location_name);
-    const [location_price, set_location_price] = useState(storage.location_price);
-    const [square_footage, set_square_footage] = useState(storage.square_footage);
-    const [full_name, set_full_name] = useState(storage.full_name);
-    const [street_name, set_street_name] = useState(storage.street_name);
-    const [city_storage, set_city_storage] = useState(storage.city_storage);
-    const [state_storage, set_state_storage] = useState(storage.state_storage);
-    const [postal_c, set_postal_c] = useState(storage.postal_c);
-    const [add_details, set_add_details] = useState(storage.add_details);
+    
     /*
         return (
             <Fragment>
@@ -167,16 +174,12 @@ const EditStorage = ({ storage, setStorageChange }) => {
         );
     };
     */
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     return (
         <Fragment>
             <Button
                 variant="primary"
-                data-target={`#id${storage.storage_id}`}
+                
                 onClick={ handleShow }
             >
                 Edit Storage
