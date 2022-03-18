@@ -2,6 +2,13 @@ import React, { useMemo, useEffect, useState } from "react";
 import { useTable } from "react-table";
 import axios from "axios";
 
+const [filterInput, setFilterInput] = useState("");
+
+const handleFilterChange = e => {
+    const value = e.target.value || undefined;
+    setFilter("", value); //need to add a db value
+    setFilterInput(value);
+  };
 
 const StorageTable = ({columns}) => {
     const [data, setData] = useState([]);
@@ -23,15 +30,23 @@ const StorageTable = ({columns}) => {
         headerGroups,
         prepareRow,
         rows,
+        setFilter,
     } = useTable(
     {
         columns,
         data,
-    }
+    },
+    useFilters
     );
 
     return (
+        
         <div>
+            <input
+  value={filterInput}
+  onChange={handleFilterChange}
+  placeholder={"Search name"}
+/>
             <table {...getTableProps()} className="StorageTable">
                 <thead>
                     {headerGroups.map(headerGroup => (
