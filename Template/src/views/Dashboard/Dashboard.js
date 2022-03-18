@@ -43,7 +43,7 @@ import { columns } from "components/StorageList/Column";
 } from "variables/charts.js";
 */
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
-import axios from "axios";
+
 //import { Button } from "@material-ui/core";
 //import { useHistory } from "react-router-dom";
 
@@ -91,7 +91,6 @@ const useStyles = makeStyles(styles);
   export default function Dashboard() {
   const classes = useStyles();
 
-  const [data, setData] = useState([]);
   const [allStorage, setAllStorage] = useState([]);
 
   const getProfile = async () => {
@@ -112,15 +111,6 @@ const useStyles = makeStyles(styles);
   };
 
   useEffect(() => { 
-    try {
-    axios.get('http://localhost:5000/units/storage', { headers: { jwt_token: localStorage.token,}})
-      .then((res) => {
-        setData(res.data);
-      }).catch((err) => {
-        window.alert(err)
-      }) } catch (e) {
-        console.log('error')
-      }
     getProfile();
   }, []);
 
@@ -128,7 +118,7 @@ const useStyles = makeStyles(styles);
 
   return (
     <div>
-<StorageTable columns={columns} data={data}  />
+<StorageTable columns={columns}/>
       <GridContainer>
         <GridItem>
           <Dash />

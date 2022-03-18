@@ -5,35 +5,12 @@ import axios from "axios";
 
 const StorageTable = ({columns}) => {
     const [data, setData] = useState([]);
-    const [unfilteredData, setUnfilteredData] = useState([]);
-    const [eyeDee, setEyeDee] = useState();
-
-    const getProfile = async () => {
-        try {
-          const res = await fetch("http://localhost:5000/dashboard/", {
-            method: "GET",
-            headers: { jwt_token: localStorage.token }
-          });
-    
-          const parseData = await res.json([]);
-          setEyeDee(parseData.user_id);
-        } catch (err) {
-          console.error(err.message);
-        }
-      };
-      useEffect(() => {
-        getProfile();
-      }, []);
-
-      
     columns = useMemo(() => columns, []);
     useEffect(() => { 
         try {
         axios.get('http://localhost:5000/units/storage', { headers: { jwt_token: localStorage.token,}})
           .then((res) => {
-            setUnfilteredData(res.data);
-            setData(unfilteredData.filter(unfilteredData => unfilteredData.user_id == eyeDee ));
-            console.log(data)
+            setData(res.data);
           }).catch((err) => {
             console.log(err)
           }) } catch (e) {
