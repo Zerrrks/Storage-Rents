@@ -7,8 +7,7 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
   const [storage, setStorage] = useState([]); //useState to set storage to
 
   //delete Storage function
-  const deleteStorage = async (id) => {
-
+  async function deleteStorage(id) {
     try {
      await fetch(`http://localhost:5000/units/storage/${id}`, {
         method: "DELETE",

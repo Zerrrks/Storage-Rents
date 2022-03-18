@@ -52,9 +52,11 @@ router.delete("/storage/:id", authorize, async (req, res) => {
         const deleteStorage = await pool.query("DELETE FROM storage where storage_id = $1 AND user_id = $2",
             [id, req.user]
         );
-        res.status(204).json({
-            status: "success",
-        });
+        if (deleteStorage.rows.length === 0) {
+            return res.json("This storage is not yours");
+        }
+
+        res.json("Storage was deleted");
     } catch (err) {
         console.error(err.message);
     }
@@ -78,7 +80,10 @@ router.put("/storage/:id", authorize, async (req, res) => {
             "UPDATE storage SET location_name = $1, location_price = $2, square_footage = $3, full_name = $4, street_name = $5, city_storage = $6, state_storage = $7, postal_c = $8, add_details = $9 WHERE storage_id = $10 AND user_id = $11 RETURNING *",
             [location_name, location_price, square_footage, full_name, street_name, city_storage, state_storage, postal_c, add_details, id, req.user]
         );
-        res.json("Storage was updated.");
+        if (updateStorage.rows.length === 0) {
+            return res.json("This Storage is not yours");
+        }
+        res.json("Storage was updated");
     } catch (err) {
         console.error(err.message);
     }
