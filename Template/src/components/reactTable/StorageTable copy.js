@@ -38,7 +38,7 @@ const StorageTable = ({columns}) => {
     const [filterInput, setFilterInput] = useState("");
     const handleFilterChange = e => {
         const value = e.target.value || undefined;
-        setFilter("_name", value); //need to add a db value
+        setFilter("street_name", value); //need to add a db value
         setFilterInput(value);
       };
 
