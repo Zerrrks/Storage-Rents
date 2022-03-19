@@ -60,7 +60,7 @@ const UserStorage = () => {
       });
 
       const parseData = await res.json();
-      setName(parseData.user_name); 
+      setName(parseData[0].user_name); 
       setAllStorage(parseData);
 
     } catch (err) {

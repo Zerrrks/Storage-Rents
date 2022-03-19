@@ -13,7 +13,7 @@ router.get("/", authorize, async (req, res) => {
             [req.user]
         );
 
-        res.json(user.rows[0]);
+        res.json(user.rows);
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server error");
@@ -35,11 +35,11 @@ router.post("/storage", authorize, async (req, res) => {
         const { state_storage } = req.body;
         const { postal_c } = req.body;
         const { add_details } = req.body;
-        const newProf = await pool.query(
-            "INSERT INTO storage (user_id, location_name, location_price, square_footage, full_name, street_name, city_storage, state_storage, postal_c, add_details) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING * ",
+        const newStorage = await pool.query(
+            "INSERT INTO storage (user_id, location_name, location_price, square_footage, full_name, street_name, city_storage, state_storage, postal_c, add_details) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *",
             [req.user, location_name, location_price, square_footage, full_name, street_name, city_storage, state_storage, postal_c, add_details]
         );
-        res.json(newProf.rows[0]);
+        res.json(newStorage.rows[0]);
 
     } catch (err) {
         console.error(err.message);
@@ -49,7 +49,7 @@ router.post("/storage", authorize, async (req, res) => {
 router.delete("/storage/:id", authorize, async (req, res) => {
     try {
         const { id } = req.params;
-        const deleteStorage = await pool.query("DELETE FROM storage where storage_id = $1 AND user_id = $2",
+        const deleteStorage = await pool.query("DELETE FROM storage where storage_id = $1 AND user_id = $2 RETURNING *",
             [id, req.user]
         );
         if (deleteStorage.rows.length === 0) {

@@ -20,6 +20,19 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
     }
   }
 
+  // async function getStorage(id) {
+  //   try {
+  //    await fetch(`http://localhost:5000/units/`, {
+  //       method: "GET",
+  //       headers: { jwt_token: localStorage.token }
+  //     });
+
+  //   setStorage(storage.filter(storage => storage.storage_id !== id));
+  //   } catch (err) {
+  //     console.error(err.message);
+  //   }
+  // }
+
   useEffect(() => {
     setStorage(allStorage);
   }, [allStorage]);
@@ -63,8 +76,8 @@ const ListStorage = ({ allStorage, setStorageChange }) => {
         </thead>
         <tbody>
           {storage.length !== 0 &&
-            [storage[0]].storage_id !== null &&
-            [storage].map(storage => (
+            storage[0].storage_id !== null &&
+            storage.map(storage => (
               <tr key={storage.storage_id}>
                 <td>{storage.location_name}</td>
                 <td>

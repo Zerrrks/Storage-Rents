@@ -20,7 +20,7 @@
 //import CustomTabs from "components/CustomTabs/CustomTabs.js";
 //import Danger from "components/Typography/Danger.js";
 //import CardFooter from "components/Card/CardFooter.js";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import Card from "components/Card/Card.js";
@@ -33,8 +33,8 @@ import { Link } from "react-router-dom";
 import Store from "@material-ui/icons/Store";
 import Dash from "views/loginPage/welcome";
 //import StorageList from "components/StorageList/StorageList";
-import StorageTable from "components/reactTable/StorageTable";
-import { columns } from "components/StorageList/Column";
+//import StorageTable from "components/reactTable/StorageTable";
+//import { columns } from "components/StorageList/Column";
 //import { bugs, website, server } from "variables/general.js";
 /*import {
   dailySalesChart,
@@ -88,7 +88,7 @@ import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js"
 const useStyles = makeStyles(styles);
 
 
-  export default function Dashboard() {
+export default function Dashboard() {
   const classes = useStyles();
 
   const [allStorage, setAllStorage] = useState([]);
@@ -101,7 +101,7 @@ const useStyles = makeStyles(styles);
       });
 
       const parseData = await res.json();
- 
+
       setAllStorage(parseData);
 
     } catch (err) {
@@ -110,21 +110,21 @@ const useStyles = makeStyles(styles);
     }
   };
 
-  useEffect(() => { 
+  useEffect(() => {
     getProfile();
   }, []);
 
-
+  //<StorageTable columns={columns}/>
 
   return (
     <div>
-<StorageTable columns={columns}/>
+
       <GridContainer>
         <GridItem>
           <Dash />
         </GridItem>
       </GridContainer>
-      
+
       <GridContainer>
 
         <GridItem xs={6} sm={2} md={10}>
@@ -138,7 +138,7 @@ const useStyles = makeStyles(styles);
             </CardHeader>
             <br></br>
           </Card>
-          
+
         </GridItem>
 
       </GridContainer>
