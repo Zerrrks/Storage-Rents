@@ -40,7 +40,50 @@ const LocationRoute = () => {
         });
 
     } )
-    sortedTable()
+    const columns = useMemo(
+        () => [
+          {
+            // first group - TV Show
+            Header: "TV Show",
+            // First group columns
+            columns: [
+              {
+                Header: "Name",
+                accessor: "show.name"
+              },
+              {
+                Header: "Type",
+                accessor: "show.type"
+              }
+            ]
+          },
+          {
+            // Second group - Details
+            Header: "Details",
+            // Second group columns
+            columns: [
+              {
+                Header: "Language",
+                accessor: "show.language"
+              },
+              {
+                Header: "Genre(s)",
+                accessor: "show.genres"
+              },
+              {
+                Header: "Runtime",
+                accessor: "show.runtime"
+              },
+              {
+                Header: "Status",
+                accessor: "show.status"
+              }
+            ]
+          }
+        ],
+        []
+      );
+    sortedTable(columns)
 
     
 /*
@@ -151,49 +194,7 @@ const App = () => {
 }
 */
 
-const columns = useMemo(
-    () => [
-      {
-        // first group - TV Show
-        Header: "TV Show",
-        // First group columns
-        columns: [
-          {
-            Header: "Name",
-            accessor: "show.name"
-          },
-          {
-            Header: "Type",
-            accessor: "show.type"
-          }
-        ]
-      },
-      {
-        // Second group - Details
-        Header: "Details",
-        // Second group columns
-        columns: [
-          {
-            Header: "Language",
-            accessor: "show.language"
-          },
-          {
-            Header: "Genre(s)",
-            accessor: "show.genres"
-          },
-          {
-            Header: "Runtime",
-            accessor: "show.runtime"
-          },
-          {
-            Header: "Status",
-            accessor: "show.status"
-          }
-        ]
-      }
-    ],
-    []
-  );
+
 
 
 const styles = {

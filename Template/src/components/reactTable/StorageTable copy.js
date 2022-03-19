@@ -1,16 +1,12 @@
 import React, { useMemo, useEffect, useState } from "react";
-import { useTable } from "react-table";
+import { useTable, useFilters } from "react-table";
 import axios from "axios";
+//import "customreact-table.css" 
 
-const [filterInput, setFilterInput] = useState("");
 
-const handleFilterChange = e => {
-    const value = e.target.value || undefined;
-    setFilter("", value); //need to add a db value
-    setFilterInput(value);
-  };
 
 const StorageTable = ({columns}) => {
+
     const [data, setData] = useState([]);
     columns = useMemo(() => columns, []);
     useEffect(() => { 
@@ -37,10 +33,17 @@ const StorageTable = ({columns}) => {
         data,
     },
     useFilters
-    );
+    );``
 
-    return (
-        
+    const [filterInput, setFilterInput] = useState("");
+    const handleFilterChange = e => {
+        const value = e.target.value || undefined;
+        setFilter("_name", value); //need to add a db value
+        setFilterInput(value);
+      };
+
+
+    return ( 
         <div>
             <input
   value={filterInput}
@@ -48,25 +51,44 @@ const StorageTable = ({columns}) => {
   placeholder={"Search name"}
 />
             <table {...getTableProps()} className="StorageTable">
-                <thead>
+                <thead  style={{
+                background: '#48d5eb',
+                color: 'white',
+               
+                fontSize: 30,
+                }}>
                     {headerGroups.map(headerGroup => (
                         <tr key={data.storage_id} {...headerGroup.getHeaderGroupProps()}>
                             {headerGroup.headers.map(column => (
-                                <th key={data.storage_id} {...column.getHeaderProps()}>
+                                <th style={{   
+                                    padding: 10,
+                                    borderBottom: 'solid 2px grey',
+                                    borderRight: 'solid 2px grey',
+                                    
+                                }} key={data.storage_id} {...column.getHeaderProps()}>
                                     {column.render('Header')}
                                 </th>
                             ))}
                         </tr>
                     ))}
                 </thead>
-                <tbody {...getTableBodyProps()} className="StorageTableBody">
+                <tbody style={{
+                             
+                            
+                        }} 
+                        {...getTableBodyProps()} className="StorageTableBody">
                     {rows.map(row => {
                         prepareRow(row)
                         return (
                             <tr key={data.storage_id} {...row.getRowProps()}>
                                 {row.cells.map(cell => {
                                     return (
-                                        <td key={data.storage_id} {...cell.getCellProps()}>
+                                        <td  style={{
+                                            
+                                            borderBottom: 'solid 2px grey',
+                                            fontSize: 20,
+                                            padding: 10,
+                                        }} key={data.storage_id} {...cell.getCellProps()}>
                                             {cell.render("Cell")}
                                         </td>
                                     )

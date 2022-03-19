@@ -4,42 +4,68 @@ import axios from "axios";
 
 
 const StorageTable = ({columns}) => {
+    console.log('first render')
     const [data, setData] = useState([]);
     const [unfilteredData, setUnfilteredData] = useState([]);
     const [eyeDee, setEyeDee] = useState();
+    useEffect(() => {
+        console.log("use effect for clearing the state on first render");
+        setData([]);
+        setUnfilteredData([]);
+        setEyeDee();
+    }, []);
 
-    const getProfile = async () => {
+    const getUserEyeDee = async () => {
         try {
           const res = await fetch("http://localhost:5000/dashboard/", {
             method: "GET",
             headers: { jwt_token: localStorage.token }
           });
-    
           const parseData = await res.json([]);
           setEyeDee(parseData.user_id);
         } catch (err) {
           console.error(err.message);
         }
       };
-      useEffect(() => {
-        getProfile();
+      
+      useEffect (() => {
+        console.log('use effect for grabbing user_id')
+        getUserEyeDee();
       }, []);
 
-      
     columns = useMemo(() => columns, []);
-    useEffect(() => { 
+
+    const grabThat = async() => {
         try {
-        axios.get('http://localhost:5000/units/storage', { headers: { jwt_token: localStorage.token,}})
+       await axios
+          .get('http://localhost:5000/units/storage', { headers: { jwt_token: localStorage.token,}})
           .then((res) => {
             setUnfilteredData(res.data);
-            setData(unfilteredData.filter(unfilteredData => unfilteredData.user_id == eyeDee ));
             console.log(data)
-          }).catch((err) => {
+          })
+          .catch((err) => {
             console.log(err)
           }) } catch (e) {
             console.log('error')
           }
-      }, []);
+        }
+      
+    useEffect(() => {
+        console.log("use effect for grabing data");
+        grabThat();
+    }, []);
+
+    const filterThat = async() => {
+      setData(unfilteredData.filter(unfilteredData => unfilteredData.user_id == eyeDee ));
+    };
+
+    useEffect(() => { 
+        console.log("use effect for filtering grabbed data and setting as const data."); 
+        filterThat();
+    }, [],);
+
+
+
     const {
         getTableProps,
         getTableBodyProps,
@@ -67,8 +93,11 @@ const StorageTable = ({columns}) => {
                         </tr>
                     ))}
                 </thead>
-                <tbody {...getTableBodyProps()} className="StorageTableBody">
-                    {rows.map(row => {
+                <tbody 
+                {...getTableBodyProps()} className="StorageTableBody">
+                    {data.length !== 0 &&
+                    data.storage_id !== null &&
+                    rows.map(row => {
                         prepareRow(row)
                         return (
                             <tr key={data.storage_id} {...row.getRowProps()}>

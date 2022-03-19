@@ -33,8 +33,8 @@ import { Link } from "react-router-dom";
 import Store from "@material-ui/icons/Store";
 import Dash from "views/loginPage/welcome";
 //import StorageList from "components/StorageList/StorageList";
-//import StorageTable from "components/reactTable/StorageTable";
-//import { columns } from "components/StorageList/Column";
+import StorageTable from "components/reactTable/StorageTable";
+import { columns } from "components/StorageList/Column";
 //import { bugs, website, server } from "variables/general.js";
 /*import {
   dailySalesChart,
@@ -114,10 +114,10 @@ export default function Dashboard() {
     getProfile();
   }, []);
 
-  //<StorageTable columns={columns}/>
-
+  
   return (
     <div>
+<StorageTable columns={columns}/>
 
       <GridContainer>
         <GridItem>

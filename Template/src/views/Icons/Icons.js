@@ -13,8 +13,9 @@ import GridContainer from "components/Grid/GridContainer.js";
 //import CardAvatar from "components/Card/CardAvatar.js";
 //import CardBody from "components/Card/CardBody.js";
 //import CardFooter from "components/Card/CardFooter.js";
-
-import LocationRoute from "./LocationRoute"
+import { columns } from "components/StorageList/Column";
+import StorageTable from "components/reactTable/StorageTable copy";
+//import LocationRoute from "./LocationRoute"
 
 //import avatar from "assets/img/faces/marc.jpg";
 
@@ -39,7 +40,7 @@ export default function LocationsPage () {
           <GridContainer>
             <GridItem xs={12} sm={12} md={8}>
               <Fragment>
-                <LocationRoute />
+                <StorageTable columns={columns} />
               </Fragment>
             </GridItem>
           </GridContainer>
