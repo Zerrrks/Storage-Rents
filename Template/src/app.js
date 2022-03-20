@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
 
-import "react-toastify/dist/ReactToastify.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -20,9 +19,8 @@ import UserStorage from "./views/UserStorage/UserStorage";
 
 // other components
 import Admin from "layouts/Admin.js";
-import "assets/css/material-dashboard-react.css?v=1.10.0";
 import AddStorage from "views/UserStorage/AddStorage.js";
-
+import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 

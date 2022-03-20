@@ -23,26 +23,25 @@
 import React, { useState, useEffect } from "react";
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardIcon from "components/Card/CardIcon.js";
+//import Card from "components/Card/Card.js";
+//import CardHeader from "components/Card/CardHeader.js";
+//import CardIcon from "components/Card/CardIcon.js";
 //import logo from 'assets/img/srlogo.png'
-import { makeStyles } from "@material-ui/core/styles";
+//import { makeStyles } from "@material-ui/core/styles";
 //import Icon from "@material-ui/core/Icon";
-import { Link } from "react-router-dom";
-import Store from "@material-ui/icons/Store";
+//import { Link } from "react-router-dom";
+//import Store from "@material-ui/icons/Store";
 import Dash from "views/loginPage/welcome";
+import { Link } from "react-router-dom";
 //import StorageList from "components/StorageList/StorageList";
-import StorageTable from "components/reactTable/StorageTable";
-import { columns } from "components/StorageList/Column";
+
 //import { bugs, website, server } from "variables/general.js";
 /*import {
   dailySalesChart,
   emailsSubscriptionChart,
   completedTasksChart,
 } from "variables/charts.js";
-*/
-import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
+//import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
 //import { Button } from "@material-ui/core";
 //import { useHistory } from "react-router-dom";
@@ -85,11 +84,11 @@ import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js"
         
         */
 
-const useStyles = makeStyles(styles);
+//const useStyles = makeStyles(styles);
 
 
 export default function Dashboard() {
-  const classes = useStyles();
+  //const classes = useStyles();
 
   const [allStorage, setAllStorage] = useState([]);
 
@@ -117,30 +116,28 @@ export default function Dashboard() {
   
   return (
     <div>
-<StorageTable columns={columns}/>
+
 
       <GridContainer>
         <GridItem>
           <Dash />
         </GridItem>
       </GridContainer>
-
+      <br></br>
       <GridContainer>
 
         <GridItem xs={6} sm={2} md={10}>
-          <Card>
-            <CardHeader color="success" stats icon>
-              <CardIcon color="info">
-                <Store />
-              </CardIcon>
-
-              <h1 className={classes.cardTitle}><Link to="/admin/storage">User Storage</Link></h1>
-            </CardHeader>
-            <br></br>
-          </Card>
-
+        <p>Storage Rents is an application meant to connect you with local storage solutions. </p>
         </GridItem>
-
+        <GridItem xs={6} sm={2} md={10}>
+        <p>To view your profile and make any desired changes, you can head to the <Link to='/admin/user'> User Profile </Link> page. </p>
+        </GridItem>
+        <GridItem xs={6} sm={2} md={10}>
+        <p>To view your submitted storage locations and make any desired changes, or to add new storage locations, you can head to the <Link to='/admin/storage'> User Storage </Link> page. </p>
+        </GridItem>
+        <GridItem xs={6} sm={2} md={10}>
+        <p>To view and filter through all user submitted storage locations, you can head to the <Link to='/admin/icons'> Locations </Link> page. </p>
+        </GridItem>
       </GridContainer>
     </div>
   );

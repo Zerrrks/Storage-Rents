@@ -22,7 +22,6 @@ const EditStorage = ({ storage, setStorageChange }) => {
 
     const editText = async (id) => {
         try {
-            console.log("bobs mom");
             const body = {
                 location_name,
                 location_price,

@@ -9,7 +9,7 @@ import axios from "axios";
 
 
 const StorageTable = ({columns}) => {
-
+    
     const [data, setData] = useState([]);
   //  const [storage, setStorage] = useState([]);
     columns = useMemo(() => columns, []);
@@ -58,12 +58,20 @@ const StorageTable = ({columns}) => {
         const value = e.target.value || undefined;
         setFilter("square_footage", value); //need to add a db value
         setFilterThreeInput(value);
-      };
+      }; 
+      const [filterFourInput, setFilterFourInput] = useState("");
+      const handleFilterFourChange = e => {
+          const value = e.target.value || undefined;
+          setFilter("state_storage", value); //need to add a db value
+          setFilterFourInput(value);
+        }; 
 
+    
 
     return (
         
-        <div fluid="true">
+        <div  >
+            <div className="d-flex mt-2 justify-content-">
             <input style={{
                 borderTop: 0,
                 borderLeft: 0,
@@ -71,13 +79,13 @@ const StorageTable = ({columns}) => {
                 borderBottom: 'solid 1px grey',
                 background: '#eeeeee',
                 fontSize: 16,
+                padding: 10,
                 
             }}
             value={filterInput}
             onChange={handleFilterChange}
             placeholder={"Search by name"}
-            />
-            {""} {""} {""} {""}
+            />&nbsp;&nbsp;
             <input style={{
                 borderTop: 0,
                 borderLeft: 0,
@@ -85,13 +93,13 @@ const StorageTable = ({columns}) => {
                 borderBottom: 'solid 1px grey',
                 background: '#eeeeee',
                 fontSize: 16,
+                padding: 10,
                 
             }}
             value={filterTwoInput}
             onChange={handleFilterTwoChange}
             placeholder={"Search by price"}
-            />
-            {""} {""} {""} {""}
+            />&nbsp;&nbsp;
             <input style={{
                 borderTop: 0,
                 borderLeft: 0,
@@ -99,12 +107,29 @@ const StorageTable = ({columns}) => {
                 borderBottom: 'solid 1px grey',
                 background: '#eeeeee',
                 fontSize: 16,
+                padding: 10,
                 
             }}
             value={filterThreeInput}
             onChange={handleFilterThreeChange}
             placeholder={"Search by square footage"}
+            /> &nbsp;&nbsp;
+                        <input style={{
+                borderTop: 0,
+                borderLeft: 0,
+                borderRight: 0,
+                borderBottom: 'solid 1px grey',
+                background: '#eeeeee',
+                fontSize: 16,
+                padding: 10,
+                
+            }}
+            value={filterFourInput}
+            onChange={handleFilterFourChange}
+            placeholder={"Search by state"}
             />
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <table {...getTableProps()} className="StorageTable">
                 <thead >
                     {headerGroups.map(headerGroup => (
@@ -136,7 +161,8 @@ const StorageTable = ({columns}) => {
                                         </td>
                                     )
                                 })}
-                             
+                                <br></br>
+
                             </tr>
                         )
                     })}

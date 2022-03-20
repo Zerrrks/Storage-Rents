@@ -32,14 +32,8 @@ export default function Footer(props) {
         <p className={classes.right}>
           <span>
             &copy; {1900 + new Date().getYear()}{" "}
-            <a
-              href="https://www.creative-tim.com?ref=mdr-footer"
-              target="_blank"
-              className={classes.a}
-            >
-              Storage Rents
-            </a>
-            , made with love for better storage.
+
+              Storage Rents, made for better storage.
           </span>
         </p>
       </div>

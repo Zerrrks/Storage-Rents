@@ -36,11 +36,14 @@ import StorageTable from "components/reactTable/StorageTable copy";
     
 export default function LocationsPage () {
     return (
-      <div>       
+      <div>
+        <div className="d-flex mt-5 justify-content-around">
+        <h2>All Locations</h2>
+      </div>       
           <GridContainer>
             <GridItem xs={12} sm={12} md={8}>
               <Fragment>
-                <StorageTable columns={columns} />
+                <StorageTable className="d-flex mt-5 justify-content-around" columns={columns} />
               </Fragment>
             </GridItem>
           </GridContainer>

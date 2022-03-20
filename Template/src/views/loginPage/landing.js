@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import  Button  from "components/CustomButtons/Button.js"; 
+//import  Button  from "components/CustomButtons/Button.js"; 
 import Logo from "srlogo.png"
 const Landing = () => {
   return (
@@ -10,10 +10,19 @@ const Landing = () => {
       <br></br>
       <p align="center">
       <Link to="/login" className="btn btn-primary">
-       <Button color="info"className="btn btn-primary">&nbsp;&nbsp;Login&nbsp;&nbsp;</Button>
+       <button style={{
+         background: '#007bff',
+         border: 0,
+         color: "white",
+       }}>&nbsp;&nbsp;Login&nbsp;&nbsp;</button>
       </Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;
       <Link to="/register" className="btn btn-primary">
-        <Button color="info"className="btn btn-primary">Register</Button>
+        <button style={{
+         background: '#007bff',
+         border: 0,
+         color: "white",
+       }}>Register</button>
       </Link>
       </p>
       <img width="304" height="228" src={Logo}/>

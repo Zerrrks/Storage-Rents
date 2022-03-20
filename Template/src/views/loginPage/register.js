@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 //import { Navigate } from "react-router-dom/cjs/react-router-dom.min";
 import { toast } from "react-toastify";
-import  Button  from "components/CustomButtons/Button.js";
+//import  Button  from "components/CustomButtons/Button.js";
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
@@ -88,7 +88,7 @@ const Register = ({ setAuth = function(){} }) => {
         />
         <br></br>
         <br></br>
-        <Button color="info" className="btn btn-success btn-block" onClick={onSubmitForm}>Submit</Button>
+        <button style={{color: 'white', background: '#007bff',}} className="btn  btn-block" onClick={onSubmitForm}>Submit</button>
       </form>
       <br></br>
       <p align="center">

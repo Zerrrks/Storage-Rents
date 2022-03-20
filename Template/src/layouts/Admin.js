@@ -93,7 +93,7 @@ export default function Admin({ ...rest }) {
     };
   }, [mainPanel]);
   return (
-    <div className={classes.wrapper}>
+    <div fluid className={classes.wrapper}>
       <Sidebar
         routes={routes}
         logoText={"Storage Rents"}

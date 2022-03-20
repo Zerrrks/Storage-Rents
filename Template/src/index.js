@@ -18,12 +18,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 //import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-//import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';
 // core components
 //import Admin from "layouts/Admin.js";
 //import RTL from "layouts/RTL.js";
 
 import "assets/css/material-dashboard-react.css?v=1.10.0";
+//import 'custom.css'
 //import AddStorage from "views/UserStorage/AddStorage.js"
 //import Login from "views/loginPage/login.js";
 //import Register from "views/loginPage/register";

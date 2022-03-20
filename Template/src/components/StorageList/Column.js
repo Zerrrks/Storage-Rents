@@ -1,10 +1,11 @@
+//import React from "react"
 
-
-export const columns = [
-    {
+export const columns  = [
+    
+ /*   {
       Header: "Storage ID",
       accessor: "storage_id"
-    },
+    },*/
     {
       Header: "Location Name",
       accessor: "location_name"
@@ -15,13 +16,14 @@ export const columns = [
     },
     {
       Header: "Square Footage",
-      accessor: "square_footage"
+      accessor: "square_footage",
     },
-    {
+
+  /*  {
       Header: "Owner",
       accessor: "full_name"
-    },
-    {
+    },*/
+ /*   {
       Header: "Street",
       accessor: "street_name"
     },
@@ -29,12 +31,12 @@ export const columns = [
       Header: "City",
       accessor: "city_storage"
     },
-    {
+   */ {
       Header: "State",
       accessor: "state_storage"
     },
-    {
+  /*  {
       Header: "Postal Code",
       accessor: "postal_c"
-    },
-  ]
+    }, */
+];
