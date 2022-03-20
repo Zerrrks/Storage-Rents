@@ -16,6 +16,7 @@ import Register from "./views/loginPage/register";
 import Dash from "./views/loginPage/welcome";
 import Landing from "./views/loginPage/landing";
 import UserStorage from "./views/UserStorage/UserStorage";
+import Icons from "./views/Icons/Icons"
 
 // other components
 import Admin from "layouts/Admin.js";
@@ -107,6 +108,16 @@ function App() {
                 <UserStorage {...props} Auth={setAuth} />
               ) : (
                 <Redirect to="/admin/storage" />
+              )
+            }
+          />
+          <Route
+            exact path="/admin/icons"
+            render={props =>
+              isAuthenticated ? (
+                <Icons {...props} Auth={setAuth} />
+              ) : (
+                <Redirect to="/admin/icons" />
               )
             }
           />

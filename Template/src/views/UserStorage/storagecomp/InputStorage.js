@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from "react";
-
+//import Form from 'react-bootstrap/Form'
+//import Button from 'react-bootstrap/Button'
+//import FormControl from 'react-bootstrap/FormControl'
 
 const InputStorage = ({ setStorageChange }) => {
     const [location_name, set_location_name] = useState("");
@@ -19,7 +21,7 @@ const InputStorage = ({ setStorageChange }) => {
 
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("jwt_token", localStorage.token);
-            
+
             const body = {
                 location_name,
                 location_price,
@@ -56,74 +58,107 @@ const InputStorage = ({ setStorageChange }) => {
             console.error(err.message);
         }
     };
+
+
     return (
         <Fragment>
-            <h1 className="text-center my-5">Input Storage Unit</h1>
-            <form className="d-flex" onSubmit={onSubmitForm}>
-                <input
-                    type="text"
-                    placeholder="Storage Type"
-                    className="form-control"
-                    value={location_name}
-                    onChange={(e) => set_location_name(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Price Per Month"
-                    className="form-control"
-                    value={location_price}
-                    onChange={(e) => set_location_price(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Square Footage (sqft)"
-                    className="form-control"
-                    value={square_footage}
-                    onChange={(e) => set_square_footage(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="form-control"
-                    value={full_name}
-                    onChange={(e) => set_full_name(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Location Address"
-                    className="form-control"
-                    value={street_name}
-                    onChange={(e) => set_street_name(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="City"
-                    className="form-control"
-                    value={city_storage}
-                    onChange={(e) => set_city_storage(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="State"
-                    className="form-control"
-                    value={state_storage}
-                    onChange={(e) => set_state_storage(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Zipcode"
-                    className="form-control"
-                    value={postal_c}
-                    onChange={(e) => set_postal_c(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Contact Information"
-                    className="form-control"
-                    value={add_details}
-                    onChange={(e) => set_add_details(e.target.value)}
-                />
-                <button className="btn btn-success ">Add</button>
+            <h1 className="text-center my-5">Input Storage Unit(s)</h1>
+            <form onSubmit={onSubmitForm}>
+                <div className="row">
+                    <label>Enter your storage type
+                        <input
+                            type="text"
+                            placeholder="Storage Type"
+                            className="form-control"
+                            value={location_name}
+                            onChange={(e) => set_location_name(e.target.value)}
+                        />
+                    </label>
+                    &nbsp;&nbsp;
+                    <label>Enter your price/month
+                        <input
+                            type="text"
+                            placeholder="Price Per Month"
+                            className="form-control"
+                            value={location_price}
+                            onChange={(e) => set_location_price(e.target.value)}
+                        />
+                    </label>
+                    &nbsp;&nbsp;
+                    <label>Enter the amount of square footage
+                        <input
+                            type="text"
+                            placeholder="Square Footage (sqft)"
+                            className="form-control"
+                            value={square_footage}
+                            onChange={(e) => set_square_footage(e.target.value)}
+                        />
+                    </label>
+                    &nbsp;&nbsp;
+                    <label>Enter your name
+                        <input
+                            type="text"
+                            placeholder="Your Name"
+                            className="form-control"
+                            value={full_name}
+                            onChange={(e) => set_full_name(e.target.value)}
+                        />
+                    </label>
+                    &nbsp;&nbsp;
+                    <label>Enter your location address
+                        <input
+                            type="text"
+                            placeholder="Location Address"
+                            className="form-control"
+                            value={street_name}
+                            onChange={(e) => set_street_name(e.target.value)}
+                        />
+                    </label>
+                    &nbsp;&nbsp;
+                    <label>Enter your city
+                        <input
+                            type="text"
+                            placeholder="City"
+                            className="form-control"
+                            value={city_storage}
+                            onChange={(e) => set_city_storage(e.target.value)}
+                        />
+                    </label>
+                    &nbsp;&nbsp;
+                    <label>Enter your state
+                        <input
+                            type="text"
+                            placeholder="State"
+                            className="form-control"
+                            value={state_storage}
+                            onChange={(e) => set_state_storage(e.target.value)}
+                        />
+                    </label>
+                    &nbsp;&nbsp;
+                    <label>Enter your zipcode
+                        <input
+                            type="text"
+                            placeholder="Zipcode"
+                            className="form-control"
+                            value={postal_c}
+                            onChange={(e) => set_postal_c(e.target.value)}
+                        />
+                    </label>
+                    &nbsp;&nbsp;
+
+                    <label>Enter your contact information
+                        <input
+                            type="text"
+                            placeholder="Contact Information"
+                            className="form-control"
+                            value={add_details}
+                            onChange={(e) => set_add_details(e.target.value)}
+                        />
+                    </label>
+                </div>
+
+                &nbsp;&nbsp;
+                <button variant="dark" className="btn btn-success ">Add</button>
             </form>
         </Fragment>
     );
