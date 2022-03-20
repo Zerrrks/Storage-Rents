@@ -78,3 +78,15 @@ CREATE TABLE storage(
   PRIMARY KEY (storage_id),
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
+CREATE TABLE profile(
+    profile_id SERIAL,
+    user_id UUID,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    city_prof VARCHAR(255) NOT NULL,
+    state_prof VARCHAR(255) NOT NULL,
+    contact VARCHAR(1000) NOT NULL,
+    PRIMARY KEY (profile_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);

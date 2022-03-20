@@ -58,13 +58,12 @@ const InputStorage = ({ setStorageChange }) => {
             console.error(err.message);
         }
     };
-    
+
 
     return (
         <Fragment>
             <h1 className="text-center my-5">Input Storage Unit(s)</h1>
             <form onSubmit={onSubmitForm}>
-                <div className="text-center my-5">
                 <div className="row">
                     <label>Enter your storage type
                         <input
@@ -146,18 +145,18 @@ const InputStorage = ({ setStorageChange }) => {
                         />
                     </label>
                     &nbsp;&nbsp;
-                
-                <label>Enter your contact information
-                    <input
-                        type="text"
-                        placeholder="Contact Information"
-                        className="form-control"
-                        value={add_details}
-                        onChange={(e) => set_add_details(e.target.value)}
-                    />
-                </label>
+
+                    <label>Enter your contact information
+                        <input
+                            type="text"
+                            placeholder="Contact Information"
+                            className="form-control"
+                            value={add_details}
+                            onChange={(e) => set_add_details(e.target.value)}
+                        />
+                    </label>
                 </div>
-                </div>
+
                 &nbsp;&nbsp;
                 <button variant="dark" className="btn btn-success ">Add</button>
             </form>
