@@ -56,7 +56,7 @@ const StorageTable = ({columns}) => {
     const [filterThreeInput, setFilterThreeInput] = useState("");
     const handleFilterThreeChange = e => {
         const value = e.target.value || undefined;
-        setFilter("location_price", value); //need to add a db value
+        setFilter("square_footage", value); //need to add a db value
         setFilterThreeInput(value);
       };
 
