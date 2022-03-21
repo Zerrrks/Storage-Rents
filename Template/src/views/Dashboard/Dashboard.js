@@ -21,8 +21,7 @@
 //import Danger from "components/Typography/Danger.js";
 //import CardFooter from "components/Card/CardFooter.js";
 import React, { useState, useEffect } from "react";
-import GridItem from "components/Grid/GridItem.js";
-import GridContainer from "components/Grid/GridContainer.js";
+
 //import Card from "components/Card/Card.js";
 //import CardHeader from "components/Card/CardHeader.js";
 //import CardIcon from "components/Card/CardIcon.js";
@@ -115,30 +114,20 @@ export default function Dashboard() {
 
   
   return (
-    <div>
-
-
-      <GridContainer>
-        <GridItem>
+    <div  style={{width: 800, padding: 10,}} className="table mt-5 card d-flex mt-2">
           <Dash />
-        </GridItem>
-      </GridContainer>
+     
       <br></br>
-      <GridContainer>
+      
 
-        <GridItem xs={6} sm={2} md={10}>
+        
         <p>Storage Rents is an application meant to connect you with local storage solutions. </p>
-        </GridItem>
-        <GridItem xs={6} sm={2} md={10}>
-        <p>To view your profile and make any desired changes, you can head to the <Link to='/admin/user'> User Profile </Link> page. </p>
-        </GridItem>
-        <GridItem xs={6} sm={2} md={10}>
+
         <p>To view your submitted storage locations and make any desired changes, or to add new storage locations, you can head to the <Link to='/admin/storage'> User Storage </Link> page. </p>
-        </GridItem>
-        <GridItem xs={6} sm={2} md={10}>
+
         <p>To view and filter through all user submitted storage locations, you can head to the <Link to='/admin/icons'> Locations </Link> page. </p>
-        </GridItem>
-      </GridContainer>
+
+
     </div>
   );
 }

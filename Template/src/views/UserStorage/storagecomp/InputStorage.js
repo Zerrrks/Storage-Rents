@@ -65,89 +65,98 @@ const InputStorage = ({ setStorageChange }) => {
             <h1 className="text-center my-5">Input Storage Unit(s)</h1>
             <form onSubmit={onSubmitForm}>
                 <label className="text-center my-5">Enter your storage information:
-                    <div className="row">
-
+                    <div className="row" style={{display: 'flex', justifyContent: 'center',}}>
+                    <label>&nbsp;
                         <input
                             type="text"
                             placeholder="Storage Type"
                             className="form-control"
                             value={location_name}
                             onChange={(e) => set_location_name(e.target.value)}
+                            style={{width: 750,}}
                         />
-
+                     </label>
                         &nbsp;&nbsp;
-
+                        <label>&nbsp;
                         <input
                             type="text"
                             placeholder="Price Per Month"
                             className="form-control"
                             value={location_price}
                             onChange={(e) => set_location_price(e.target.value)}
+                            style={{width: 750,}}
                         />
-
+                         </label>
                         &nbsp;&nbsp;
-
+                        <label>&nbsp;
                         <input
                             type="text"
                             placeholder="Square Footage (sqft)"
                             className="form-control"
                             value={square_footage}
                             onChange={(e) => set_square_footage(e.target.value)}
+                            style={{width: 750,}}
                         />
-
+                         </label>
                         &nbsp;&nbsp;
-
+                        <label>&nbsp;
                         <input
                             type="text"
                             placeholder="Your Name"
                             className="form-control"
                             value={full_name}
                             onChange={(e) => set_full_name(e.target.value)}
+                            style={{width: 750,}}
                         />
-
+                         </label>
                         &nbsp;&nbsp;
-
+                        <label>&nbsp;
                         <input
                             type="text"
                             placeholder="Location Address"
                             className="form-control"
                             value={street_name}
                             onChange={(e) => set_street_name(e.target.value)}
+                            style={{width: 750,}}
                         />
-
+                         </label>
                         &nbsp;&nbsp;
-
+                        <label>&nbsp;
                         <input
                             type="text"
                             placeholder="City"
                             className="form-control"
                             value={city_storage}
                             onChange={(e) => set_city_storage(e.target.value)}
+                            style={{width: 750,}}
                         />
-
+                         </label>
                         &nbsp;&nbsp;
-
+                        <label>&nbsp;
                         <input
                             type="text"
                             placeholder="State"
                             className="form-control"
                             value={state_storage}
                             onChange={(e) => set_state_storage(e.target.value)}
+                            style={{width: 750,}}
                         />
-
+                         </label>
                         &nbsp;&nbsp;
-
+                        <label>&nbsp;
                         <input
                             type="text"
                             placeholder="Zipcode"
                             className="form-control"
                             value={postal_c}
                             onChange={(e) => set_postal_c(e.target.value)}
+                            style={{width: 750,}}
                         />
-
+                        </label>
                         &nbsp;&nbsp;
                     </div>
                     <label>Enter your contact information and other additional details.
+                    <label>&nbsp; 
                         <textarea
                             rows="5" cols="80"
                             type="text"
@@ -156,11 +165,14 @@ const InputStorage = ({ setStorageChange }) => {
                             value={add_details}
                             onChange={(e) => set_add_details(e.target.value)}
                         />
+                        </label>
                     </label>
 
                 </label>
                 &nbsp;
-                <button variant="dark" className="btn btn-success ">Add</button>
+                <div style={{display: 'flex', justfyContent: 'center',}}>
+                <button  variant="dark" className="btn btn-success ">Add</button>
+                </div>
             </form>
         </Fragment>
     );
