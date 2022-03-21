@@ -1,5 +1,5 @@
 import React, { useMemo, useEffect, useState } from "react";
-import { useTable, useFilters } from "react-table";
+import { useTable, useFilters, useBlockLayout } from "react-table";
 import axios from "axios";
 import InfoModal from "views/Icons/InfoModal";
 //import EditStorage from "views/UserStorage/storagecomp/EditStorage";
@@ -38,7 +38,8 @@ const StorageTable = ({columns}) => {
         columns,
         data,
     },
-    useFilters
+    useFilters,
+    useBlockLayout
     );
 
     const [filterInput, setFilterInput] = useState("");
@@ -85,7 +86,7 @@ const StorageTable = ({columns}) => {
             }}
             value={filterInput}
             onChange={handleFilterChange}
-            placeholder={"Search by name"}
+            placeholder={"Search by location"}
             />&nbsp;&nbsp;
             <input style={{
                 borderTop: 0,
@@ -131,19 +132,17 @@ const StorageTable = ({columns}) => {
             />
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;
+            <div className="table mt-5">
             <table {...getTableProps()} className="StorageTable">
                 <thead >
                     {headerGroups.map(headerGroup => (
                         <tr key={data.storage_id} {...headerGroup.getHeaderGroupProps()}>
                             {headerGroup.headers.map(column => (
-                                <th style={{
-                                    padding: 10,
-                                    borderBottom: 'solid 2px grey',
-                                    fontSize: 20,
-                                    }} key={data.storage_id} {...column.getHeaderProps()}>
+                                <th key={data.storage_id} {...column.getHeaderProps()}>
                                     {column.render('Header')}
                                 </th>
-                            ))}
+                                
+                            ))}<th>Info</th>
                         </tr>
                     ))}
                 </thead>
@@ -172,6 +171,7 @@ const StorageTable = ({columns}) => {
                     })}
                 </tbody>
             </table>
+            </div>
         </div>
     );
 

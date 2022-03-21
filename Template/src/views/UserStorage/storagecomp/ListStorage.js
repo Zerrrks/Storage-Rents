@@ -3,7 +3,6 @@ import EditStorage from "./EditStorage";
 //import Table from "../../../components/Table/Table";
 
 const ListStorage = ({ allStorage, setStorageChange }) => {
-  console.log(allStorage);
   const [storage, setStorage] = useState([]); //useState to set storage to
 
   //delete Storage function

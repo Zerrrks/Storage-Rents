@@ -2,6 +2,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
+import { Button } from "react-bootstrap";
 //import Button from 'react-bootstrap/Button';
 
 
@@ -81,29 +82,32 @@ const InfoModal = ({storage}) => {
    });
     return (
       <Fragment>
-          <button style={{  
+          <Button style={{  
    padding: 10,              
-   borderTop: '0',
-   borderLeft: '0',
+   borderTop: 'solid 1px grey',
+   borderLeft: 'solid 1px grey',
    borderRight: 'solid 1px grey',
    borderBottom: 'solid 1px grey',
-   background: '#eeeeee',
+   background: '#007bff',
    float: 'center',
-   color: '#3c4858',
+   color: 'white',
    fontWeight: "bold",
-   fontSize: 16,}}
+   fontSize: 16,
+   width: 20,
+   height: 20,
+   
+   }} 
               variant="primary"
-              
               onClick={ handleShow }
-          >All Info
-          </button>
+          > 
+          </Button>
 
           <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
                   <Modal.Title>Location Info:</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                 <p>Location Name:
+                 <p>Location Type:
               <input
                         type="text"
                         className="form-control"
@@ -169,11 +173,11 @@ const InfoModal = ({storage}) => {
                     /></p>
                     <br></br>
                     <p>Contact Info:
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={add_details}
-                        readOnly
+                    <textarea
+                            rows="5" cols="80"
+                            type="text"
+                            value={add_details}
+                            className="form-control"
                     /></p>
               </Modal.Body>
               <Modal.Footer>
