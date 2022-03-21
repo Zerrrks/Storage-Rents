@@ -62,7 +62,7 @@ const InputStorage = ({ setStorageChange }) => {
 
     return (
         <Fragment>
-            <h1 className="text-center my-5">Input Storage Unit(s)</h1>
+            <h3 className="text-center my-5">Input Storage Unit(s)</h3>
             <form onSubmit={onSubmitForm}>
                 <label className="text-center my-5">Enter your storage information:
                     <div className="row" style={{display: 'flex', justifyContent: 'center',}}>
