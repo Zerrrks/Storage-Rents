@@ -1,6 +1,7 @@
 import React, { useMemo, useEffect, useState } from "react";
 import { useTable, useFilters } from "react-table";
 import axios from "axios";
+import InfoModal from "views/Icons/InfoModal";
 //import EditStorage from "views/UserStorage/storagecomp/EditStorage";
 
 
@@ -15,10 +16,9 @@ const StorageTable = ({columns}) => {
     columns = useMemo(() => columns, []);
     useEffect(() => { 
         try {
-        axios.get('http://localhost:5000/units/storage', { headers: { jwt_token: localStorage.token,}})
+        axios.get('http://localhost:5000/units/', { headers: { jwt_token: localStorage.token,}})
           .then((res) => {
             setData(res.data);
-   //         setStorage(res.data);
           }).catch((err) => {
             console.log(err)
           }) } catch (e) {
@@ -160,9 +160,11 @@ const StorageTable = ({columns}) => {
                                             {cell.render("Cell")}
                                         </td>
                                     )
+                                    
                                 })}
+                                <td> <InfoModal storage={row.cells}/></td>
                                 <br></br>
-
+                                
                             </tr>
                         )
                     })}
