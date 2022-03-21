@@ -64,8 +64,9 @@ const InputStorage = ({ setStorageChange }) => {
         <Fragment>
             <h1 className="text-center my-5">Input Storage Unit(s)</h1>
             <form onSubmit={onSubmitForm}>
-                <div className="row">
-                    <label>Enter your storage type
+                <label className="text-center my-5">Enter your storage information:
+                    <div className="row">
+
                         <input
                             type="text"
                             placeholder="Storage Type"
@@ -73,9 +74,9 @@ const InputStorage = ({ setStorageChange }) => {
                             value={location_name}
                             onChange={(e) => set_location_name(e.target.value)}
                         />
-                    </label>
-                    &nbsp;&nbsp;
-                    <label>Enter your price/month
+
+                        &nbsp;&nbsp;
+
                         <input
                             type="text"
                             placeholder="Price Per Month"
@@ -83,9 +84,9 @@ const InputStorage = ({ setStorageChange }) => {
                             value={location_price}
                             onChange={(e) => set_location_price(e.target.value)}
                         />
-                    </label>
-                    &nbsp;&nbsp;
-                    <label>Enter the amount of square footage
+
+                        &nbsp;&nbsp;
+
                         <input
                             type="text"
                             placeholder="Square Footage (sqft)"
@@ -93,9 +94,9 @@ const InputStorage = ({ setStorageChange }) => {
                             value={square_footage}
                             onChange={(e) => set_square_footage(e.target.value)}
                         />
-                    </label>
-                    &nbsp;&nbsp;
-                    <label>Enter your name
+
+                        &nbsp;&nbsp;
+
                         <input
                             type="text"
                             placeholder="Your Name"
@@ -103,9 +104,9 @@ const InputStorage = ({ setStorageChange }) => {
                             value={full_name}
                             onChange={(e) => set_full_name(e.target.value)}
                         />
-                    </label>
-                    &nbsp;&nbsp;
-                    <label>Enter your location address
+
+                        &nbsp;&nbsp;
+
                         <input
                             type="text"
                             placeholder="Location Address"
@@ -113,9 +114,9 @@ const InputStorage = ({ setStorageChange }) => {
                             value={street_name}
                             onChange={(e) => set_street_name(e.target.value)}
                         />
-                    </label>
-                    &nbsp;&nbsp;
-                    <label>Enter your city
+
+                        &nbsp;&nbsp;
+
                         <input
                             type="text"
                             placeholder="City"
@@ -123,9 +124,9 @@ const InputStorage = ({ setStorageChange }) => {
                             value={city_storage}
                             onChange={(e) => set_city_storage(e.target.value)}
                         />
-                    </label>
-                    &nbsp;&nbsp;
-                    <label>Enter your state
+
+                        &nbsp;&nbsp;
+
                         <input
                             type="text"
                             placeholder="State"
@@ -133,9 +134,9 @@ const InputStorage = ({ setStorageChange }) => {
                             value={state_storage}
                             onChange={(e) => set_state_storage(e.target.value)}
                         />
-                    </label>
-                    &nbsp;&nbsp;
-                    <label>Enter your zipcode
+
+                        &nbsp;&nbsp;
+
                         <input
                             type="text"
                             placeholder="Zipcode"
@@ -143,11 +144,12 @@ const InputStorage = ({ setStorageChange }) => {
                             value={postal_c}
                             onChange={(e) => set_postal_c(e.target.value)}
                         />
-                    </label>
-                    &nbsp;&nbsp;
 
-                    <label>Enter your contact information
-                        <input
+                        &nbsp;&nbsp;
+                    </div>
+                    <label>Enter your contact information and other additional details.
+                        <textarea
+                            rows="5" cols="80"
                             type="text"
                             placeholder="Contact Information"
                             className="form-control"
@@ -155,9 +157,9 @@ const InputStorage = ({ setStorageChange }) => {
                             onChange={(e) => set_add_details(e.target.value)}
                         />
                     </label>
-                </div>
 
-                &nbsp;&nbsp;
+                </label>
+                &nbsp;
                 <button variant="dark" className="btn btn-success ">Add</button>
             </form>
         </Fragment>

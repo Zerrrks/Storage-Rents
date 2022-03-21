@@ -17,7 +17,7 @@
 */
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
-import Person from "@material-ui/icons/Person";
+//import Person from "@material-ui/icons/Person";
 //import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import BubbleChart from "@material-ui/icons/BubbleChart";
 
@@ -26,7 +26,7 @@ import BubbleChart from "@material-ui/icons/BubbleChart";
 //import Language from "@material-ui/icons/Language";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
-import UserProfile from "views/UserProfile/UserProfile.js";
+//import UserProfile from "views/UserProfile/UserProfile.js";
 import UserStorage from "views/UserStorage/UserStorage.js";
 //import TableList from "views/TableList/TableList.js";
 //import UserLogins from "views/Logins/UserLogins";
@@ -60,14 +60,14 @@ const dashboardRoutes = [
  //   component: Landing,
  //   layout: "/admin",
 //},
-  {
-    path: "/user",
-    name: "User Profile",
-    rtlName: "ملف تعريفي للمستخدم",
-    icon: Person,
-    component: UserProfile,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/user",
+  //   name: "User Profile",
+  //   rtlName: "ملف تعريفي للمستخدم",
+  //   icon: Person,
+  //   component: UserProfile,
+  //   layout: "/admin",
+  // },
   { path: "/storage",
     name: "User Storage",
     icon: "content_paste",
