@@ -40,7 +40,7 @@ const Dash = ({ setAuth = function(){} }) => {
 
   return (
     <div>
-      <h2>Welcome {name}</h2>
+      <h2>Welcome, {name}!</h2>
       <Button onClick={e => logout(e)} color="warning" className="btn btn-primary">
         Logout
       </Button>

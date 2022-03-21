@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 
 const EditStorage = ({ storage, setStorageChange }) => {
-    
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -54,7 +54,7 @@ const EditStorage = ({ storage, setStorageChange }) => {
         editText(storage.storage_id);
         handleClose();
     }
-    
+
     /*
         return (
             <Fragment>
@@ -182,8 +182,8 @@ const EditStorage = ({ storage, setStorageChange }) => {
         <Fragment>
             <Button
                 variant="primary"
-                
-                onClick={ handleShow }
+
+                onClick={handleShow}
             >
                 Edit Storage
             </Button>
@@ -193,60 +193,79 @@ const EditStorage = ({ storage, setStorageChange }) => {
                     <Modal.Title>Edit your storage info:</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={location_name}
-                        onChange={(e) => set_location_name(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={location_price}
-                        onChange={(e) => set_location_price(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={square_footage}
-                        onChange={(e) => set_square_footage(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={full_name}
-                        onChange={(e) => set_full_name(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={street_name}
-                        onChange={(e) => set_street_name(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={city_storage}
-                        onChange={(e) => set_city_storage(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={state_storage}
-                        onChange={(e) => set_state_storage(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={postal_c}
-                        onChange={(e) => set_postal_c(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={add_details}
-                        onChange={(e) => set_add_details(e.target.value)}
-                    />
+                    <label>Storage Type:
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={location_name}
+                            onChange={(e) => set_location_name(e.target.value)}
+                        />
+                    </label>
+                    <label>$/Month:
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={location_price}
+                            onChange={(e) => set_location_price(e.target.value)}
+                        />
+                    </label>
+                    <label>sqft: 
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={square_footage}
+                            onChange={(e) => set_square_footage(e.target.value)}
+                        />
+                    </label>
+                    <label>Your Name:
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={full_name}
+                            onChange={(e) => set_full_name(e.target.value)}
+                        />
+                    </label>
+                    <label>Location Address:
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={street_name}
+                            onChange={(e) => set_street_name(e.target.value)}
+                        />
+                    </label>
+                    <label>City:
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={city_storage}
+                            onChange={(e) => set_city_storage(e.target.value)}
+                        />
+                    </label>
+                    <label>State:
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={state_storage}
+                            onChange={(e) => set_state_storage(e.target.value)}
+                        />
+                    </label>
+                    <label>Zipcode:
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={postal_c}
+                            onChange={(e) => set_postal_c(e.target.value)}
+                        />
+                    </label>
+                    <label>Contact Information:
+                        <textarea
+                            rows="5" cols="80"
+                            type="text"
+                            className="form-control"
+                            value={add_details}
+                            onChange={(e) => set_add_details(e.target.value)}
+                        />
+                    </label>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={commitChanges}>
@@ -257,7 +276,7 @@ const EditStorage = ({ storage, setStorageChange }) => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </Fragment>
+        </Fragment >
     );
 }
 export default EditStorage;
