@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+
 //import InputLabel from "@material-ui/core/InputLabel";
 
 //import UpdateStorage from "./UpdateStorage";
@@ -10,13 +10,11 @@ import { makeStyles } from "@material-ui/core/styles";
 //import DisplayStorage from "./DisplayStorage";
 
 // core components
-import GridItem from "components/Grid/GridItem.js";
+
 //import GridContainer from "components/Grid/GridContainer.js";
 //import CustomInput from "components/CustomInput/CustomInput.js";
 //import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardBody from "components/Card/CardBody.js";
+
 //import CardFooter from "components/Card/CardFooter.js";
 //var PropTypes = require('prop-types');
 
@@ -73,46 +71,19 @@ const UserStorage = () => {
     setStorageChange(false);
   }, [storageChange]);
 
-  const styles = {
-    cardCategoryWhite: {
-      color: "rgba(255,255,255,.62)",
-      margin: "0",
-      fontSize: "14px",
-      marginTop: "0",
-      marginBottom: "0",
-    },
-    cardTitleWhite: {
-      color: "#FFFFFF",
-      marginTop: "0px",
-      minHeight: "auto",
-      fontWeight: "300",
-      fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-      marginBottom: "3px",
-      textDecoration: "none",
-    },
-  };
-
-  const useStyles = makeStyles(styles);
-
-  const classes = useStyles();
 
   return (
-    <div>
+    <div style={{width: 800,}}className="card">
       {/* //   <div className="d-flex mt-5 justify-content-around">
     //     <h2>{name} - Storage List</h2>
     //   </div> */}
-      <GridItem xs={20} sm={20} md={15}>
-        <Card>
-          <CardHeader color="primary">
-            <h2 className={classes.cardTitleWhite}>{name} - Storage List</h2>
-            <p className={classes.cardCategoryWhite}>Add, edit, and remove storage units</p>
-          </CardHeader>
-          <CardBody>
+
+            <h2 className="d-flex mt-5 justify-content-around">{name} - Storage List</h2>
+            <p className="d-flex mt-5 justify-content-around">Add, edit, and remove storage units</p>
             <InputStorage setStorageChange={setStorageChange} />
             <ListStorage allStorage={allStorage} setStorageChange={setStorageChange} />
-          </CardBody>
-        </Card>
-      </GridItem>
+
+
     </div >
   );
 };
