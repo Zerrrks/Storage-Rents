@@ -16,7 +16,7 @@ const StorageTable = ({columns}) => {
     columns = useMemo(() => columns, []);
     useEffect(() => { 
         try {
-        axios.get('http://localhost:5000/units/', { headers: { jwt_token: localStorage.token,}})
+        axios.get('http://localhost:5000/units/storage', { headers: { jwt_token: localStorage.token,}})
           .then((res) => {
             setData(res.data);
           }).catch((err) => {
@@ -162,9 +162,9 @@ const StorageTable = ({columns}) => {
                                     )
                                     
                                 })}
-                                <td> <InfoModal storage={row.cells}/></td>
+                        
                                 <br></br>
-                                
+                                <InfoModal storage={row.cells}/>
                             </tr>
                         )
                     })}
