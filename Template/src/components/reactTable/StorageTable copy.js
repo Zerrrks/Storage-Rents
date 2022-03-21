@@ -10,7 +10,7 @@ import InfoModal from "views/Icons/InfoModal";
 
 
 const StorageTable = ({columns}) => {
-    
+    const [rowValue, setRowValue] = useState([]);
     const [data, setData] = useState([]);
   //  const [storage, setStorage] = useState([]);
     columns = useMemo(() => columns, []);
@@ -25,6 +25,7 @@ const StorageTable = ({columns}) => {
             console.log('error')
           }
       }, []);
+      
     const {
         getTableProps,
         getTableBodyProps,
@@ -70,7 +71,7 @@ const StorageTable = ({columns}) => {
 
     return (
         
-        <div  >
+        <div >
             <div className="d-flex mt-2 justify-content-">
             <input style={{
                 borderTop: 0,
@@ -150,7 +151,8 @@ const StorageTable = ({columns}) => {
                     {rows.map(row => {
                         prepareRow(row)
                         return (
-                            <tr key={data.storage_id} {...row.getRowProps()}>
+                            <tr onClick={() => setRowValue(row.values)} 
+                            key={data.storage_id} {...row.getRowProps()}>
                                 {row.cells.map(cell => {
                                     return (
                                         <td style={{
@@ -164,7 +166,7 @@ const StorageTable = ({columns}) => {
                                 })}
                         
                                 <br></br>
-                                <InfoModal storage={row.cells}/>
+                                <InfoModal storage={rowValue}/>
                             </tr>
                         )
                     })}

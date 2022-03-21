@@ -2,10 +2,10 @@
 
 export const columns  = [
     
- /*   {
+   {
       Header: "Storage ID",
       accessor: "storage_id"
-    },*/
+    },
     {
       Header: "Location Name",
       accessor: "location_name"
