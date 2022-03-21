@@ -116,7 +116,7 @@ const InfoModal = ({storage}) => {
                         
                     /></p>
                     <br></br>
-                    <p>Location Price:
+                    <p>Price per Month:
                     <input
                         type="text"
                         className="form-control"

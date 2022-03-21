@@ -86,7 +86,7 @@ const StorageTable = ({columns}) => {
             }}
             value={filterInput}
             onChange={handleFilterChange}
-            placeholder={"Search by location"}
+            placeholder={"Search by location type"}
             />&nbsp;&nbsp;
             <input style={{
                 borderTop: 0,

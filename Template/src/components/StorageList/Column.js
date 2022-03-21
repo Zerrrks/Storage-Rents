@@ -11,7 +11,7 @@ export const columns  = [
       accessor: "location_name"
     },
     {
-      Header: "Price",
+      Header: "Price $",
       accessor: "location_price"
     },
     {
@@ -32,7 +32,7 @@ export const columns  = [
       accessor: "city_storage"
     },
    */ {
-      Header: "                 State",
+      Header: "State",
       accessor: "state_storage"
     },
   /*  {
