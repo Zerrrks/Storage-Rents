@@ -127,7 +127,7 @@ var locations = [
              }
         })(marker, e));
     }
-    /*Table Marker Setup
+ /*    //Table Marker Setup
   const marker = new google.maps.Marker[e]({
       position: Latlng,
       map: map,
@@ -137,7 +137,7 @@ var locations = [
 
 
  //May not need content strings
- /*Marker 1    
+ Marker 1    
     const contentString =
       '<div class="info-window-content"><h3><a className="locationoneLink" href="/admin/locationone">Open Garage</a></h3>' +
       "<img src = 'https://www.thespruce.com/thmb/OSikhwOUp996sGOElb_FwcgkwSs=/2576x2576/smart/filters:no_upscale()/upscale-residential-house-has-neat-garage-168531302-588389105f9b58bdb36b0226.jpg' style= 'height:150px;width:150px;'/></div>" +
@@ -149,13 +149,13 @@ var locations = [
       [content]: [data.location_name + data.location_price + data.square_footage]
     });
 
-
+*/
  //Table Marker Setup
 
-    google.maps.event.addListener(marker, "click", function () {
-      infowindow.open(map, marker);
-    });
-*/
+ //   google.maps.event.addListener(marker, "click", function () {
+   //   infowindow.open(map, marker);
+   // });
+
 
   });
   return (

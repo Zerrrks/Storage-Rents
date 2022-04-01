@@ -99,7 +99,7 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/Maps",
+    path: "/maps",
     name: "Map View",
     icon: LocationOn,
     component: Maps,
