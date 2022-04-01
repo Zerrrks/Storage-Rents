@@ -30,9 +30,9 @@ import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserStorage from "views/UserStorage/UserStorage.js";
 //import TableList from "views/TableList/TableList.js";
 //import UserLogins from "views/Logins/UserLogins";
-//import Typography from "views/Typography/Typography.js";
+import Maps from "views/Maps/Maps.js";
 import Icons from "views/Icons/Icons.js";
-
+import LocationOn from "@material-ui/icons/LocationOn";
 //import Landing from "views/loginPage/landing";
 
 
@@ -74,21 +74,15 @@ const dashboardRoutes = [
     component: UserStorage,
     layout: "/admin",
   },
+
   /*{ path: "/login",
     name: "User login",
     icon: "content_paste",
     component: UserLogins,
     layout: "/admin",
   },
-  /*{
-    path: "/table",
-    name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
-    layout: "/admin",
-  },
- /* {
+
+  {
     path: "/typography",
     name: "Typography",
     rtlName: "طباعة",
@@ -102,6 +96,13 @@ const dashboardRoutes = [
     rtlName: "الرموز",
     icon: BubbleChart,
     component: Icons,
+    layout: "/admin",
+  },
+  {
+    path: "/Maps",
+    name: "Map View",
+    icon: LocationOn,
+    component: Maps,
     layout: "/admin",
   },
 ];
