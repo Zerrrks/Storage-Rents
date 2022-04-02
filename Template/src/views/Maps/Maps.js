@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 const Geocodio = require('geocodio-library-node');
-const geocoder = new Geocodio('7f919baa291d25f6a558211155f21b6dd6b6522');
+const geocoder = new Geocodio('4a594a77282b48723426a2294b545293364638b');
 const Maps = () => {
 
   const [data, setData] = useState([]);
  //  const [storage, setStorage] = useState([]);
-  const [lat]= useState([]);
-  const [lng]= useState([]);
+  const lat= useState([]);
+  const lng= useState([]);
  
   useEffect(() => { 
       try {
@@ -19,15 +19,15 @@ const Maps = () => {
         })  
 
     geocoder
-      .geocode[data.street_name+", "+data.city_storage+", "+data.country_storage+" "+data.postal_c]
+      .geocode(data.street_name+", "+data.city_storage+", "+data.country_storage+" "+data.postal_c)
     //.reverse([39.9612, -82.9988])
 
       .then(response => {
-        [response.results[0].location.lat]=[lat];
-        [response.results[0].location.lng]=[lng];
+        response.results.location.lat=lat;
+        response.results.location.lng=lng;
       })}
         catch (e) {
-          console.log('error')
+          console.log(e)
           }
       }, []);
   const mapRef = React.useRef(null);
