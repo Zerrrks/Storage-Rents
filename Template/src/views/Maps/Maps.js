@@ -3,33 +3,33 @@ import axios from "axios";
 const Geocodio = require('geocodio-library-node');
 const geocoder = new Geocodio('4a594a77282b48723426a2294b545293364638b');
 const Maps = () => {
-
-  const [data, setData] = useState([]);
- //  const [storage, setStorage] = useState([]);
   const lat= useState([]);
   const lng= useState([]);
- 
-  useEffect(() => { 
-      try {
-      axios.get('http://localhost:5000/units/storage', { headers: { jwt_token: localStorage.token,}})
-        .then((res) => {
-          setData(res.data);
-        }).catch((err) => {
-          console.log(err)
-        })  
-
-    geocoder
-      .geocode(data.street_name+", "+data.city_storage+", "+data.country_storage+" "+data.postal_c)
-    //.reverse([39.9612, -82.9988])
-
-      .then(response => {
-        response.results.location.lat=lat;
-        response.results.location.lng=lng;
-      })}
-        catch (e) {
-          console.log(e)
+  const [data, setData] = useState([]);
+  //  const [storage, setStorage] = useState([]);
+    useEffect(() => { 
+        try {
+        axios.get('http://localhost:5000/units/storage', { headers: { jwt_token: localStorage.token,}})
+          .then((res) => {
+            setData(res.data);
+          }).catch((err) => {
+            console.log(err)
+          }) } catch (e) {
+            console.log('error')
           }
       }, []);
+      var addresses = [
+        [data.street_name+", "+data.city_storage+", "+data.country_storage+" "+data.postal_c]
+      ]
+      geocoder
+      .geocode(addresses)
+    //.reverse([39.9612, -82.9988])
+    
+      .then(response => {
+        response.results[0].location.lat=lat;
+        response.results[0].location.lng=lng;
+      })
+    
   const mapRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -43,7 +43,7 @@ const Maps = () => {
     const myLatlng = new google.maps.LatLng(lat1,lng1);
     //const Latlng = new google.maps.LatLng[lat,lng];
 var locations = [
-  [data.location_name, [lat], [lng], e]
+  [data.location_name, lat, lng, e]
 ];
     const mapOptions = {
       zoom: 11.4,
