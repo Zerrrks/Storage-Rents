@@ -18,6 +18,7 @@ app.use("/auth", require("./routes/jwtAuth"));
 app.use("/dashboard", require("./routes/dashboard"));
 app.use("/units", require("./routes/units"));
 app.use("/prof", require("./routes/prof"));
+app.use("/maps", require("./routes/maps"));
 
 //create a location
 app.post("/locations", async (req, res) => {

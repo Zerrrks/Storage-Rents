@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-
+import React, { Fragment, useState, useEffect } from "react";
+import axios from "axios";
 // @material-ui/core components
 //import { makeStyles } from "@material-ui/core/styles";
 //import InputLabel from "@material-ui/core/InputLabel";
@@ -33,14 +33,27 @@ import MapRender from "components/Maps/MapRender.js";
 
 //const classes = useStyles();
     
-export default function Maps () {
+function Maps () {
+  const [data, setData] = useState([]);
+  useEffect(() => { 
+    try {
+    axios.get('http://localhost:5000/maps/storage', { headers: { jwt_token: localStorage.token,}})
+      .then((res) => {
+        setData(res.data);
+      }).catch((err) => {
+        console.log(err)
+      }) } catch (e) {
+        console.log('error')
+      }
+  }, []);
     return (
      
       
 
               <Fragment>
-                <MapRender />
+                <MapRender data={data} />
               </Fragment>
       
       );
     }
+export default Maps

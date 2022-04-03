@@ -69,7 +69,6 @@ const InfoModal = ({storage}) => {
       const [filteredData, setFilteredData] = useState([]);
    useEffect(() => {
       dataStorage.filter(dataStorage => dataStorage.storage_id == storage.storage_id).map(filteredData => (setFilteredData(filteredData)))
-      console.log("filtered data ^")
       set_location_name(storage.location_name);
       set_location_price(storage.location_price);
       set_square_footage(storage.square_footage);

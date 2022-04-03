@@ -1,49 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 const Geocodio = require('geocodio-library-node');
 const geocoder = new Geocodio('4a594a77282b48723426a2294b545293364638b');
-const MapRender = () => {
-
-  const [data, setData] = useState([]);
-  const [street_name, setStreet_Name] = useState([]);
-  const [city_storage, setCity_Storage] = useState([]);
-  const [country_storage, setCountry_Storage] = useState([]);
-  const [location_name, setLocation_Name] = useState([]);
+const MapRender = ({data}) => {
+  const [moreData, setMoreData] = useState([]);
+  useEffect(() => { 
+    try {
+    axios.get('http://localhost:5000/maps/storage', { headers: { jwt_token: localStorage.token,}})
+      .then((res) => {
+        setMoreData(res.data);
+      }).catch((err) => {
+        console.log(err)
+      }) } catch (e) {
+        console.log('error')
+      }
+  }, []);
+  const [laht, setLaht] = useState([]);
+  const [lang, setLang] = useState([]);
   //  const [storage, setStorage] = useState([]);
-    useEffect(() => { 
-        try {
-        axios.get('http://localhost:5000/units/storage', { headers: { jwt_token: localStorage.token,}})
-          .then((res) => {
-            setData(res.data);
-            console.log(res.data);
-          }).catch((err) => {
-            console.log(err)
-          }) } catch (e) {
-            console.log('error')
-          }
-      }, []);
-    useEffect(() => {
-        setLocation_Name(data.location_name);
-        setStreet_Name(data.street_name);
-        setCity_Storage(data.city_storage);
-        setCountry_Storage(data.country_storage);
-     });
-
-      var lat = new Array();
-      var lng = new Array();
-
-      var addresses = [
-        [location_name+", "+street_name+", "+city_storage+" "+country_storage]
-      ]
-      console.log(addresses);
+  if(data !== undefined && data !== [] && moreData !== undefined && moreData !== [] ){
+    console.log(data.data);
+    console.log('data^^^');
+    console.log(moreData);
+    console.log("please^^");
       geocoder
-      .geocode(addresses)
+      .geocode(data.data)
     //.reverse([39.9612, -82.9988])
     
       .then(response => {
-        response.results.location.lat=lat;
-        response.results.location.lng=lng;
-
+        setLaht(response.results[0].location.lat);
+        setLang(response.results[0].location.lng);
       })
     
   const mapRef = React.useRef(null);
@@ -59,7 +45,7 @@ const MapRender = () => {
     const myLatlng = new google.maps.LatLng(lat1,lng1);
     //const Latlng = new google.maps.LatLng[lat,lng];
 var locations = [
-  [data.location_name, lat, lng, e]
+  [data.location_name, laht, lang, e]
 ];
     const mapOptions = {
       zoom: 11.4,
@@ -180,6 +166,12 @@ var locations = [
       <div style={{ height: `92.3vh` }} ref={mapRef}></div>
     </>
   );
-};
+} else {
+  return(
+    <div>
+      <p>you fucked up </p>
+    </div>
+  ); 
+}};
 
 export default MapRender;
