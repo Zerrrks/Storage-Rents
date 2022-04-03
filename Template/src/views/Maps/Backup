@@ -1,16 +1,17 @@
 const Geocodio = require('geocodio-library-node');
 const geocoder = new Geocodio('4a594a77282b48723426a2294b545293364638b');
 
-const addresses = 
-  '1109 N Highland St, Arlington VA'
-;
+const addresses = [
+  '1109 N Highland St, Arlington VA',
+  '525 University Ave, Toronto, ON, Canada',
+  '4410 S Highway 17 92, Casselberry FL',
+  '15000 NE 24th Street, Redmond WA',
+  '17015 Walnut Grove Drive, Morgan Hill CA'
+];
 
 geocoder.geocode(addresses)
   .then(response => {
-    const lat = response.results[0].location.lat;
-    const lng =response.results[0].location.lng;
-    console.log(response.results[0].location.lat,response.results[0].location.lng);
-    console.log(lat,lng);
+    console.log(response);
   })
   .catch(err => {
     console.error(err);
@@ -388,5 +389,4 @@ const Maps = () => {
     </>
   );
 };
-
-export default Maps;
+*/
