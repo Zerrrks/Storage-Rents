@@ -23,13 +23,18 @@ const MapRender = ({data}) => {
     console.log('data^^^');
     console.log(moreData);
     console.log("please^^");
-      geocoder
-      .geocode(data.data)
+    var addresses= 
+      [moreData.street_name + ", "+moreData.city_storage+" "+moreData.state_storage] 
+    ;
+    console.log(addresses);
+    console.log('fuck');
+    geocoder
+      .geocode(addresses)
     //.reverse([39.9612, -82.9988])
     
       .then(response => {
-        setLaht(response.results[0].location.lat);
-        setLang(response.results[0].location.lng);
+        setLaht(response.results.location.lat);
+        setLang(response.results.location.lng);
       })
     
   const mapRef = React.useRef(null);
@@ -45,7 +50,7 @@ const MapRender = ({data}) => {
     const myLatlng = new google.maps.LatLng(lat1,lng1);
     //const Latlng = new google.maps.LatLng[lat,lng];
 var locations = [
-  [data.location_name, laht, lang, e]
+  [moreData.location_name, laht, lang, e]
 ];
     const mapOptions = {
       zoom: 11.4,
