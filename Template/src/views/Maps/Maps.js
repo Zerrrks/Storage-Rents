@@ -1,35 +1,6 @@
-/*import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
-// @material-ui/core components
-//import { makeStyles } from "@material-ui/core/styles";
-//import InputLabel from "@material-ui/core/InputLabel";
-// core components
-
-//import CustomInput from "components/CustomInput/CustomInput.js";
-//import Button from "components/CustomButtons/Button.js";
-//import Card from "components/Card/Card.js";
-//import CardHeader from "components/Card/CardHeader.js";
-//import CardAvatar from "components/Card/CardAvatar.js";
-//import CardBody from "components/Card/CardBody.js";
-//import CardFooter from "components/Card/CardFooter.js";
-//import { columns } from "components/StorageList/Column";
 import MapRender from "components/Maps/MapRender.js";
-//import LocationRoute from "./LocationRoute"
-
-//import avatar from "assets/img/faces/marc.jpg";
-
-//import { bugs, website, server } from "variables/general.js";
-
-//import {
-//  dailySalesChart,
-//  emailsSubscriptionChart,
-// completedTasksChart,
-//} from "variables/charts.js";
-
-//import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
-
-//const useStyles = makeStyles(styles);
-
 
 //const classes = useStyles();
     
@@ -57,7 +28,7 @@ function Maps () {
       );
     }
 export default Maps
-*/
+/*
 import React from "react";
 
 
@@ -127,7 +98,7 @@ const Maps = () => {
     var avgLng = totalLng / lng.length;
     const avgLatLng = new google.maps.LatLng(avgLat, avgLng);
 
-*/
+*//*
     const mapOptions = {
       zoom: 9,
 //    center: avgLatLng
@@ -332,7 +303,7 @@ const Maps = () => {
       const infowindow[e] = new google.maps.InfoWindow({
       content: //location_name[e] + "img[e]" + "contact[e]",
     });
-*/
+*//*
 //Marker 1
     const infowindow = new google.maps.InfoWindow({
       content: contentString,
@@ -377,7 +348,7 @@ const Maps = () => {
 /*
     google.maps.event.addListener(marker[e], "click", function () {
       infowindow[e].open(map, marker[e]);
-    });*/
+    });*//*
 //Marker 1
     google.maps.event.addListener(marker, "click", function () {
       infowindow.open(map, marker);
@@ -426,3 +397,4 @@ const Maps = () => {
 };
 
 export default Maps
+*/
