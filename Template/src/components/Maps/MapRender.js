@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 const Geocodio = require('geocodio-library-node');
-const geocoder = new Geocodio('4a594a77282b48723426a2294b545293364638b');
+const geocoder = new Geocodio('397499a2a3693637632a2666697631222346924');
 const MapRender = ({data}) => {
   const [moreData, setMoreData] = useState([]);
   useEffect(() => { 
@@ -19,19 +19,28 @@ const MapRender = ({data}) => {
   const [lang, setLang] = useState([]);
   //  const [storage, setStorage] = useState([]);
   if(data !== undefined && data !== [] && moreData !== undefined && moreData !== [] ){
-    console.log(data.data);
-    console.log('data^^^');
+
     console.log(moreData);
-    console.log("please^^");
+    console.log("data^^");
+    for (let i = 0; i < moreData.length; i++) {
       geocoder
-      .geocode(data.data)
+      .geocode(moreData[i])
     //.reverse([39.9612, -82.9988])
     
       .then(response => {
-        setLaht(response.results[0].location.lat);
-        setLang(response.results[0].location.lng);
+        console.log(response.results[0].location.lat)
+        console.log('geocodio lat ^^^')
+        setLaht(response.results[0].location.lat)
+        console.log(response.results[0].location.lng)
+        console.log('geocodio lng^^^')
+        setLang(response.results[0].location.lng)
       })
-    
+        console.log(laht);
+        console.log('lat array')
+        console.log(lang);
+        console.log('lang array')
+    }
+
   const mapRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -44,9 +53,6 @@ const MapRender = ({data}) => {
 
     const myLatlng = new google.maps.LatLng(lat1,lng1);
     //const Latlng = new google.maps.LatLng[lat,lng];
-var locations = [
-  [data.location_name, laht, lang, e]
-];
     const mapOptions = {
       zoom: 11.4,
  //   center: avgLatLng
@@ -110,15 +116,15 @@ var locations = [
         },
       ],
     };
-
+    
     map = new google.maps.Map(map, mapOptions);
     var infowindow = new google.maps.InfoWindow;
 
     var marker, e;
     
-    for (e = 0; e < locations.length; e++) {  
+    for (e = 0; e < locations.length ; e++) {  
         marker = new google.maps.Marker({
-             position: new google.maps.LatLng(locations[e][1], locations[e][2]),
+             position: new google.maps.LatLng(laht[e], lang[e]),
              map: map
         });
     
